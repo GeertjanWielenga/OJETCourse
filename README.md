@@ -35,7 +35,7 @@ eventually replacing everything with Oracle JET.
   * Part-019: Hybrid Mobile Application
   * Part-020: Patterns
 
-3. "Into the Clouds with Oracle JET": Features, Use Cases, and Scenarios
+3. "Into the Clouds with Oracle JET": Miscellaneous Topics
 * Part-021: Theming, Branding, Customizations
 * Part-022: Internationalization
 * Part-023: Testing
