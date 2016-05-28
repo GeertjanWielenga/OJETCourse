@@ -36,14 +36,14 @@ eventually replacing everything with Oracle JET.
   * Part-020: Patterns
 
 3. "Into the Clouds with Oracle JET": Miscellaneous Topics
-* Part-021: Theming, Branding, Customizations
-* Part-022: Internationalization
-* Part-023: Testing
-* Part-024: Performance
-* Part-025: Building
-* Part-026: Distribution
-* Part-027:
-* Part-028:
-* Part-029:
-* Part-030:
+  * Part-021: Theming, Branding, Customizations
+  * Part-022: Internationalization
+  * Part-023: Testing
+  * Part-024: Performance
+  * Part-025: Building
+  * Part-026: Distribution
+  * Part-027:
+  * Part-028:
+  * Part-029:
+  * Part-030:
 
