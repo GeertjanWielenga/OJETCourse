@@ -10,7 +10,7 @@ The idea is to start from scratch, without any libraries,
 then include Require.js, then Knockout.js, then Require Text, etc,
 eventually replacing everything with Oracle JET.
 
-Every part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
+Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 
 1. "Taking Off with Oracle JET": Architecture, Modularity, and Data Binding
 
