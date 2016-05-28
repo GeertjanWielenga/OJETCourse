@@ -1,58 +1,13 @@
 What you will learn:
 
-Creating Oracle JET modules.
+Adding Oracle JET components
 
 How to use this sample:
 
-1. Find js\libs\oraclejet\dist\js\libs\oj\main-template.js
+1. Show how to use the Oracle JET Cookbook:
 
-2. Move it to the same folder where 'main.js' is found.
+http://www.oracle.com/webfolder/technetwork/jet/uiComponents-areaChart-default.html
 
-3. Rewrite 'paths':
+2. Create and load a new JET module.
 
-paths: {
-    'knockout': 'libs/knockout/dist/knockout',
-    'jquery': 'libs/jquery/dist/jquery.min',
-    'jqueryui-amd': 'libs/jquery-ui/ui',
-    'ojs': 'libs/oraclejet/dist/js/libs/oj/min',
-    'ojL10n': 'libs/oraclejet/dist/js/libs/oj/ojL10n',
-    'ojtranslations': 'libs/oraclejet/dist/js/libs/oj/resources',
-    'text': 'libs/text/text',
-    'promise': 'libs/es6-promise/promise.min',
-    'hammerjs': 'libs/hammerjs/hammer.min',
-    'signals': 'libs/js-signals/dist/signals.min',
-    'ojdnd': 'libs/oraclejet/dist/libs/dnd-polyfill/dnd-polyfill-1.0.0.min'
-},
-
-4. In 'require' block in 'main-template.js', add ViewModel:
-
-function DemoViewModel() {
-}
-$(document).ready(
-        function ()
-        {
-            ko.applyBindings(new DemoViewModel());
-        }
-);
-
-5. In 'require' statement, after 'ojs/knockout', add 'ojs/ojmodule'.
-
-6. Delete 'main.js' and change the name of 'main-template.js' to 'main.js'.
-
-7. Rewrite 'app.js' to the following:
-
-define(['ojs/ojcore', 'knockout'
-], function (oj, ko) {
-    function homeContentViewModel() {
-        var self = this;
-        self.firstName = ko.observable('Bert');
-        self.firstNameCaps = ko.pureComputed(function () {
-            return this.firstName().toUpperCase();
-        }, this);
-    }
-    return homeContentViewModel;
-});
-
-8. Load the 'app' module as follows in the 'index' file:
-
-<div data-bind="ojModule: {name:'app'}"></div>
+3. Inclusion of CSS stylesheet.

@@ -20,7 +20,7 @@ eventually replacing everything with Oracle JET.
   * [Part-006](Part-006): Using 'requirejs-text.js' to separate out the HTML view.
   * [Part-007](Part-007): First usage of Oracle JET.
   * [Part-008](Part-008): Creating Oracle JET modules.
-  * Part-009: Adding Oracle JET components.
+  * [Part-009](Part-009): Adding Oracle JET components.
   * Part-010: Using FlexBox to Layout an Oracle JET application.
 
 2. "Exploring the Skies with Oracle JET": Features, Use Cases, and Scenarios
