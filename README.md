@@ -8,8 +8,15 @@ The idea is to start from scratch, without any libraries,
 then include Require.js, then Knockout.js, then Require Text, etc,
 eventually replacing everything with Oracle JET.
 
+[a relative link](other_file.md)
+
+
 <ul>
     <li>
+
+        [a relative link](other_file.md)
+
+
         [Part-001](Part-001): The problem statement -- JavaScript file loading problems.
     </li>
     <li>
