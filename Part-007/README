@@ -1,0 +1,10 @@
+What you will learn:
+
+First usage of Oracle JET, instead of Require.js and Knockout.js separately.
+
+How to use this sample:
+
+1. Remove Require.js and Knockout.js from bower.json.
+2. Include dependency on "oraclejet": "2.0.1" instead.
+3. Compare the result to the previous example.
+4. The application should work exactly as before.
