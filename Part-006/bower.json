@@ -6,9 +6,10 @@
     ".jshintrc",
     "**/*.txt"
   ],
-  "dependencies": {
+  "dependencies": {"requirejs-text": "2.0.15",
     "requirejs": "2.2.0",
-    "knockout": "3.4.0"
+    "knockout": "3.4.0",
+    "text": "requirejs-text#2.0.15"
   },
   "devDependencies": {}
 }

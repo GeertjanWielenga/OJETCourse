@@ -7,9 +7,7 @@ define(['knockout'], function (ko) {
                     return this.firstName().toUpperCase();
                 }, this);
             },
-            template:
-                    "<p>First name: <input data-bind='value: firstName' /></p>\n\
-                     <p>First name capitalized: <strong data-bind='text: firstNameCaps'></strong></p>"
+            template: {require: 'text!js/views/app.html'}
         });
     };
 });

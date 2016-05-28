@@ -1,0 +1,12 @@
+What you will learn:
+
+Separating the HTML view from the JavaScript business logic.
+
+How to use this sample:
+
+1. Note the inclusion of requirejs-text.
+2. Knockout.js component created in app.js, with its view in app.html.
+3. Usage of js/viewModels and js/Views.
+4. In index file, usage of "component" binding to load the Knockout component.
+
+Reference: https://blogs.oracle.com/geertjan/entry/require_config_with_knockout_in
