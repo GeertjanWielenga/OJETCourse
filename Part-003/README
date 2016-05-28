@@ -1,3 +1,7 @@
+What you will learn:
+
+Configuration of 'require.js' is done in the 'require.config' section.
+
 How to use this sample:
 
 1. Inclusion of 'require.config' in the 'main.js' file.

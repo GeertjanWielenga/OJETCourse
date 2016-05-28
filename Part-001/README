@@ -1,3 +1,9 @@
+What you will learn:
+
+A fundamental problem in JavaScript is that (1) you need to specify
+the load order of JavaScript files and (2) you have no control over
+when a JavaScript file is loaded.
+
 How to use this sample:
 
 1. Run the application.

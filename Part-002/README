@@ -1,3 +1,10 @@
+What you will learn:
+
+You can solve the problem of Part-001 via 'require.js', i.e.,
+delegate load order and loading in general to require.js. The
+concept of a 'require' block (of which there is one per application)
+and 'define' block are also handled here.
+
 How to use this sample:
 
 1. Inclusion of 'require.js' via 'bower.json' file.
