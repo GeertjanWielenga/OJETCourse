@@ -1,7 +1,7 @@
 require.config({
     baseUrl: './',
     paths: {
-        knockout: 'bower_components/knockout/dist/knockout',
+        knockout: 'js/libs/knockout/dist/knockout',
         appViewModel: 'js/appViewModel'
     },
     waitSeconds: 2
