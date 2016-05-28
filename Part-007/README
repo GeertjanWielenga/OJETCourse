@@ -2,6 +2,9 @@ What you will learn:
 
 First usage of Oracle JET, instead of Require.js and Knockout.js separately.
 
+Here, we use Bower to install Oracle JET. We could also use Yeoman
+and we could also use the Oracle JET Support plugin in NetBeans IDE.
+
 How to use this sample:
 
 1. Remove Require.js and Knockout.js from bower.json.
