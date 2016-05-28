@@ -1,13 +1,58 @@
 What you will learn:
 
-First usage of Oracle JET, instead of Require.js and Knockout.js separately.
-
-Here, we use Bower to install Oracle JET. We could also use Yeoman
-and we could also use the Oracle JET Support plugin in NetBeans IDE.
+Creating Oracle JET modules.
 
 How to use this sample:
 
-1. Remove Require.js and Knockout.js from bower.json.
-2. Include dependency on "oraclejet": "2.0.1" instead.
-3. Compare the result to the previous example.
-4. The application should work exactly as before.
+1. Find bower_components\oraclejet\dist\js\libs\oj\main-template.js
+
+2. Move it to the same folder where 'main.js' is found.
+
+3. Rewrite 'paths':
+
+paths: {
+'knockout': 'bower_components/knockout/dist/knockout',
+'jquery': 'bower_components/jquery/dist/jquery.min',
+'jqueryui-amd': 'bower_components/jquery-ui/ui',
+'ojs': 'bower_components/oraclejet/dist/js/libs/oj/min/',
+'ojL10n': 'bower_components/oraclejet/dist/js/libs/oj/ojL10n',
+'ojtranslations': 'bower_components/oraclejet/dist/js/libs/oj/resources',
+'text': 'bower_components/text/text',
+'promise': 'bower_components/es6-promise/promise.min',
+'hammerjs': 'bower_components/hammerjs/hammer.min',
+'signals': 'bower_components/js-signals/dist/signals.min',
+'ojdnd': 'bower_components/oraclejet/dist/js/libs/dnd-polyfill/dnd-polyfill-1.0.0.min'
+},
+
+4. In 'require' block in 'main-template.js', add ViewModel:
+
+function DemoViewModel() {
+}
+$(document).ready(
+        function ()
+        {
+            ko.applyBindings(new DemoViewModel());
+        }
+);
+
+5. In 'require' statement, after 'ojs/knockout', add 'ojs/ojmodule'.
+
+6. Delete 'main.js' and change its reference in the 'index.html' to 'main-template.js'.
+
+7. Rewrite 'app.js' to the following:
+
+define(['ojs/ojcore', 'knockout'
+], function (oj, ko) {
+    function homeContentViewModel() {
+        var self = this;
+        self.firstName = ko.observable('Bert');
+        this.firstNameCaps = ko.pureComputed(function () {
+            return this.firstName().toUpperCase();
+        }, this);
+    }
+    return homeContentViewModel;
+});
+
+8. Load the 'app' module as follows in the 'index' file:
+
+<div data-bind="ojModule: {name:'app'}"></div>
