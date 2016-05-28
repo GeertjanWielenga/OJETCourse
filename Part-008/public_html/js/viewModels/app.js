@@ -1,13 +1,11 @@
-define(['knockout'], function (ko) {
-    return function appViewModel() {
-        ko.components.register("userName", {
-            viewModel: function (params) {
-                this.firstName = ko.observable('Bert');
-                this.firstNameCaps = ko.pureComputed(function () {
-                    return this.firstName().toUpperCase();
-                }, this);
-            },
-            template: {require: 'text!js/views/app.html'}
-        });
-    };
+define(['ojs/ojcore', 'knockout'
+], function (oj, ko) {
+    function homeContentViewModel() {
+        var self = this;
+        self.firstName = ko.observable('Bert');
+        this.firstNameCaps = ko.pureComputed(function () {
+            return this.firstName().toUpperCase();
+        }, this);
+    }
+    return homeContentViewModel;
 });
