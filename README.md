@@ -10,7 +10,7 @@ The idea is to start from scratch, without any libraries,
 then include Require.js, then Knockout.js, then Require Text, etc,
 eventually replacing everything with Oracle JET.
 
-* Section A: Architecture, Modularity, and Data Binding
+1. Section A: Architecture, Modularity, and Data Binding
 ..* [Part-001](Part-001): The problem statement -- JavaScript file loading problems.
 ..* [Part-002](Part-002): Introduction to AMD via Require.js.
 ..* [Part-003](Part-003): Understanding 'require.config'.
