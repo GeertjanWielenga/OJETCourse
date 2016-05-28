@@ -4,9 +4,8 @@ Component-based development with Knockout.js.
 
 How to use this sample:
 
-1. Note the inclusion of requirejs-text.
-2. Knockout.js component created in app.js, with its view in app.html.
-3. Usage of js/viewModels and js/Views.
-4. In index file, usage of "component" binding to load the Knockout component.
+1. Knockout.js component created in app.js, with its view in app.js.
+2. Usage of js/viewModels.
+3. In index file, usage of "component" binding to load the Knockout component.
 
 Reference: https://blogs.oracle.com/geertjan/entry/require_config_with_knockout_in
