@@ -1,6 +1,5 @@
-<b>Notes:</b>
-<ul>
-<li>a</li>
-<li>b</li>
-<li>c</li>
-</ul>
+1. Run the application.
+2. The Console (Output window in NetBeans) shows the output.
+3. Go to the index file and change the load order of the two JavaScript files.
+4. Point out that the application doesn't work anymore because of load order problems.
+5. Explain that we can delegate the load order to 'require.js' in part 002.
