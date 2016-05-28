@@ -24,7 +24,7 @@ eventually replacing everything with Oracle JET.
   * Part-010: Using FlexBox to Layout an Oracle JET application.
 
 2. "Exploring the Skies with Oracle JET": Features, Use Cases, and Scenarios
-  * Part-011: Components
+  * Part-011: Components and the on-line Oracle JET Cookbook
   * Part-012: Data Visualization
   * Part-013: Data Collections
   * Part-014: AJAX, Common Model, and Peristence
