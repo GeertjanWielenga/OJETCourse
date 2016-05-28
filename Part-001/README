@@ -1,3 +1,5 @@
+How to use this sample:
+
 1. Run the application.
 2. The Console (Output window Ctrl-4 in NetBeans) shows the output.
 3. Go to the index file and change the load order of the two JavaScript files.

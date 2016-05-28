@@ -1,3 +1,5 @@
+How to use this sample:
+
 1. Inclusion of 'require.js' via 'bower.json' file.
 2. Look at index file and notice that JavaScript files are not loaded there.
 3. Instead, require.js is loaded in index file, with 'data-main' pointing to entry point.
