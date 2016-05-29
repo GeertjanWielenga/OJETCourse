@@ -48,6 +48,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
     * Oracle Mobile Cloud Service
     * Oracle Application Container Cloud Service
     * Oracle Mobile Application Accelerator
+    * Others/More?
   * Part-023: Accessibility
   * Part-024: Internationalization
   * Part-025: Testing & Debugging
