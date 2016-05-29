@@ -9,5 +9,6 @@ How to use this sample:
 
 1. Remove Require.js and Knockout.js from bower.json.
 2. Include dependency on "oraclejet": "2.0.1" instead.
-3. Compare the result to the previous example.
+3. Compare the result to the previous example, the same libraries are there, plus more.
 4. The application should work exactly as before.
+5. Point out that we can also generate the app via Yeoman and via NetBeans IDE.
