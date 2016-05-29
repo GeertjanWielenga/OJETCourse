@@ -26,7 +26,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * [Part-010](Part-010): Using FlexBox to Layout an Oracle JET application.
 
 2. "Exploring the Skies with Oracle JET": Features, Use Cases, and Scenarios
-  * Part-011: Exploring the Oracle JET Website
+  * [Part-011](Part-011): Exploring the Oracle JET Website
   * Part-012: Exploring Data Visualization components
   * Part-013: Exploring Data Collection components
   * Part-014: Exploring AJAX, Common Model, and Peristence
