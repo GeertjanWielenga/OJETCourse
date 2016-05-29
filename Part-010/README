@@ -4,6 +4,14 @@ Using FlexBox to Layout an Oracle JET application
 
 How to use this sample:
 
-1. Usage of "oj-flex".
+1. Discuss CSS3 and FlexBox.
 
-2. Usage of "oj-flex-item".
+2. Usage of "oj-flex".
+
+3. Usage of "oj-flex-item".
+
+4. Point out how easy it is to use FlexBox in Oracle JET applications.
+
+5. Show the related page on the Oracle JET site:
+
+http://www.oracle.com/webfolder/technetwork/jet/uiComponents-flex-basics.html

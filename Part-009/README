@@ -4,10 +4,16 @@ Adding Oracle JET components
 
 How to use this sample:
 
-1. Show how to use the Oracle JET Cookbook:
+1. Start with the previous sample.
+
+2. Show how to use the Oracle JET Cookbook:
 
 http://www.oracle.com/webfolder/technetwork/jet/uiComponents-areaChart-default.html
 
-2. Create and load a new JET module.
+3. Create and load a new JET module.
 
-3. Inclusion of CSS stylesheet.
+4. Inclusion of CSS stylesheet.
+
+5. Create several different JET modules.
+
+6. Add several different JET components.
