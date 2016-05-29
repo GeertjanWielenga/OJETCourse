@@ -7,8 +7,10 @@ and 'define' block are also handled here.
 
 How to use this sample:
 
-1. Inclusion of 'require.js' via 'bower.json' file.
-2. Look at index file and notice that JavaScript files are not loaded there.
-3. Instead, require.js is loaded in index file, with 'data-main' pointing to entry point.
-4. Look at 'main.js' (which has a 'require' block). Each application only has one 'require' block.
-5. Look at 'buyer.js', which has a 'define' block. Each module is a 'define' block.
+1. Compare this code sample with the previous code sample.
+2. Look at inclusion of 'require.js' via 'bower.json' file.
+3. Look at index file and notice that JavaScript files are not loaded there.
+4. Instead, require.js is loaded in index file, with 'data-main' pointing to entry point.
+5. Look at 'main.js' (which has a 'require' block). Each application only has one 'require' block.
+6. Look at 'buyer.js', which has a 'define' block. Each module is a 'define' block.
+7. Understand that you now have the basis of a modular application with loading delegated to 'require.js'.
