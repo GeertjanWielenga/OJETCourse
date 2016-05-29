@@ -3,7 +3,7 @@ What you will learn:
 Inclusion of 'Knockout.js' into an application organized via 'Require.js'.
 
 1. Compare this code sample with the previous code sample.
-2. Notice te inclusion of 'knockout.js' in the 'require.config' section.
+2. Notice the inclusion of 'knockout.js' in the 'require.config' section.
 3. Discuss the problem that two-way data binding solves.
 4. Point out that Knockout solves this problem very narrowly and neatly.
 
