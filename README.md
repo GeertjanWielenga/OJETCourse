@@ -42,7 +42,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * Part-022: Integrating Oracle Cloud Services
   * Part-023: Accessibility
   * Part-024: Internationalization
-  * Part-025: Testing
+  * Part-025: Testing & Debugging
   * Part-026: Performance
   * Part-027: Building
   * Part-028: Security
