@@ -4,9 +4,11 @@ Separating the HTML view from the JavaScript business logic.
 
 How to use this sample:
 
-1. Note the inclusion of requirejs-text.
-2. Knockout.js component created in app.js, with its view in app.html.
-3. Usage of js/viewModels and js/Views.
-4. In index file, usage of "component" binding to load the Knockout component.
+1. Point out that separating the view from the business logic has advantages.
+2. Note the inclusion of requirejs-text.
+3. Note the Knockout.js component created in app.js, with its view in app.html.
+4. Usage of js/viewModels and js/Views, to prepare for Oracle JET.
+5. In index file, usage of "component" binding to load the Knockout component.
+6. Point out that we will see this same pattern in Oracle JET applications.
 
 Reference: https://blogs.oracle.com/geertjan/entry/require_config_with_knockout_in
