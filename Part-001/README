@@ -6,11 +6,15 @@ when a JavaScript file is loaded.
 
 How to use this sample:
 
-1. Run the application.
-2. The Console (Output window Ctrl-4 in NetBeans) shows the output.
-3. Go to the index file and change the load order of the two JavaScript files.
-4. Point out that the application doesn't work anymore because of load order problems.
-5. Explain that we can delegate the load order to 'require.js' in part 002.
-6. Explain that this is one of several problems in larger JavaScript applications, e.g.,
+1. Small number of slides, about Oracle JET, and about this course/MOOC.
+2. Show an image of an empty toolbox.
+3. Show items being added to the toolbox.
+4. Transition to talking about one specific problem, i.e., building up to AMD loading.
+5. Run the application.
+6. The Console (Output window Ctrl-4 in NetBeans) shows the output.
+7. Go to the index file and change the load order of the two JavaScript files.
+8. Point out that the application doesn't work anymore because of load order problems.
+9. Explain that we can delegate the load order to 'require.js' in part 002.
+10. Explain that this is one of several problems in larger JavaScript applications, e.g.,
    data visualization, accesibility, internationalization -- and that these are
    low-level infrastructural problems that we shouldn't need to think about.
