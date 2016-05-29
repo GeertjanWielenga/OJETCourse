@@ -4,11 +4,13 @@ Creating Oracle JET modules.
 
 How to use this sample:
 
-1. Find js\libs\oraclejet\dist\js\libs\oj\main-template.js
+1. Start by opening the previous sample and reworking it, as described in the steps below.
 
-2. Move it to the same folder where 'main.js' is found.
+2. Find js\libs\oraclejet\dist\js\libs\oj\main-template.js
 
-3. Rewrite 'paths':
+3. Move it to the same folder where 'main.js' is found.
+
+4. Rewrite 'paths':
 
 paths: {
     'knockout': 'libs/knockout/dist/knockout',
@@ -24,7 +26,7 @@ paths: {
     'ojdnd': 'libs/oraclejet/dist/libs/dnd-polyfill/dnd-polyfill-1.0.0.min'
 },
 
-4. In 'require' block in 'main-template.js', add ViewModel:
+5. In 'require' block in 'main-template.js', add ViewModel:
 
 function DemoViewModel() {
 }
@@ -35,11 +37,11 @@ $(document).ready(
         }
 );
 
-5. In 'require' statement, after 'ojs/knockout', add 'ojs/ojmodule'.
+6. In 'require' statement, after 'ojs/knockout', add 'ojs/ojmodule'.
 
-6. Delete 'main.js' and change the name of 'main-template.js' to 'main.js'.
+7. Delete 'main.js' and change the name of 'main-template.js' to 'main.js'.
 
-7. Rewrite 'app.js' to the following:
+8. Rewrite 'app.js' to the following:
 
 define(['ojs/ojcore', 'knockout'
 ], function (oj, ko) {
@@ -53,6 +55,6 @@ define(['ojs/ojcore', 'knockout'
     return homeContentViewModel;
 });
 
-8. Load the 'app' module as follows in the 'index' file:
+9. Load the 'app' module as follows in the 'index' file:
 
 <div data-bind="ojModule: {name:'app'}"></div>
