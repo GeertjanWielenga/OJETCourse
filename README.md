@@ -26,16 +26,16 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * [Part-010](Part-010): Using FlexBox to Layout an Oracle JET application.
 
 2. "Exploring the Skies with Oracle JET": Features, Use Cases, and Scenarios
-  * Part-011: Components and the on-line Oracle JET Cookbook
-  * Part-012: Data Visualization
-  * Part-013: Data Collections
-  * Part-014: AJAX, Common Model, and Peristence
-  * Part-015: Navigation & Routing
-  * Part-016: Validation & Error Handling
-  * Part-017: Layouts
-  * Part-018: Responsive Design
-  * Part-019: Hybrid Mobile Application
-  * Part-020: Patterns
+  * Part-011: Exploring the Oracle JET Website
+  * Part-012: Exploring Data Visualization components
+  * Part-013: Exploring Data Collection components
+  * Part-014: Exploring AJAX, Common Model, and Peristence
+  * Part-015: Exploring Navigation & Routing
+  * Part-016: Exploring Validation & Error Handling
+  * Part-017: Exploring Layout Techniques
+  * Part-018: Exploring Responsive Design Solutions
+  * Part-019: Exploring Oracle JET Development Patterns
+  * Part-020: Exploring the Hybrid Mobile Application Process
 
 3. "Into the Clouds with Oracle JET": Miscellaneous Topics
   * Part-021: Theming, Branding, Customizations
@@ -43,9 +43,9 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * Part-023: Testing
   * Part-024: Performance
   * Part-025: Building
-  * Part-026: Distribution
-  * Part-027:
-  * Part-028:
-  * Part-029:
-  * Part-030:
+  * Part-026: Security
+  * Part-027: Distribution
+  * Part-028: Integration with Oracle Cloud Services
+  * Part-029: Contributing to the Oracle JET community
+  * Part-030: Next Steps
 
