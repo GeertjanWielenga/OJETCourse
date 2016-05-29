@@ -11,3 +11,6 @@ How to use this sample:
 3. Go to the index file and change the load order of the two JavaScript files.
 4. Point out that the application doesn't work anymore because of load order problems.
 5. Explain that we can delegate the load order to 'require.js' in part 002.
+6. Explain that this is one of several problems in larger JavaScript applications, e.g.,
+   data visualization, accesibility, internationalization -- and that these are
+   low-level infrastructural problems that we shouldn't need to think about.
