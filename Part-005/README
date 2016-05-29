@@ -4,8 +4,12 @@ Component-based development with Knockout.js.
 
 How to use this sample:
 
-1. Knockout.js component created in app.js, with its view in app.js.
-2. Usage of js/viewModels.
-3. In index file, usage of "component" binding to load the Knockout component.
+1. Discuss the problem that Knockout components solve.
+2. In the code, look at Knockout.js component created in app.js, with its view in app.js.
+3. Notice the usage of js/viewModels, an idea to prepare the way for Oracle JET.
+4. In index file, usage of "component" binding to load the Knockout component.
+5. Point out that Oracle JET also has components, expressed in JQuery UI, which we will see later.
 
-Reference: https://blogs.oracle.com/geertjan/entry/require_config_with_knockout_in
+Reference:
+http://knockoutjs.com/documentation/component-overview.html
+https://blogs.oracle.com/geertjan/entry/require_config_with_knockout_in
