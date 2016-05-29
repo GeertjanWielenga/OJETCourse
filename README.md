@@ -4,7 +4,7 @@ Small samples that, step-by-step, build up a thorough
 understanding of the concepts underpinning Oracle JET.
 
 The samples will each form the basis of a chapter or exercise
-in a course and/or a MOOC on Oracle JET.
+in a book and/or course and/or a MOOC on Oracle JET.
 
 The idea is to start from scratch, without any libraries,
 then include Require.js, then Knockout.js, then Require Text, etc,
