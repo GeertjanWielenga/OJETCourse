@@ -29,7 +29,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * [Part-011](Part-011): Exploring the Oracle JET Website
   * Part-012: Exploring Data Visualization components
   * Part-013: Exploring Data Collection components
-  * Part-014: Exploring AJAX, Common Model, and Peristence
+  * Part-014: Exploring AJAX, Common Model, and Persistence
   * Part-015: Exploring Navigation & Routing
   * Part-016: Exploring Validation & Error Handling
   * Part-017: Exploring Layout Techniques
