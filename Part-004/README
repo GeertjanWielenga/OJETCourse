@@ -6,5 +6,6 @@ Inclusion of 'Knockout.js' into an application organized via 'Require.js'.
 2. Notice the inclusion of 'knockout.js' in the 'require.config' section.
 3. Discuss the problem that two-way data binding solves.
 4. Point out that Knockout solves this problem very narrowly and neatly.
+5. Run the sample and explain how it works and point to the link below.
 
 Reference: http://knockoutjs.com/documentation/amd-loading.html
