@@ -44,9 +44,10 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 3. "Into the Clouds with Oracle JET": Miscellaneous Topics
   * Part-021: Integrating Other Components, e.g., custom JQuery UI components
   * Part-022: Interactions with Oracle Cloud Services
-    * Application Builder Cloud Service
-    * Mobile Cloud Service
-    * Application Container Cloud Service
+    * Oracle Application Builder Cloud Service
+    * Oracle Mobile Cloud Service
+    * Oracle Application Container Cloud Service
+    * Oracle Mobile Application Accelerator
   * Part-023: Accessibility
   * Part-024: Internationalization
   * Part-025: Testing & Debugging
