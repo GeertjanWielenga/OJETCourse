@@ -46,6 +46,6 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * Part-026: Performance
   * Part-027: Building
   * Part-028: Security
-  * Part-029: Distribution
+  * Part-029: Packaging & Deploying
   * Part-030: Contributing to the Oracle JET community
 
