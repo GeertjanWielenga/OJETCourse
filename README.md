@@ -14,6 +14,10 @@ By the end, the participant should have all the knowledge they need
 to build applications with Oracle JET and know where to go
 and how to solve problems/questions they may encounter.
 
+The intended audience is anyone with basic JavaScript knowledge
+who wants to create enterprise/business JavaScript applications
+for the browser on the desktop and/or mobile devices.
+
 Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 
 1. "Taking Off with Oracle JET": Architecture, Modularity, and Data Binding
