@@ -23,13 +23,23 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 1. "Taking Off with Oracle JET": Architecture, Modularity, and Data Binding
 
   * [Part-001](Part-001): 
-    * Title 
+    * Title: Overview 
     * Description: The problem statement -- JavaScript file loading problems.
-  * [Part-002](Part-002): Introduction to AMD via Require.js.
-  * [Part-003](Part-003): Understanding 'require.config'.
-  * [Part-004](Part-004): Including Knockout.js.
-  * [Part-005](Part-005): Creating and loading a Knockout component.
-  * [Part-006](Part-006): Using 'requirejs-text.js' to separate out the HTML view.
+  * [Part-002](Part-002):
+    * Title: Modularity 
+    * Description: Introduction to AMD via Require.js.
+  * [Part-003](Part-003):
+    * Title: Advanced Modularity 
+    * Description: Understanding 'require.config'.
+  * [Part-004](Part-004):
+    * Title: Data Binding
+    * Description: Including Knockout.js.
+  * [Part-005](Part-005): 
+    * Title: Knockout Components
+    * Description: Creating and loading a Knockout component.
+  * [Part-006](Part-006): 
+    * Title: HTML Templates
+    * Description: Using 'requirejs-text.js' to separate out the HTML view.
   * [Part-007](Part-007): First usage of Oracle JET.
   * [Part-008](Part-008): Creating Oracle JET modules.
   * [Part-009](Part-009): Adding Oracle JET components.
