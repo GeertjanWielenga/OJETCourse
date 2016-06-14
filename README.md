@@ -40,10 +40,18 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * [Part-006](Part-006): 
     * Title: HTML Templates
     * Description: Using 'requirejs-text.js' to separate out the HTML view.
-  * [Part-007](Part-007): First usage of Oracle JET.
-  * [Part-008](Part-008): Creating Oracle JET modules.
-  * [Part-009](Part-009): Adding Oracle JET components.
-  * [Part-010](Part-010): Using FlexBox to Layout an Oracle JET application.
+  * [Part-007](Part-007): 
+    * Title: Oracle JET
+    * Description: First usage of Oracle JET.
+  * [Part-008](Part-008): 
+    * Title: Oracle JET Modules
+    * Description: Creating Oracle JET modules.
+  * [Part-009](Part-009): 
+    * Title: Oracle JET Components
+    * Description: Adding Oracle JET components.
+  * [Part-010](Part-010):
+    * Title: Oracle JET Layouts
+    * Description: Using FlexBox to Layout an Oracle JET application.
 
 2. "Exploring the Skies with Oracle JET": Features, Use Cases, and Scenarios
   * [Part-011](Part-011): Exploring the Oracle JET Website
