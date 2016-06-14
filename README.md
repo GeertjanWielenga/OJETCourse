@@ -69,11 +69,21 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * Part-015: 
     * Title: Navigation and Routing
     * Description: Exploring Navigation & Routing.
-  * Part-016: Exploring Validation & Error Handling
-  * Part-017: Exploring Layout Techniques
+  * Part-016: 
+    * Title: Validation and Error Handling
+    * Description: Exploring Validation & Error Handling.
+  * Part-017: 
+    * Title: Layout Techniques
+    * Description: Exploring Layout Techniques.
   * Part-018: Exploring Responsive Design Solutions
-  * Part-019: Exploring Oracle JET Development Patterns
-  * Part-020: Exploring the Hybrid Mobile Application Process
+    * Title: Validation and Error Handling
+    * Description: Exploring Validation & Error Handling.
+  * Part-019: 
+    * Title: Development Patterns
+    * Description: Exploring Oracle JET Development Patterns.
+  * Part-020: 
+    * Title: Hybrid Mobile Application Development
+    * Description: Exploring the Hybrid Mobile Application Process.
 
 3. "Into the Clouds with Oracle JET": Miscellaneous Topics
   * Part-021: Integrating Other Components, e.g., custom JQuery UI components
