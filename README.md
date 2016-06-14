@@ -56,15 +56,19 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 2. "Exploring the Skies with Oracle JET": Features, Use Cases, and Scenarios
   * [Part-011](Part-011): 
     * Title: Overview
-    * Description: Exploring the Oracle JET Website
+    * Description: Exploring the Oracle JET website.
   * Part-012: 
     * Title: Data Visualization Components
-    * Description: Exploring the Data Visualization Components
+    * Description: Exploring the Data Visualization components.
   * Part-013: 
     * Title: Data Collection Components
-    * Description: Exploring Data Collection components
-  * Part-014: Exploring AJAX, Common Model, and Persistence
-  * Part-015: Exploring Navigation & Routing
+    * Description: Exploring Data Collection components.
+  * Part-014: 
+    * Title: Data Sources and Persistence
+    * Description: Exploring AJAX, Common Model, and Persistence.
+  * Part-015: 
+    * Title: Navigation and Routing
+    * Description: Exploring Navigation & Routing.
   * Part-016: Exploring Validation & Error Handling
   * Part-017: Exploring Layout Techniques
   * Part-018: Exploring Responsive Design Solutions
