@@ -75,9 +75,9 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * Part-017: 
     * Title: Layout Techniques
     * Description: Exploring Layout Techniques.
-  * Part-018: Exploring Responsive Design Solutions
-    * Title: Validation and Error Handling
-    * Description: Exploring Validation & Error Handling.
+  * Part-018: 
+    * Title: Responsive Design Solutions
+    * Description: Exploring Responsive Design Solutions.
   * Part-019: 
     * Title: Development Patterns
     * Description: Exploring Oracle JET Development Patterns.
