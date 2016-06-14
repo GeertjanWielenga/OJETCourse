@@ -99,7 +99,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
     * Title: Internationalization
     * Description: 
   * Part-025: 
-    * Title: Testing & Debugging
+    * Title: Testing and Debugging
     * Description: NetBeans Knockout window, test frameworks.
   * Part-026: 
     * Title: Performance
@@ -111,7 +111,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
     * Title: Security
     * Description: oAuth, securing data on the server, etc.
   * Part-029: 
-    * Title: Packaging & Deploying
+    * Title: Packaging and Deploying
     * Description: 
   * Part-030: 
     * Title: Contributing to the Oracle JET community
