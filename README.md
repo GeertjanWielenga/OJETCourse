@@ -89,18 +89,31 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * Part-021:
     * Title: Integrating Other Components
     * Description: Integrate custom JQuery UI components, Leaflet, Mapbox, etc.
-  * Part-022: Interactions with Oracle Cloud Services
-    * Oracle Application Builder Cloud Service
-    * Oracle Mobile Cloud Service
-    * Oracle Application Container Cloud Service
-    * Oracle Mobile Application Accelerator
-    * Others/More?
-  * Part-023: Accessibility
-  * Part-024: Internationalization
-  * Part-025: Testing & Debugging
-  * Part-026: Performance
-  * Part-027: Building
-  * Part-028: Security
-  * Part-029: Packaging & Deploying
-  * Part-030: Contributing to the Oracle JET community
+  * Part-022: 
+    * Title: Interactions with Oracle Cloud Services
+    * Description: ABCS, MCS, ACCS, ORDS, MAX, and more.
+  * Part-023:
+    * Title: Accessibility
+    * Description: 
+  * Part-024: 
+    * Title: Internationalization
+    * Description: 
+  * Part-025: 
+    * Title: Testing & Debugging
+    * Description: NetBeans Knockout window, test frameworks.
+  * Part-026: 
+    * Title: Performance
+    * Description: 
+  * Part-027: 
+    * Title: Building
+    * Description: Grunt.
+  * Part-028: 
+    * Title: Security
+    * Description: oAuth, securing data on the server, etc.
+  * Part-029: 
+    * Title: Packaging & Deploying
+    * Description: 
+  * Part-030: 
+    * Title: Contributing to the Oracle JET community
+    * Description: GitHub, YouTube clips, Blogs, Twitter.
 
