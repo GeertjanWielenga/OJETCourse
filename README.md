@@ -86,7 +86,9 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
     * Description: Exploring the Hybrid Mobile Application Process.
 
 3. "Into the Clouds with Oracle JET": Miscellaneous Topics
-  * Part-021: Integrating Other Components, e.g., custom JQuery UI components
+  * Part-021:
+    * Title: Integrating Other Components
+    * Description: Integrate custom JQuery UI components, Leaflet, Mapbox, etc.
   * Part-022: Interactions with Oracle Cloud Services
     * Oracle Application Builder Cloud Service
     * Oracle Mobile Cloud Service
