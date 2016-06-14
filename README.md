@@ -35,7 +35,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
     * Title: Data Binding
     * Description: Including Knockout.js.
   * [Part-005](Part-005): 
-    * Title: Knockout Components
+    * Title: Components
     * Description: Creating and loading a Knockout component.
   * [Part-006](Part-006): 
     * Title: HTML Templates
