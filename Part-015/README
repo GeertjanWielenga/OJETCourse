@@ -6,7 +6,11 @@ How to use this sample:
 
 1. Open the sample.
 
-2. Add modules.
+2. Add 'header' and 'footer' modules and add in index:
+
+<header data-bind="ojModule: {name:'header'}"></header>
+
+<footer data-bind="ojModule: {name:'footer'}"></footer>
 
 3. Add router.
 
