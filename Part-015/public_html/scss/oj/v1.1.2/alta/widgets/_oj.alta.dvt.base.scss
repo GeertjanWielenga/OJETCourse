@@ -1,0 +1,18 @@
+@import "../../utilities/oj.utilities";
+
+$includeDvtBaseClasses:       $includeDvtClasses !default;
+
+@import "../../common/helpers/oj.common.helpers"; 
+@import "../../common/widgets/oj.common.dvt.base"; 
+
+@if $includeDvtBaseClasses != false {
+  @include module-include-once("alta.dvtbase") {
+    .oj-legend-title {
+      color: $tertiaryTextColor;
+    }
+  
+    .oj-legend-section-title {
+      color: $tertiaryTextColor;
+    }
+  }
+}

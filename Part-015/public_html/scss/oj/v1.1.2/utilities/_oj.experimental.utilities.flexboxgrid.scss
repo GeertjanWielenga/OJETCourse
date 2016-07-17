@@ -1,0 +1,193 @@
+
+
+//-------------------------------------------------------------------------------------------------
+// grid variables for defaulting whether certain types of grid classes are generated
+// $gridGenerateOrdering:  generate order grid classes like .oj-sm-order-1, .oj-sm-order-2, etc.
+//-------------------------------------------------------------------------------------------------
+$gridGenerateOrdering:  true !default;
+
+
+
+//
+// Grid Mixins
+//
+
+//-------------------------------------------------------------------------------------------------
+// Create default or nested rows
+// 
+// $behavior - Any special beavior for this row? 
+//             Options: nest, null
+//             Default: null. 
+//-------------------------------------------------------------------------------------------------
+@mixin oj-grid-row($behavior:     null, 
+                   $columnGutter: $gridColumnGutter, 
+                   $maxWidth:     $appContentMaxWidth) {
+
+  // use @include oj-grid-row(nest); to include a nested row
+  @if $behavior == nest {
+    margin-left: -($columnGutter/2);
+    margin-right: -($columnGutter/2);
+    max-width: none;
+    width: auto;
+  }
+
+
+  // use @include oj-grid-row; to use a container row
+  @else {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: $maxWidth;
+    width: 100%;
+    @include oj-box-sizing-property(border-box);
+    @include oj-display-flex-property();
+    @include oj-flex-direction-property(row);
+    @include oj-flex-wrap-property(wrap);
+    @include oj-align-items-property(flex-start);
+ }
+
+}
+
+
+
+//-------------------------------------------------------------------------------------------------
+// For creating columns 
+//
+// $columns:   The number of columns this should be. Default: false
+// $offset:    # of columns to offset. Default: false.
+// $order:     # of columns to order. Default: false.
+// $padding:   left and right padding value on column. 
+//             true means use $columnGutter/2. 
+//             Default: null.
+//-------------------------------------------------------------------------------------------------
+@mixin oj-grid-column($columns:   false, 
+                      $offset:    false, 
+                      $order:     false, 
+                      $padding:   null,
+                      $totalColumns: $gridTotalColumns,
+                      $columnGutter: $gridColumnGutter) 
+{
+
+  @if $padding == true {
+    padding-left: $columnGutter / 2;
+    padding-right: $columnGutter / 2;
+  }
+  // If padding, get rid of gutter padding
+  @else if $padding != null {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+
+  // If a column number is given, calculate width
+  @if $columns {
+    width: percentage($columns/$totalColumns);
+  }
+
+  // If offset, calculate appropriate margins
+  @if $offset { 
+    $offsetPercentage: $offset/$totalColumns;
+
+    @if ($offsetPercentage == 0) 
+    { 
+      @include oj-ltr()
+      {
+        margin-left: 0;
+      }
+
+      @include oj-rtl()
+      {
+        margin-right: 0;
+      }
+    }
+    @else                        
+    { 
+      @include oj-ltr()
+      {
+        margin-left: percentage($offsetPercentage);
+      }
+
+      @include oj-rtl()
+      {
+        margin-right: percentage($offsetPercentage);
+      }
+    }
+  }
+
+  // Source Ordering
+  @if $order { @include oj-order-property($order) }
+
+}
+
+
+
+//-------------------------------------------------------------------------------------------------
+// generate grid classes that belong inside of media queries
+//
+//
+// $selectorPrefix:    name of class prefix to use, i.e. "oj-sm" will generate .oj-sm-1, .oj-sm-2, etc.
+// $generateBasics:    generate basic grid classes like .oj-sm-1, .oj-sm-2, etc.
+// $generateOffsets:   generate offset grid classes like .oj-sm-offset-1, .oj-sm-offset-2, etc.
+// $generateCentering: generate centering grid classes like .oj-sm-center
+// $generateOddEven:   generate odd and even grid classes like .oj-sm-odd-cols-1, .oj-sm-odd-cols-2, etc.
+// $generateOrdering:  generate order grid classes like .oj-sm-order-1, .oj-sm-order-2, etc.
+//-------------------------------------------------------------------------------------------------
+@mixin oj-grid-responsive($selectorPrefix, 
+                          $generateBasics:    $gridGenerateBasics, 
+                          $generateOffsets:   $gridGenerateOffsets, 
+                          $generateCentering: $gridGenerateCentering,
+                          $generateOddEven:   $gridGenerateOddEven,
+                          $generateOrdering:  $gridGenerateOrdering,
+                          $totalColumns:      $gridTotalColumns) {
+
+
+  @if ($generateBasics) {
+    @for $i from 1 through $totalColumns {
+      .#{$selectorPrefix}-#{$i} { @include oj-grid-column($columns:$i); }
+    }
+  }
+
+  @if ($generateOffsets) {
+    @for $i from 0 through $totalColumns - 1 {
+      .#{$selectorPrefix}-offset-#{$i} {
+        @include oj-grid-column($offset:$i);
+      }
+    }
+  }
+
+  @if ($generateOrdering)
+  {
+    @for $i from 0 through $totalColumns - 1 {
+      .#{$selectorPrefix}-order-#{$i} { @include oj-grid-column($order:$i); }
+    }
+  }
+
+  @if ($generateCentering) {
+    .#{$selectorPrefix}-center {
+      @include oj-justify-content-property(center); }
+  }
+
+  @if ($generateOddEven) {
+    // only need to specify odd in a 2 column grid
+    @for $i from 1 through $totalColumns - 1 {
+
+      .#{$selectorPrefix}-odd-cols-#{$i} > .oj-row > .oj-col:nth-child(odd) {
+         @include oj-grid-column($i);
+      }
+
+      .#{$selectorPrefix}-odd-cols-#{$i} > .oj-row > .oj-col:nth-child(even) {
+         @include oj-grid-column($totalColumns - $i);
+      }
+    }
+
+
+    // used for when there's 4+ columns
+    @for $i from 1 through (($totalColumns/2) - 1){
+
+      .#{$selectorPrefix}-even-cols-#{$i} > .oj-row > .oj-col:nth-child(even) {
+         @include oj-grid-column($i);
+      }
+    }
+  }
+
+}

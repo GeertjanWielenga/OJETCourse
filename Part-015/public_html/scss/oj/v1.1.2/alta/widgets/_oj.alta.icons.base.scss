@@ -1,0 +1,39 @@
+@import "../../utilities/oj.utilities";
+
+$includeIconClasses: $includeAllClasses !default;
+
+@if $includeIconClasses != false {
+  @include module-include-once("alta.icons.base") {
+
+    @font-face {
+      font-family: 'Alta Icon Font';
+      src: oj-font-url('JetFW_iconfont.woff') format('woff');
+
+    }
+
+    /*--------------------------------------------------------------------
+    /  Generic style that can be used for widget images
+    /  You can use the mixin ("oj-icon-content") to generate 
+    /  a class with additions/overrides
+    / 
+    /  For example let's say you used the mixin ("oj-icon-content") to 
+    /  generate a class ".binky-icon". You
+    /  could then put class="oj-icon binky-icon" on your dom element. 
+    --------------------------------------------------------------------*/
+    .oj-fwk-icon {
+
+      @include oj-icon-font-base(
+           // the alta icon font was designed to look best at 16px
+           $fontSize:   16px,
+           $fontFamily: 'Alta Icon Font',
+           $color:      $iconColor); 
+    }
+
+    .oj-component-icon {
+      @extend .oj-fwk-icon;
+    }    
+
+  }
+}
+
+

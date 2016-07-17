@@ -1,0 +1,157 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your theme's directory, 
+//          for example alta/widgets/_oj.alta.formcontrol.radiocheckbox.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+@import "../../utilities/oj.utilities";
+
+
+@if $includeRadiosetClasses != false {
+  @include module-include-once("common.radioset") {
+
+    /* radioset and checkboxset styles */
+    /* this styles the radio, checkbox, and their labels */
+    /* --------------------------------------------------------------- */
+
+
+
+    // this file includes classes for ojRadioset and ojCheckboxset,
+    // but you will also see classes to use checkbox html/css without a component, classes are: 
+    //   .oj-checkbox-nocomp,
+    //   .oj-checkbox-label-nocomp
+    // to use these put oj-form-control on as well, for example
+    //  <div class="oj-form-control">
+    //     <input id="checkcontrol" type="checkbox" class="oj-checkbox-nocomp"/>
+    //     <label for="checkcontrol" class="oj-checkbox-label-nocomp">checkbox no component</label>
+    //  </div>
+
+    /* App developer can use this styleclass if they would like to put on a span
+    around the input/label */
+    .oj-choice-row {
+        @include oj-display-flex-property();
+        align-items: center; // needed so that the label text and radio/checkbox align center.
+        margin: 0;
+        
+        // alta spec says 24 between radio buttons when vertical. 
+        // line-height doesn't work because it affects top and bottom margins
+        // making it so that the inline label and first radio do not line up.
+        margin-bottom: .6em;
+        // when I change from display: block (what it was) to display: flex (needed to fix
+        // whitespace between input and label), then the box's height changes by one pixel. e.g.,  
+        // from 15 to 14. this is to compensate. This pushes everything down by one pixel.
+        padding-top:1px;
+ 
+    }
+    
+    .oj-choice-row:last-child {
+        margin-bottom: 0;
+    }
+    .oj-choice-row-inline {
+        @include oj-display-inline-flex-property();
+        align-items: center; // needed so that the label text and radio/checkbox align center.
+        padding-top:1px;
+    }
+    
+    .oj-choice-row input[type="checkbox"],
+    .oj-choice-row input[type="radio"],
+    .oj-choice-row-inline input[type="checkbox"],
+    .oj-choice-row-inline input[type="radio"] {
+       @include oj-flex-property(0 0 auto);
+    }
+    
+
+    // These are the styleclasses rendered on the input type=radio|checkbox.
+    // We include the 'common' css properties in this definition. rtl or ltr
+    // specific properties will follow.
+    .oj-radio,
+    .oj-checkbox,
+    .oj-checkbox-nocomp {
+      @include oj-normalize-choice;
+      display: inline-block;    	     
+      vertical-align: middle;
+
+      @include oj-ltr() {
+        // I'm not using $formControlLabelInlineGutter since this variable
+        // is for the main label gutter, and if this is changed to something
+        // big, let's say, we probably don't want the radio label gutter to
+        // be affected. 
+        margin: 0 .74em 0 0; 
+      }
+      @include oj-rtl() {
+        margin: 0 0 0 .74em;
+      }
+    }
+
+    .oj-radioset,
+    .oj-checkboxset	{
+      display: inline-block;
+    }
+   
+    .oj-radioset-label, .oj-checkboxset-label {
+    margin-bottom: .70em;
+}
+    
+    .oj-label-inline.oj-radioset-label,
+    .oj-label-inline.oj-checkboxset-label {
+      margin-top: 1px;
+      margin-bottom: 0;
+    }
+
+    /* Invalid styling for the radioset */
+    .oj-radioset.oj-invalid .oj-radio {
+        -moz-outline-radius: 8px 8px 8px 8px;
+        // styling border does not work. Using outline like we do in ADF Faces
+        // radio components.
+        outline: $formControlMessagingBorderWidth solid $borderColorError;
+    }
+
+    /* Warning styling for the radioset */
+    .oj-radioset.oj-warning .oj-radio {
+        -moz-outline-radius: 8px 8px 8px 8px;
+        outline: $formControlMessagingBorderWidth solid $borderColorWarning;
+    }  
+	
+	/* Invalid styling for the checkboxset */
+    .oj-checkboxset.oj-invalid .oj-checkbox:not(.oj-focus):not(.oj-disabled) {
+       outline: $formControlMessagingBorderWidth solid $borderColorError;
+    }
+
+    /* Warning styling for the checkboxset */
+    .oj-checkboxset.oj-warning .oj-checkbox:not(.oj-focus):not(.oj-disabled) {
+        outline: $formControlMessagingBorderWidth solid $borderColorWarning;
+    }
+	   // ui spec calls for about 8 pixels after label before next input if horizontal - one px
+     // more than before the label
+    .oj-radio-label,
+    .oj-checkbox-label,
+    .oj-checkbox-label-nocomp {
+      color: $textColor;
+      display: inline-block;
+      font-size: $fontSize;
+      font-weight: normal;
+      vertical-align: middle;
+      @include oj-ltr() {
+        margin-right: 1.5em;
+      }
+      @include oj-rtl() {
+        margin-left: 1.5em;
+      }   
+    }
+
+    .oj-radio-label.oj-disabled,
+    .oj-checkbox-label.oj-disabled,
+    .oj-checkbox-nocomp[disabled] + .oj-checkbox-label-nocomp {
+      color: $formControlValueColorDisabled;
+      opacity: $formControlOpacityDisabled;
+    }
+    
+    /* override the invalid/warning outline in case it is there */
+    .oj-radioset.oj-disabled .oj-radio,
+    .oj-checkboxset.oj-disabled .oj-checkbox {
+      -moz-outline-radius: 0 0 0 0;
+      outline-width: 0;
+    }
+  }
+}

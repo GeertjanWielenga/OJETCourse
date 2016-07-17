@@ -1,0 +1,1310 @@
+@import "../utilities/oj.utilities.urls";
+@import "../utilities/oj.utilities.math";
+// 
+// This is the variable file for the Oracle Alta look and feel.
+// 
+// The variables in the file are (imperfectly) organized in some general categories
+// - LOGISTICAL: these variables are more logistical, for example 
+//       you can set the path to your image directory
+// - ABSTRACT: in general these "abstract" variables are not used directly
+//       in the widget files, rather they are referred to by 
+//       other variables.
+// - GENERAL: these variables are used broadly in the widget files. 
+//       Examples are text, link and icon colors.
+// - CATEGORY AND WIDGET: these variables are widget 
+//        or category specific, for example button or form control variables.
+// - OPTIMIZATIONS: these variables are for optimizations, for example they
+//       control things like whether to include certain classes in the output.
+// 
+// 
+// ---------------------------------------------------------------
+//  LOGISTICAL VARIABLES
+// ---------------------------------------------------------------
+// 
+// PATHS
+// ---------------------------------
+// these paths should be relative to the generated css file
+// 
+// path to alta images 
+// $imageDir: "images/";
+// 
+// path to alta (icon) fonts 
+// $fontDir: "fonts/";
+// 
+// path to common images (images shared across themes)
+// $commonImageDir: "../common/images/";
+// 
+// 
+// DIRECTION
+// ---------------------------------
+// 
+// Accepted values of $textDirection are null, ltr, rtl
+//    - null means ouput for both directions (default)
+//    - ltr means output left to right only 
+//    - rtl means output right to left only
+//
+// By default we support right to left without 
+// switching out the css file as long as dir="rtl"
+// is set on the html tag. However if you'd prefer 
+// to generate one css file per direction you can 
+// also set "$textDirection" to either "rtl" or "ltr".
+// $textDirection: null;
+// 
+// 
+// COMPATIBILITY
+// ---------------------------------
+// 
+// when $allowTagSelectors is true JET directly styles certain tags like 
+// <p> <a> <h1>, etc. However for developers trying to mix JET with other 
+// technologies styling these tags directly could cause issues on other parts of the page. 
+// In that case set $allowTagSelectors: false;.
+// See the "compatibility" section of the theming documentation for more information
+// $allowTagSelectors: true;
+// 
+// 
+// 
+// INITIAL VISIBILITY
+// ---------------------------------
+// 
+// when $initialVisiblity is hidden then visibility: hidden is set on the dom until the
+// component is initialized. This reduces the unstyled dom seen by the user during page load.
+// $initialVisibility: hidden;
+// 
+// 
+// 
+// ---------------------------------------------------------------
+// "ABSTRACT" STYLING 
+//     in general these "abstract" variables are not used directly
+//     in the widget files, rather they are referred to by 
+//     other variables.
+// ---------------------------------------------------------------
+// 
+// 
+// interaction state colors 
+// ---------------------------------
+// 
+// $interaction1Color is often used to
+// indicate a selected state.
+// $interaction1Color: #0572ce;  
+// 
+// $interaction2Color and $interaction2Color are often 
+// used to indicate hover or focus on a row or item
+// $interaction2Color: #ebeced;
+// $interaction3Color: #e4f0fa;  
+// 
+// $interaction4Color is often used to
+// indicate active or selected on a row or item
+// $interaction4Color: #cfe8fc;   
+// 
+// $interaction5Color and $interaction6Color are
+// often used to indicate state in a "header",
+// for example a column header
+// $interaction5Color: #d6d7d8;
+// $interaction6Color: #dae9f5;  
+// 
+// 
+// 
+// background colors
+// ---------------------------------
+// $background1Color: #ffffff;
+// $background2Color: #f9f9f9;
+// $background3Color: #fcfdfe;
+// $background4Color: #f0f0f0; 
+// $background5Color: #fafafa;
+// $background6Color: #e4e8ea;
+// 
+// border colors
+// ---------------------------------
+// $border1Color:       #d6dfe6;
+// $border2Color:       #d9dfe3; 
+// $border3Color:       #c4ced7;
+// $border4Color:       #dfe4e7;
+// $border5Color:       #eeeeee;
+// $border6Color:       #000000;
+// $border7Color:       #ffffff;
+// $border8Color:       #4f4f4f;
+// 
+// ---------------------------------------------------------------
+// GENERAL STYLING
+//       these variables are used broadly in the widget files
+// ---------------------------------------------------------------
+// 
+// font 
+// ---------------------------------
+// 
+// font family 
+// $fontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// 
+// font size
+// 
+// $rootFontSize is only used on the html element 
+// in order to support using rem units. 
+//
+// If you have $allowTagSelectors set to false you can 
+// use the class oj-html to get the JET html tag styling. 
+// If you are not generating classes for the html element in JET
+// you can still use rem's if you can set the font size on 
+// the html element with your own class or inline style.
+//
+// The browser usually uses 16px and the Alta default is 14px. 
+// Therefore set $rootFontValue to .875em to get 14px;
+// $rootFontSize:    .875em;    // 14px
+// 
+// $fontSize:        1rem;      // 14px
+// $smallFontSize:   .857rem;   // 12px when root 14px
+// $mediumFontSize:  1.143rem;  // 16px when root 14px
+// $largeFontSize:   1.286rem;  // 18px when root 14px
+// $largestFontSize: 1.429rem;  // 20px when root 14px
+// 
+// 
+// text colors
+// ---------------------------------
+// $textColor:             #333333;                                
+// $primaryTextColor:      darken($textColor, 25%);  // = #000000;  
+// $secondaryTextColor:    lighten($textColor, 10%); // = #454545;  
+// $tertiaryTextColor:     lighten($textColor, 25%); // = #737373; 
+// $formControlLabelColor: #4f4f4f;   
+// $headerTextColor:       #252525;    
+// $contrastTextColor:     #ffffff;  
+// $textColorDisabled:     #9e9e9e; 
+// 
+// link colors
+// ---------------------------------
+// $linkTextColor:         #045fab;   
+// $linkTextColorVisited:  $linkTextColor; 
+// $linkTextColorDisabled: $textColorDisabled;
+// 
+// 
+// 
+// interaction cue colors 
+// ---------------------------------
+// $colorRequired: $interaction1Color;
+// 
+// icon colors
+// ---------------------------------
+// these are used to control the color of icon font icons
+// $iconColor:         $textColor;
+// colors for clickable icons below
+// $iconColorDefault:  #878c90;
+// $iconColorHover:    #85bbe7;
+// $iconColorActive:   $interaction1Color;
+// $iconColorSelected: $iconColorActive;
+// $iconColorDisabled: #d4d6d7;
+// 
+// 
+// border color
+// ---------------------------------
+// $borderColorError:   #dd6666;
+// $borderColorWarning: #ffd699;
+// $helpBorderColor: lighten($formControlLabelColor, 1%); // = #525252
+// 
+// 
+// messaging
+// ---------------------------------
+// 
+// We want to keep the background colors as they are in the UX spec and not
+// derive them from border colors since bg colors need to pass high contrast
+// mode - that is, the bg color needs to be light enough 
+// so the text on them can be read easily.
+// 
+// we want the same lightness adjustment for all msg types, and 4% is
+// a good compromise that works for all. The calculated border-color doesn't
+// exactly match the ux alta spec as it is today.
+// $messageInlineBorderColorLightnessAdjustment: 4%;
+// 
+// ux alta spec for error: background-color: #FFF3F3; border-color: #ffe6e6;
+// $messageInlineBgColorError: #FFF3F3;       
+// $messageInlineBorderColorError: 
+//   darken($messageInlineBgColorError, $messageInlineBorderColorLightnessAdjustment);                        
+// 
+// ux alta spec for warning: background-color: #fff2de; border-color: #ffdfae;
+// $messageInlineBgColorWarning: #fff2de;
+// $messageInlineBorderColorWarning:  
+//   darken($messageInlineBgColorWarning, $messageInlineBorderColorLightnessAdjustment);
+// 
+// ux alta spec for confirmation: background-color: #E5F6EA;border-color:#ddf7e5;
+// $messageInlineBgColorConfirmation: #E5F6EA;
+// $messageInlineBorderColorConfirmation: 
+//   darken($messageInlineBgColorConfirmation, $messageInlineBorderColorLightnessAdjustment);
+// 
+// ux alta spec for info: background-color: #EAF5FB;border-color: #D6EFFB;
+// $messageInlineBgColorInfo: #EAF5FB;
+// $messageInlineBorderColorInfo:  
+//   darken($messageInlineBgColorInfo, $messageInlineBorderColorLightnessAdjustment);
+// 
+// drag and drop
+// ---------------------------------
+// $dropTarget1Color:  #D9F4FA;
+// $dropTarget2Color:  #C3EAF3;
+// 
+// 
+// border radius
+// ---------------------------------
+// $smallBorderRadius:  1px;
+// $mediumBorderRadius: 2px;
+// $largeBorderRadius:  3px;
+// 
+// 
+// shadow
+// ---------------------------------
+// $boxShadowColor: #000000;
+// $smallBoxShadow:  1px 1px 3px 0 transparentize($boxShadowColor, .65); 
+// $mediumBoxShadow: 1px 1px 5px 0 transparentize($boxShadowColor, .60);
+// $largeBoxShadow:  1px 1px 10px 0 transparentize($boxShadowColor, .55);
+// 
+// 
+// overlay
+// ---------------------------------
+// this is used for something like a modal dialog to overlay the
+// rest of the screen, indicating it's not reachable
+// $overlayBgColor:     #000000;
+// 
+// z-index hierarchy 
+// ---------------------------------
+// $defaultZindex:     1;
+// 
+// $dialogZindex:     1050;
+// 
+// ojPopup option tail=simple
+// $noteWindowZindex: 1030;
+// 
+// ojPopup option tail=none and popups used to collect immediate feedback: inputdatatime, menu, listbox (ojSelect, ojCombobox)
+// $popupZindex:      1000;
+// 
+// ojDialog port from jquery resizable.  Assigned to resize grippers on the dialogs corners and edges.
+// $resizableZindex:  900 ;
+// 
+// wrappable
+// ---------------------------------
+// this margin is needed so that if components are laid out
+// next to one another and wrap onto a new line there is 
+// some vertical space between the "rows". For example when 
+// several buttons are laid out next to each other on a small screen 
+// some may wrap onto a new line, this puts some space
+// between these buttons.  
+// $wrappableMarginBottom:  4px;
+// 
+// disabled
+// ---------------------------------
+// alta uses color and not opacity to indicate disabled
+// $opacityDisabled: null;
+// 
+// animation
+// ---------------------------------
+// $animationDuration: .5s;
+// 
+// 
+// ---------------------------------------------------------------
+// CATEGORY AND WIDGET VARIABLES
+// ---------------------------------------------------------------
+// 
+// 
+// BODY
+// ---------------------------------------------------------------
+// to remove background image use $bodyBgImage: none;
+// $bodyBgImage:   oj-image-url('texture.png');
+// $bodyBgColor:   $background1Color;
+// $bodyTextColor: $textColor;
+// 
+// 
+// 
+// PANEL
+// ---------------------------------------------------------------
+// 
+// panel defaults:
+// $panelBorderColor: $border1Color;
+// $panelBgColor:     $background1Color;
+// $panelPadding:     .8571rem; // 12px when root is 14px
+// 
+// 
+// panel alternatives
+// $panel1BgColor:     #eff2f5;
+// $panel1BorderColor: $panelBorderColor;
+// 
+// most panels determine their border colors by changing 
+// the saturation/lightness of their background colors
+// $panelBorderColorSaturationAdjustment: 5%;
+// $panelBorderColorLightnessAdjustment: -5%;
+// 
+// $panel2BgColor:     #e8f2fb;
+// $panel2BorderColor: adjust-color($panel2BgColor,
+//                                  $lightness: $panelBorderColorLightnessAdjustment, 
+//                                  $saturation: $panelBorderColorSaturationAdjustment);
+// 
+// $panel3BgColor:     #fef9e8;
+// $panel3BorderColor: adjust-color($panel3BgColor,
+//                                  $lightness: $panelBorderColorLightnessAdjustment, 
+//                                  $saturation: $panelBorderColorSaturationAdjustment);
+// 
+// $panel4BgColor:     #ffe4e1;
+// $panel4BorderColor: adjust-color($panel4BgColor,
+//                                  $lightness: $panelBorderColorLightnessAdjustment, 
+//                                  $saturation: $panelBorderColorSaturationAdjustment);
+// 
+// $panel5BgColor:     #fce8fe;
+// $panel5BorderColor: adjust-color($panel5BgColor,
+//                                  $lightness: $panelBorderColorLightnessAdjustment, 
+//                                  $saturation: $panelBorderColorSaturationAdjustment);
+// 
+// 
+// HEADERS
+// ---------------------------------------------------------------
+// header text color defined above, look for "text colors"
+// $headerFontWeight:      bold;
+// $headerBorderColor:     $border2Color;  
+// 
+// the background variables below are for a header "container", 
+// like the title bar of a dialog or an accordion header
+// $headerBgColor:         $background4Color;  
+// $headerBgColorDisabled: $background5Color; 
+// $headerBgImage:         null; 
+// 
+// 
+// WINDOW
+// ---------------------------------------------------------------
+// $windowBorderColor: $border3Color;
+// $windowBgColor:     $background2Color;
+// 
+// DIALOG
+// ---------------------------------------------------------------
+// $dialogBorderColor:  $windowBorderColor;
+// $dialogBgColor:      $windowBgColor;
+// 
+// NOTE WINDOW
+// ---------------------------------------------------------------
+// $noteWindowBorderColor:      $windowBorderColor;
+// $noteWindowBgColor:          $windowBgColor;
+// 
+// tail width and height
+// $noteWindowTailSimpleWidth:  14px;
+// $noteWindowTailSimpleHeight: 13px;
+// 
+// POPUP
+// ---------------------------------------------------------------
+// popups are sometimes called a "dropdown" or "inline selector"
+// $popupBorderColor:  $windowBorderColor;
+// $popupBgColor:      $background1Color;
+// 
+// 
+// MENU
+// ---------------------------------------------------------------
+// $menuBorderColor:       $popupBorderColor;
+// $menuBgColor:           $popupBgColor;
+// $menuItemBgColorFocus:  $interaction2Color;
+// 
+// LISTBOX
+// ---------------------------------------------------------------
+// listbox values used in drop down for 
+// inputTime, select, combobox
+// $listboxBgColorFocus: $interaction2Color;
+// 
+// padding for a listbox item
+// $listboxItemPadding: 5px ; 
+// 
+// listbox data can be a tree, meaning the item is nested.
+// this is the additional padding per nesting level
+// $listboxIndentWidth: 15px;
+// 
+// 
+// DATEPICKER
+// ---------------------------------------------------------------
+// $datepickerBgColorSelected:  $interaction1Color;
+// $datepickerBorderColorToday: $interaction1Color;
+// 
+// 
+// FORM CONTROLS 
+// ---------------------------------------------------------------
+// 
+// form control dimensions
+// ---------------------------------
+// 
+// controls the height of an input
+// $formControlHeight: 2.286rem; // 32px when base font 14px
+// 
+// 
+// 
+// On form controls we use a width of 100% and then set a max and  
+// min width so that when there's less room for the form control it 
+// can automatically get smaller instead of overflowing its boundaries. 
+// This forces us to set some sort of default max-width
+// which can be overridden on the instance by setting a style
+// or class using the rootAttributes option.
+//
+// In alta there are large width form controls, like input text, and
+// medium width form controls, like input number
+// $formControlLargeMaxWidth:  18em;
+// $formControlMediumMaxWidth: 15em;
+// $formControlMinWidth:       8em;
+// 
+// 
+// form control common
+// ---------------------------------
+// $formControlBorderRadius:    $mediumBorderRadius;
+// 
+// controls the horizontal padding inside an input
+// $formControlPaddingHorizontal: 5px; 
+// 
+// messaging border
+// $formControlMessagingBorderWidth: 2px;
+// 
+// font size
+// $formControlFontSize: $fontSize;
+// 
+// 
+// form control states
+// ---------------------------------
+//default
+// $formControlBgColor:             $background3Color;
+// $formControlValueColor:          $textColor; 
+// $formControlBorderColor:         $border4Color;
+// 
+//readonly
+// $formControlValueColorReadOnly:  $textColor; 
+// 
+//disabled
+// $formControlBgColorDisabled:     #efeff1; 
+// $formControlValueColorDisabled:  $textColorDisabled;
+// $formControlBorderColorDisabled: $formControlBgColorDisabled;
+// $formControlOpacityDisabled:     $opacityDisabled  ;
+// 
+// placeholder
+// $formControlPlaceholderColor: $tertiaryTextColor; 
+// $formControlPlaceholderFontStyle: italic;
+// 
+// form labels
+// ---------------------------------
+// label text color defined above, look for "text colors"
+// $formControlLabelFontWeight: bold;
+// 
+// top aligned labels:
+//    by default labels are dislplay: block and therefore
+//    render on top of the field. This variable controls
+//    the vertical spacing between labels and fields 
+// $formControlLabelMarginBottom: .25em;
+// 
+// 
+// inline labels
+// ---------------------------------
+// 
+// gutter (padding) between the inline label and the control
+// $formControlLabelInlineGutter:     .5em;
+// 
+// top margin on the inline label, generally this
+// distance is to align the label text with an input's text.
+// Note that there is an additional inline label var $formLayoutLabelInlineMarginTop
+// $formControlLabelInlineMarginTop:  .55em;
+// 
+// form layout
+// ---------------------------------
+// 
+// These variables are used to set the column-width property
+// in .oj-form-cols and .oj-form-cols-labels-inline.
+// These classes use css multi column layout, see:
+// http://dev.w3.org/csswg/css-multicol/ 
+// $formLayoutColumnWidth:             1.025 * $formControlLargeMaxWidth;
+// $formLayoutLabelsInlineColumnWidth: 22rem;
+// 
+// In a form layout this is the space expected between 
+// form controls in different rows
+// $formLayoutMarginBottom: 10px;
+// 
+// inline label in a oj-row > oj-col; we do not float, thus we need line-height
+// to maintain label's height, and we need a different top margin for this case.
+// $formLayoutLabelInlineMarginTop: .4em;
+// 
+// BUTTONS 
+// ---------------------------------------------------------------
+// 
+// $buttonFontWeight:   bold;
+// $buttonBorderRadius: $mediumBorderRadius;
+// $buttonCursor:       default;
+// 
+// we set button and form control heights to the same value so they will line up nicely
+// $buttonHeight:       $formControlHeight;
+// $buttonSmallHeight:  $buttonHeight * .875;
+// $buttonLargeHeight:  $buttonHeight * 1.3125;
+// $buttonXlargeHeight: $buttonHeight * 1.5;
+// 
+// 
+// button padding
+// ---------------------------------
+// Horiz space between text and edge of button when no intervening icon.
+// $buttonTextToEdgePadding: 0.857rem;   
+// $buttonLargeTextToEdgePadding: 1.43rem;
+// 
+// Horiz space between text and icon.
+// $buttonIconToTextPadding: 0.43rem;
+// 
+// Horiz space between icon and edge of button when text also showing.
+// $buttonIconToEdgePadding:      .7rem;   
+// $buttonLargeIconToEdgePadding: 1.071rem;
+// 
+// Horiz space between icon and edge of button when icon only.
+// $buttonIconOnlyPadding:       .5rem;   
+// $buttonSmallIconOnlyPadding:  .357rem;   
+// $buttonLargeIconOnlyPadding:  .857rem; 
+// $buttonXlargeIconOnlyPadding: 1rem;
+// 
+// 
+// 
+// button states
+// ---------------------------------
+// default
+// $buttonBgColor:                   $background6Color;
+// $buttonTextColor:                 $primaryTextColor;
+// $buttonIconColor:                 $iconColorDefault;
+// $buttonBorderColor:               $border3Color;
+// $buttonBgImage:                   linear-gradient(to bottom, 
+//                                                   #ffffff 0%, 
+//                                                   #f1f3f4 3.64%, 
+//                                                   #e8ebed 50%,
+//                                                   $buttonBgColor 100%);    
+// $buttonTextShadow:                null; 
+// $buttonBoxShadow:                 null; 
+// 
+// hover
+// $buttonBgColorHover:              #f7f8f9;
+// $buttonTextColorHover:            $interaction1Color;
+// $buttonIconColorHover:            $iconColorHover;
+// $buttonBorderColorHover:          $buttonBorderColor;
+// $buttonBgImageHover:              null;                     
+// $buttonTextShadowHover:           null; 
+// $buttonBoxShadowHover:            null; 
+// 
+// active
+// $buttonBgColorActive:             $interaction1Color; 
+// $buttonTextColorActive:           $contrastTextColor;
+// $buttonIconColorActive:           $buttonTextColorActive;
+// $buttonBorderColorActive:         $buttonBgColorActive;
+// $buttonInternalBorderColorActive: $buttonBorderColor;
+// $buttonBgImageActive:             null;                     
+// $buttonTextShadowActive:          null; 
+// $buttonBoxShadowActive:           null; 
+// $buttonOpacityActive:             null;
+// 
+// selected - default to use active values
+// $buttonBgColorSelected:           $buttonBgColorActive; 
+// $buttonTextColorSelected:         $buttonTextColorActive;
+// $buttonIconColorSelected:         $buttonIconColorActive;
+// $buttonBorderColorSelected:       $buttonBorderColorActive;
+// $buttonInternalBorderColorSelected: $buttonInternalBorderColorActive;
+// $buttonBgImageSelected:           $buttonBgImageActive;                   
+// $buttonTextShadowSelected:        $buttonTextShadowActive; 
+// $buttonBoxShadowSelected:         $buttonBoxShadowActive; 
+// 
+// selected and hovered
+// $buttonTextColorSelectedHover:    $buttonIconColorHover;
+// $buttonIconColorSelectedHover:    $buttonIconColorHover; 
+// 
+// disabled
+// $buttonBgColorDisabled:           #f4f6f7; 
+// $buttonTextColorDisabled:         $textColorDisabled;
+// $buttonIconColorDisabled:         $iconColorDisabled;
+// $buttonBorderColorDisabled:       #e0e6eb;  
+// $buttonOpacityDisabled:           $opacityDisabled;
+// 
+// disabled and selected
+// $buttonTextColorSelectedDisabled:            $buttonTextColorSelected;
+// $buttonIconColorSelectedDisabled:            $buttonTextColorSelectedDisabled; 
+// $buttonBgColorSelectedDisabled:              $buttonIconColorDisabled;
+// $buttonBorderColorSelectedDisabled:          $buttonBgColorSelectedDisabled;
+// $buttonInternalBorderColorSelectedDisabled:  $buttonBorderColorDisabled;
+// 
+// 
+// 
+// alternate button colors
+// ---------------------------------
+// $buttonContrastTextColor: $contrastTextColor;
+// $buttonPrimaryColor:      $interaction1Color;
+// $buttonConfirmColor:      #008b32;
+// 
+// 
+// 
+// TOOLBAR
+// ---------------------------------------------------------------
+// $toolbarBorderColor:  $panelBorderColor; 
+// $toolbarBgColor:      null; 
+// $toolbarBorderWidth:  0;
+// 
+// 
+// COLLAPSIBLE
+// ---------------------------------------------------------------
+// $collapsibleAnimationDuration: $animationDuration;
+// 
+// ACCORDION
+// ---------------------------------------------------------------
+// 
+// accordion panel area
+// -----------------------
+// $accordionPanelBgColor:               $panelBgColor;
+// $accordionPanelBorderColor:           $panelBorderColor;
+// 
+// TABS
+// ---------------------------------------------------------------
+// 
+// tabs content area
+// ---------------------------------
+// $tabsPanelBgColor:      $panelBgColor;
+// $tabsPanelBorderColor:  $panelBorderColor;
+// 
+// individual tabs
+// ---------------------------------
+// $tabsNavTextColor:                 $linkTextColor;
+// $tabsNavBorderRadius:              0;
+// 
+// selected
+// $tabsNavBorderColorSelected:       $border3Color; 
+// 
+// in alta this color and border width are used at the top 
+// of the selected tab when the tabs are horizontal 
+// (or on the start side when the tabs are vertical)
+// $tabsNavAccentBorderColorSelected: $interaction1Color;
+// $tabsNavAccentBorderWidthSelected: 3px;
+// 
+// 
+// PROGRESSBAR
+// ---------------------------------------------------------------
+// $progressbarBgColor:      $background3Color;
+// $progressbarValueBgColor: $interaction1Color;
+// $progressbarBorderColor:  $border4Color;
+// 
+// TRAIN
+// ---------------------------------------------------------------
+// 
+// unvisited
+// $trainBgColor:              $buttonBgColor;
+// $trainBorderColor:          $buttonBorderColor;
+// 
+// disabled
+// $trainBgColorDisabled:      $buttonBgColorDisabled;
+// $trainBorderColorDisabled:  $buttonBorderColorDisabled;
+// 
+// hover
+// $trainBgColorHover:         $iconColorHover;
+// $trainBorderColorHover:     $trainBgColorHover;
+// 
+// selected
+// $trainBgColorSelected:      $iconColorSelected;
+// $trainBorderColorSelected:  $trainBgColorSelected;
+// 
+// visited
+// $trainBgColorVisited:       $background1Color;
+// $trainBorderColorVisited:   $trainBorderColorSelected;
+// $trainLabelColorVisited:    #72007C;
+// 
+// Connector
+// $trainConnectorBgColor:    $background4Color;
+// $trainConnectorBgColorSelected: $interaction5Color;
+// 
+// the height of the line connector between buttons
+// $trainConnectorHeight: 8px;
+// 
+// the default width of a step
+// $trainStepWidth: 100px;
+// 
+// the diameter of the "button" representing a stop
+// $trainButtonDiameter: 14px;
+// 
+// the diameter of the connector circle around the button
+// $trainButtonConnectorDiameter: $trainButtonDiameter + 8px;
+// 
+// 
+//TREE
+// ---------------------------------------------------------------
+// 
+// $treeAnimationDuration: $animationDuration;
+// 
+// text
+// $treeTextColor:                     $linkTextColor;
+// 
+// node bg
+// $treeNodeBgColorHover:              transparent; 
+// $treeNodeBgColorSelected:           $interaction4Color;  
+// $treeNodeBgColorHoverSelected:      $interaction4Color;
+// $treeNodeBgColorSelectedInactive:   $interaction3Color;
+// 
+// node text border
+// $treeNodeBorderColorHover:            $border8Color; 
+// $treeNodeBorderColorSelected:         $treeNodeBgColorSelected; 
+// $treeNodeBorderColorHoverSelected:    $treeTextColor;
+// $treeNodeBorderColorSelectedInactive: #bfd4e5;
+// 
+// Dnd
+// $treeDndMarkerLineColor:      $interaction1Color;
+// 
+// 
+// DATA GRID AND TABLE
+// ---------------------------------------------------------------
+// Default 
+// $dataGridBorderColor:                       $border1Color; 
+// $dataGridBgColor:                           #f7f9fc;
+// 
+// Headers
+// $dataGridHeaderPadding:                     0.5em;
+// $dataGridHeaderFontWeight:                  $headerFontWeight;
+// $dataGridHeaderTextColor:                   $primaryTextColor;
+// $dataGridHeaderFontSize:                    $fontSize;
+// Headers - Default
+// $dataGridHeaderBgColor:                     #f2f4f7;  
+// $dataGridHeaderBorderColor:                 $dataGridBorderColor;
+// Headers - Hover
+// $dataGridHeaderBgColorHover:                $interaction5Color;
+// Headers - Focus
+// $dataGridHeaderBgColorFocus:                $interaction6Color;
+// Headers - Selected 
+// $dataGridHeaderBgColorSelected:             #b9dfff;  
+// Headers - Selected Inactive (selected but focus outside the component)
+// $dataGridHeaderBgColorSelectedInactive:     $interaction6Color;  
+// 
+// Cells  
+// $dataGridCellPadding:                       $dataGridHeaderPadding;
+// $dataGridCellTextColor:                     $textColor; 
+// Cells - Default
+// $dataGridCellBorderColor:                   $border5Color;
+// $dataGridCellBgColor:                       $background1Color;
+// $dataGridCellBandedBgColor:                 $background2Color;
+// Cells - Hover
+// $dataGridCellBgColorHover:                  $interaction2Color;
+// Cells - Focus 
+// $dataGridCellBgColorFocus:                  $interaction3Color;  
+// Cells - Selected 
+// $dataGridCellBgColorSelected:               $interaction4Color;
+// Cells - Selected Inactive (selected but focus outside the component)
+// $dataGridCellBgColorSelectedInactive:       $interaction3Color;
+// 
+// Rows - Height
+// $dataGridRowHeight:                         2.25em;
+// 
+// ROWEXPANDER
+// ---------------------------------------------------------------
+// $rowExpanderIndentWidth:  16px;
+// 
+// 
+// PAGING CONTROL
+// ---------------------------------------------------------------
+// 
+// padding between various elements of the paging control
+// $pagingControlPadding: 5px;
+// 
+// LISTVIEW
+// ---------------------------------------------------------------
+// 
+// $listViewAnimationDuration: $animationDuration;
+// 
+// MASONRY LAYOUT
+// ---------------------------------------------------------------
+// 
+// duration of a masonryLayout transition
+// $masonryLayoutTransitionDuration:     $animationDuration;
+// duration of a faster masonryLayout transition
+// $masonryLayoutTransitionDurationFast: $masonryLayoutTransitionDuration/2;
+// margin around a masonryLayout tile
+// $masonryLayoutTileMargin:             8px;
+// width of a 1x1 masonryLayout tile, not including margin
+// $masonryLayoutTileWidth:              170px;
+// height of a 1x1 masonryLayout tile, not including margin
+// $masonryLayoutTileHeight:             170px;
+// 
+// 
+// NAVIGATIONLIST
+// ---------------------------------------------------------------
+// 
+// for text/icons navlist directly uses $link* and $iconColor* variables
+// 
+// states
+// ---------------------------------
+// hover
+// $navigationListItemBorderColorHover:    $iconColorHover;
+// $navigationListItemBgColorHover:        $interaction2Color;
+// 
+// selected
+// $navigationListItemBorderColorSelected: $interaction1Color;
+// $navigationListItemBgColorSelected:     $interaction3Color;
+// 
+//Focus 
+// $navigationListItemOutlineColorFocus:   $border8Color;
+// 
+// 
+// icon only
+// ---------------------------------
+// icon-only
+// $navigationListItemIconOnlyBgColorSelected: $interaction1Color;
+// $navigationListItemIconOnlyBgColorHover:    $interaction2Color;
+// 
+// 
+// dividers
+// ---------------------------------
+// 
+// item border color - used for sliding
+// $navigationListItemBorderColor:      $border5Color;
+// divider - used between text items when horizontal
+// $navigationListItemDividerColor:     $border2Color;
+// category divider - used between categories
+// $navigationListCategoryDividerColor: $border1Color;
+// 
+// 
+// sizing
+// ---------------------------------
+// Not applicable to icon-only or sliding
+// $navigationListItemStartEndPadding:      1.072rem; //15px
+// $navigationListIconToTextPadding:            0.714rem; // 10px
+// $navigationListItemAccentBorderWidth:    3px;
+// 
+// 
+// sliding navlist
+// ---------------------------------
+// 
+// for the sliding toolbar and hierarchical menu area 
+// navigationList uses various $toolbar* and $tree* variables
+// 
+//sliding navigation list toolbar 
+// $navigationListToolbarBgColor:          $background5Color;
+// 
+//Hierarchical menu
+// $navigationListHierarchicalMenuBgColor: $background2Color;
+// 
+// 
+// 
+// 
+// GRID LAYOUT and RESPONSIVE
+// ---------------------------------------------------------------
+// 
+// grid layout
+// ---------------------------------------------------------------
+// 
+// the number of pixels between column content
+// $gridColumnGutter: 20px;
+// 
+// the number of columns in the grid system, a number divisible by 2, 3, and 4 is preferred
+// in order to easily get columns that take up 50%, 33.3%, or 25% of the screen.
+// $gridTotalColumns: 12;
+// 
+// 
+// app content max width
+// ---------------------------------
+// $appContentMaxWidth is the maximum width an application is designed for. 
+// While monitors can be very large, many applications are not designed 
+// to be infinitely wide. This variable is used to set the max-width property on 
+// the grid's .oj-row, which is in turn used for responsive page layout.  
+//
+// When the screen is larger than this width there will be empty margins 
+// on either side taking up the rest of the screen. 
+//
+// If the application has no maximum content width then set this value to 
+// 'none', for example:
+//    $appContentMaxWidth: none;
+//
+// Note that this value is used in the responsive screen size variables below.
+// $appContentMaxWidth: 1440px;
+// 
+// 
+// responsive screen sizes
+// ---------------------------------
+// $screenSmallRange:  0, 767px;
+// $screenMediumRange: 768px, 1023px;
+// $screenLargeRange:  1024px, 1279px;
+// $screenXlargeRange: 1280px, $appContentMaxWidth;
+// 
+// 
+// responsive media queries
+// ---------------------------------
+// 
+// You will see "print" on some media queries below. 
+// By default printing portrait is treated as a medium screen and 
+// printing landscape is treated as a large screen.
+// 
+// the $responsiveQueryXYZ variables can be set to 'none' if 
+// you don't want to render a particular set of classes, 
+// for example $responsiveQueryPrint can be set to 'none' 
+// if print only classes aren't desired
+// Or if you don't want xlarge classes you could set:
+// //    $screenLargeRange:          1024px, $appContentMaxWidth;
+//    $screenXlargeRange:         none;
+//    $responsiveQueryLargeOnly:  none;
+//    $responsiveQueryXlargeUp:   none;
+// 
+// 
+// $responsiveQueryPrint:      "print";
+// 
+// $responsiveQuerySmallUp:    "print, screen";
+// $responsiveQuerySmallOnly:  "screen and (max-width: #{upper-bound($screenSmallRange)})";
+// 
+// $responsiveQueryMediumUp:   "print, screen and (min-width: #{lower-bound($screenMediumRange)})";
+// $responsiveQueryMediumOnly: "print and (orientation: portrait), screen and (min-width: #{lower-bound($screenMediumRange)}) and (max-width: #{upper-bound($screenMediumRange)})";
+// $responsiveQueryMediumDown: "print and (orientation: portrait), screen and (max-width: #{upper-bound($screenMediumRange)})";
+// 
+// $responsiveQueryLargeUp:    "print and (orientation: landscape), screen and (min-width: #{lower-bound($screenLargeRange)})";
+// $responsiveQueryLargeOnly:  "print and (orientation: landscape), screen and (min-width: #{lower-bound($screenLargeRange)}) and (max-width: #{upper-bound($screenLargeRange)})";
+// $responsiveQueryLargeDown:  "print and (orientation: landscape), screen and (max-width: #{upper-bound($screenLargeRange)})";
+// 
+// $responsiveQueryXlargeUp:   "screen and (min-width: #{lower-bound($screenXlargeRange)})";
+// 
+// by default there is no xxl screen range variable. 
+// to add support for an xxl range you can do something like
+// the following in your settings file:
+// //   $screenXXlargeRange:         1441px, $appContentMaxWidth;
+//   $responsiveQueryXlargeOnly:  "screen and (min-width: #{lower-bound($screenXLargeRange)}) and (max-width: #{upper-bound($screenXLargeRange)})";
+//   $responsiveQueryXlargeDown:  "screen and (max-width: #{upper-bound($screenXLargeRange)})";
+//   $responsiveQueryXXlargeUp:   "screen and (min-width: #{lower-bound($screenXXlargeRange)})";
+// $responsiveQueryXlargeOnly: null;
+// $responsiveQueryXlargeDown: null;
+// $responsiveQueryXXlargeUp:  null;
+// 
+// 
+// the default point at which we consider a screen a high resolution
+// (or retina) display.
+//
+// The value is set to 1.5 because as of 2014 there's a lot 
+// of Android devices out there that are half-way between the 
+// legacy screen resolutions and retina (aka "xhdpi" in Google's terminology) 
+// they use a 1.5 factor so the default device pixel ratio is 1.5
+//
+// NOTE: in order to allow stand alone use of these utility mixins
+// this variable is also defined in _oj.utilities.icons.scss. 
+// Because of the !default, the actual value will be the value 
+// in the file loaded first.
+// $highResolutionDevicePixelRatio: 1.5;
+// 
+// 
+// Note: you'll see "screen and .." in the media queries above. 
+// we wanted to do something like
+//     "(not print) and (min-width: #{$screen-xlarge})", 
+// However that doesn't seem to be supported, the "not" negates the entire query. 
+// So we're forced to enumerate the media types we do want to 
+// support instead of exclude the ones we don't. Hence the use of
+// "screen and ..."
+// 
+// 
+// optimizations: variables for defaulting whether certain types of 
+// responsive helper classes are generated
+//
+// $responsiveGenerateHide:                  generate classes like .oj-md-hide
+// $responsiveGenerateTextAlignEnd:          generate classes like .oj-md-text-align-end
+// $responsiveGenerateFloatStart:            generate classes like .oj-md-float-start
+// $responsiveGenerateFloatEnd:              generate classes like .oj-md-float-end
+// $responsiveGenerateJustifyContentFlexEnd: generate classes like .oj-md-justify-content-flex-end
+// $responsiveGenerateJustifyContentCenter:  generate classes like .oj-md-justify-content-center
+// $responsiveGenerateHide:                  true;
+// $responsiveGenerateTextAlignEnd:          true;
+// $responsiveGenerateFloatStart:            true;
+// $responsiveGenerateFloatEnd:              true;
+// $responsiveGenerateJustifyContentFlexEnd: true;
+// $responsiveGenerateJustifyContentCenter:  true;
+// 
+// 
+// 
+// optimizations: there are a lot of different grid classes, some of which you may not need. 
+// These variables control whether certain types of grid classes are generated
+//
+//
+// $gridGenerateBasics:    generate basic grid classes like .oj-sm-1, .oj-sm-2, etc.
+// $gridGenerateOffsets:   generate offset grid classes like 
+//                         .oj-md-offset-1, .oj-md-offset-2, etc.
+//                         Note that offset classes are not generated for small
+//                         screens even when the variable is true.
+// $gridGenerateCentering: generate centering grid classes like .oj-sm-center
+// $gridGenerateOddEven:   generate odd and even grid classes like .oj-md-odd-cols-1, 
+//                         .oj-md-odd-cols-2, etc.
+// $gridGenerateDeprecatedOrdering:  
+//                         generate push/pull grid classes like 
+//                         .oj-md-pull-1, .oj-md-push-3, etc. In the future we expect to switch
+//                         to a flexbox implementation of the grid, and the push/pull classes will 
+//                         not be forward compatible, therefore by default these are not enabled.
+//                         If you use the push/pull classes you will need to change your pages when
+//                         we change to the flexbox implementation.
+// $gridGenerateBasics:             true;
+// $gridGenerateOffsets:            true;
+// $gridGenerateCentering:          true;
+// $gridGenerateOddEven:            true;
+// $gridGenerateDeprecatedOrdering: false;
+// 
+// SLIDER
+// ---------------------------------------------------------------
+// 
+// $sliderThumbDiameter:  	  24px;
+// $sliderThumbBorderWidth:	2px; 
+// $sliderBarThickness:  	  4px;
+// 
+// default
+// $sliderThumbBorderColor:         #b2bcc4;
+// $sliderThumbBgColor: 	           $background1Color;
+// $sliderBarBgColor:               $interaction5Color;
+// $sliderBarValueBgColor:           $interaction1Color;
+// 
+// hover
+// $sliderThumbBgColorHover:        $interaction2Color;
+// 
+// active
+// $sliderThumbBgColorActive:       $sliderThumbBgColorHover;
+// 
+// disabled
+// $sliderThumbBgColorDisabled:     $textColorDisabled;  
+// $sliderBarValueBgColorDisabled:  $textColorDisabled;  
+// 
+//SWITCH
+// ---------------------------------------------------------------
+// DEFAULT
+// $switchTrackBgColor:                     $background3Color;
+// $switchTrackBorderColor:                 $border3Color;
+// $switchThumbBgColor:                     $background3Color;
+// $switchThumbBorderColor:                 #b2bcc4;
+// 
+// SELECTED
+// $switchTrackBgColorSelected:             $interaction1Color;
+// $switchTrackBorderColorSelected:         $switchTrackBgColorSelected;
+// $switchThumbBgColorSelected:             $background1Color;
+// $switchThumbBorderColorSelected:         $switchThumbBgColorSelected;
+// 
+// HOVER
+// $switchTrackBgColorHover:                $iconColorDisabled;
+// $switchTrackBorderColorHover:            $switchTrackBgColorHover;
+// $switchThumbBgColorHover:                $switchThumbBgColor;
+// $switchThumbBorderColorHover:            $switchThumbBorderColor;
+// 
+// HOVER SELECTED
+// $switchTrackBgColorSelectedHover:        $iconColorHover;
+// $switchTrackBorderColorSelectedHover:    $switchTrackBgColorSelectedHover;
+// $switchThumbBgColorSelectedHover:        $switchThumbBgColor;
+// $switchThumbBorderColorSelectedHover:    $switchThumbBorderColor;
+// 
+// ACTIVE
+// $switchTrackBgColorActive:               $switchTrackBgColor;
+// $switchTrackBorderColorActive:           $switchTrackBorderColor;
+// $switchThumbBgColorActive:               $switchThumbBgColor;
+// $switchThumbBorderColorActive:           $switchThumbBorderColor;
+// 
+// ACTIVE SELECTED
+// $switchTrackBgColorSelectedActive:       $switchTrackBgColorSelected;
+// $switchTrackBorderColorSelectedActive:   $switchTrackBorderColorSelected;
+// $switchThumbBgColorSelectedActive:       $switchThumbBgColor;
+// $switchThumbBorderColorSelectedActive:   $switchThumbBorderColor;
+// 
+// DISABLED
+// $switchTrackBgColorDisabled:             $interaction2Color;
+// $switchTrackBorderColorDisabled:         $switchTrackBgColorDisabled;
+// $switchThumbBgColorDisabled:             $iconColorDisabled;
+// $switchThumbBorderColorDisabled:         $switchThumbBgColorDisabled;
+// 
+// DISABLED SELECTED
+// $switchTrackBgColorSelectedDisabled:     $switchThumbBgColorDisabled;
+// $switchTrackBorderColorSelectedDisabled: $switchTrackBgColorSelectedDisabled;
+// $switchThumbBgColorSelectedDisabled:     $switchTrackBgColorDisabled;
+// $switchThumbBorderColorSelectedDisabled: $switchThumbBgColorSelectedDisabled;
+// 
+// TRACK HEIGHT/WIDTH
+// $switchTrackHeight: $formControlHeight;
+// $switchTrackWidth:  $switchTrackHeight * 1.625;
+// 
+// THUMB HEIGHT/WIDTH Enable, Disable, Active, Hover
+// $switchThumbHeight: calc(#{$switchTrackHeight} - 2px);
+// $switchThumbSelectedHeight: calc(#{$switchTrackHeight} - 4px);
+// $switchThumbActiveHoverWidth:  $switchTrackHeight * 1.1875;
+// 
+// THUMB SHADOW
+// $switchThumbShadow: 0 2px 2px -2px $boxShadowColor;
+// 
+// DVT 
+// ---------------------------------------------------------------
+// $dvtAnimationDuration: $animationDuration;
+// 
+// attribute group colors
+// ---------------------------------
+// $dvtCategory1Color: #267db3;
+// $dvtCategory2Color: #68c182;
+// $dvtCategory3Color: #fad55c;
+// $dvtCategory4Color: #ed6647;
+// $dvtCategory5Color: #8561c8;
+// $dvtCategory6Color: #6ddbdb;
+// $dvtCategory7Color: #ffb54d;
+// $dvtCategory8Color: #e371b2;
+// $dvtCategory9Color: #47bdef;
+// $dvtCategory10Color: #a2bf39;
+// $dvtCategory11Color: #a75dba;
+// $dvtCategory12Color: #f7f37b;
+// 
+// gauge threshold colors
+// ---------------------------------
+// used for the first threshold on a gauge, typically represents a low value
+// $dvtThreshold1Color: #ed6647;
+// used for the second threshold on a gauge, typically represents a medium value
+// $dvtThreshold2Color: #fad55c;
+// used for the third threshold on a gauge, typically represents a high value
+// $dvtThreshold3Color: #68c182;
+// 
+// background
+// ---------------------------------
+// $dvtComponentBgColor: $background1Color;
+// $dvtComponentBg2Color: #dddddd;
+// $dvtTooltipBgColor: $background2Color;
+// 
+// border
+// ---------------------------------
+// $dvtBorderColor: $border6Color;
+// $dvtBorder2Color: $border7Color;
+// $dvtPanelBorderColor: $border2Color;
+// 
+// charts
+// ---------------------------------
+// $dvtChartAxisTitleColor: $tertiaryTextColor;
+// $dvtChartStockFallingBgColor: $dvtThreshold1Color;
+// $dvtChartStockRangeBgColor: #b8b8b8;
+// $dvtChartStockRisingBgColor: #6b6f74;
+// 
+// diagram
+// ---------------------------------
+// $dvtDiagramNodeBorderColorHover: $interaction2Color;
+// $dvtDiagramLinkBorderColorHover: $dvtDiagramNodeBorderColorHover;
+// $dvtDiagramLinkColor: #9bb2c7;
+// 
+// nbox
+// ---------------------------------
+// $dvtNBoxCellBgColor: #e5e5e5;
+// $dvtNBoxCellBgColorMinimized: $background4Color;
+// $dvtNBoxDialogBorderColor: $border3Color;
+// 
+// thematic map
+// ---------------------------------
+// $dvtMapBgColor: $dvtComponentBg2Color;
+// $dvtMapMarkerBgColor: #333333;
+// 
+// timeline
+// ---------------------------------
+// 
+// $dvtTimelineBorderColor:               $dvtPanelBorderColor;
+// 
+// $dvtTimelineItemBgColor:               $dvtComponentBgColor;
+// $dvtTimelineItemBgColorHover:          $dvtComponentBgColor;
+// $dvtTimelineItemBgColorSelected:       $dvtComponentBgColor;
+// $dvtTimelineItemBorderColor:           #648baf;
+// $dvtTimelineItemBorderColorHover:      #85bbe7;
+// $dvtTimelineItemBorderColorSelected:   $dvtBorderColor;
+// $dvtTimelineItemDescriptionColor:      $textColor;
+// $dvtTimelineItemTitleColor:            $formControlLabelColor;
+// 
+// $dvtTimelineMajorAxisLabelColor:       $formControlLabelColor;
+// $dvtTimelineMajorAxisSeparatorColor:   #bcc7d2;
+// $dvtTimelineMinorAxisSeparatorColor:   $dvtTimelineMajorAxisSeparatorColor;
+// $dvtTimelineMinorAxisBgColor:          $background2Color;
+// $dvtTimelineMinorAxisBorderColor:      $border2Color;
+// $dvtTimelineMinorAxisLabelColor:       $textColor;
+// 
+// $dvtTimelineOverviewBgColor:           #e6ecf3;
+// $dvtTimelineOverviewLabelColor:        $formControlLabelColor;
+// $dvtTimelineOverviewWindowBgColor:     $background1Color;
+// $dvtTimelineOverviewWindowBorderColor: $border8Color;
+// 
+// $dvtTimelineSeriesBgColor:             $background2Color;
+// $dvtTimelineSeriesLabelColor:          $headerTextColor;
+// $dvtTimelineSeriesEmptyTextColor:      $textColor;
+// 
+// $dvtTimelineReferenceObjectColor:      #ff591f;
+// 
+// treemap
+// ---------------------------------
+// $dvtTreemapNodeHeaderBorderColor: $headerBorderColor;
+// $dvtTreemapNodeHeaderBorderColorHover: $interaction5Color;
+// $dvtTreemapNodeHeaderBgColor: $interaction6Color;
+// $dvtTreemapNodeBorderColorHover: $interaction2Color;
+// 
+// sunburst
+// ---------------------------------
+// $dvtSunburstNodeBorderColorHover: $dvtTreemapNodeBorderColorHover;
+// 
+// 
+// 
+// ---------------------------------------------------------------
+// OPTIMIZATION VARIABLES
+// ---------------------------------------------------------------
+// 
+// 
+// Please search for the term "optimizations" to find other 
+// variables related to optimizing output
+// 
+// 
+// INCLUDES
+// ---------------------------------------------------------------
+// 
+// by default everything is included, but you can also start by setting 
+// $includeAllClasses to false and then just add in what you want.
+// 
+// $includeAllClasses: true;
+// $includeNormalize:  ($includeAllClasses and $allowTagSelectors);
+// 
+// group includes 
+// ---------------------------------
+// 
+// whether to include classes for tags like headers, links, etc
+// $includeTagClasses: $includeAllClasses;
+// 
+// whether to include dvt classes
+// $includeDvtClasses: $includeAllClasses;
+// 
+// whether to include form control classes
+// $includeFormControlClasses: $includeAllClasses;
+// 
+// 
+// widget includes 
+// ---------------------------------
+// Only the higher level include variables are defined in this file, 
+// widget specific variables are defined in the widget files.
+//
+// For example at the top of the button file you'll see
+// // $includeButtonClasses:  $includeAllClasses;
+//
+// At the top of the accordion file you'll see
+// // $includeAccordionClasses:  $includeAllClasses;
+// 
+// 
+// 
+// SLOW CSS
+// ---------------------------------------------------------------
+// In certain browsers you may notice that by default we're not showing a  
+// border-radius, box-shadow, or gradient even if the browser supports the  
+// css property. In browsers where we feel the performance is unacceptably slow 
+// we will put the following classes on the html element. 
+//
+//   - oj-slow-borderradius
+//   - oj-slow-boxshadow, 
+//   - oj-slow-cssgradients
+//
+// This is similar to what modernizr does with classes like no-borderradius
+// browsers that don't support border radius.
+//
+// In the CSS you may see code like this:
+//
+//  .oj-button {
+//      border-radius: 2px;
+//  }
+//  
+//  html.oj-slow-borderradius .oj-button {
+//      border-radius: 0;
+//  }
+//
+//
+// The main reason we need this is that IE has two rendering modes, 
+// GPU and software rendering mode. There is no known way for JET to 
+// detect which rendering mode is being used. Performance for  
+// border radius can be very slow in software rendering mode, 
+// and even GPU rendering has been slow in many cases. Therefore in 
+// JET the oj-slow-borderradius class is put on the html element in all 
+// supported versions of IE.
+//
+// You may control output of the overrides, or choose not to generate 
+// border-radius/gradients/box-shadows at all, with the variables below.
+//
+// Valid values for the variables below are 
+//   
+//    - slowOverride: generate the regular value, but in addition generate 
+//            overrides for slow browsers to remove 
+//            border-radius/gradient/box-shadow on slow browsers. 
+//    - on: no overrides, generate only the regular value
+//    - off: don't write out any value at all. If you wanted to generate 
+//            an IE only style sheet you might want to use "off" to
+//            just not write out any  border-radius/gradient/box-shadow 
+//            values in the first place.
+// $borderRadiusGeneration: slowOverride;
+// $boxShadowGeneration: slowOverride;
+// $gradientGeneration: slowOverride;
+// 
+// 
+// 

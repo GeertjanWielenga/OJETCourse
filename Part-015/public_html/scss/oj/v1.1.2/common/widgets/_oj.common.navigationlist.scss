@@ -1,0 +1,741 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your base theme's directory, 
+//          for example alta/widgets/_oj.alta.navigationList.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+@import "../../utilities/oj.utilities";
+
+@if $includeNavigationListClasses != false {
+    @include module-include-once("common.navigationlist") {
+        /*Navlist root node*/
+        .oj-navigationlist,
+        .oj-navigationlist-listview-container {
+            overflow-x:hidden;
+        }
+        
+        .oj-navigationlist-touch {
+             -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+
+        /* navigation list divider used in category header navlist*/
+        .oj-navigationlist-category-divider {
+            border-color: $navigationListCategoryDividerColor;
+            border-style: solid;
+            border-width: 1px 0 0;
+            font-size: 0;
+            height: 0;
+            line-height: 0;
+            margin: 0 3px;
+        }
+        /* navigation list divider used in horizontal navlist to separate buttons*/
+        .oj-navigationlist-horizontal .oj-navigationlist-divider {
+            border-color: $navigationListItemDividerColor;
+            border-style: solid;
+            border-width: 0 1px 0 0;
+            font-size: 0;
+            height: 1.714rem;//24px
+            line-height: 0;
+            margin: 5px 0;
+            @include oj-align-self-property(center);
+        }
+        
+        /* Basic styling  for all ul elements in list*/
+        .oj-navigationlist-element, .oj-navigationlist-group {
+            list-style-type: none;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+        }
+        
+        /* Remove focus ring on outer ul element*/
+        .oj-navigationlist-element:focus {
+            outline: none;
+        }
+        
+        /* Style content wrapper of each list item */
+        .oj-navigationlist-vertical .oj-navigationlist-item::before {
+            min-height: 3.142rem; //44 px height when root font 14px
+        //This is needed for IE 11 bug
+        //https://connect.microsoft.com/IE/feedback/details/816293/ie11-flexbox-with-min-height-not-vertically-aligning-with-align-items-center
+            content:"";
+            display: inline-block;
+            visibility: hidden; 
+        }
+        
+        .oj-navigationlist-horizontal .oj-navigationlist-item-element {
+            box-sizing: border-box;
+            min-height: 2.714rem; //38 px height when root font 14px
+        }
+        
+        .oj-navigationlist-horizontal.oj-navigationlist-stack-icon-label .oj-navigationlist-item-element {
+            min-height: 4.285rem; //60 px height when root font 14px
+        }
+        
+        /* Styling for expand/collapse icons holder */
+        .oj-navigationlist-collapse-icon,
+        .oj-navigationlist-expand-icon {
+            @include oj-order-property(1);
+            @include oj-align-self-property(center);
+        }
+        
+        /* Style content of each list item */
+        .oj-navigationlist-item-content {
+            @include oj-display-flex-property();
+            @include oj-flex-property(1 1 auto);
+            @include oj-align-items-property(center);
+        }
+        
+        // For simple links case
+        a.oj-navigationlist-item-content {
+            color: $linkTextColor;
+            text-decoration: none;
+            font-weight: normal;
+            outline:none;
+            overflow: hidden;
+        }
+        
+        /* Navigation list node label or arbitrary content place holder*/
+        .oj-navigationlist-item-label {
+            @include oj-order-property(2);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow-x: hidden;
+            display: inline-block;
+        }
+        
+        /*Padding for vertical navlist item label*/
+        .oj-navigationlist-vertical .oj-navigationlist-item-label {
+            padding: 3px 0;
+            @include oj-flex-property(1 1 auto);
+        }
+        
+        /* hide label for icons-only case */
+        .oj-navigationlist-icon-only .oj-navigationlist-item-label {
+            display:none;
+        }
+        
+        /* List item's Icon */
+        .oj-navigationlist-item-icon 
+        {
+            color: $iconColorDefault;
+            @include oj-flex-property( 0 0 auto);
+        }
+        
+        .oj-navigationlist-group-item {
+            @include oj-display-flex-property();
+            @include oj-flex-property(1 1 auto);
+        }
+        
+        .oj-navigationlist-group {
+            @include oj-flex-property(1 1 auto);
+        }
+        
+        /* Disabled node */
+        
+        .oj-navigationlist-item.oj-disabled .oj-navigationlist-item-label {
+            cursor: default;
+            color: $linkTextColorDisabled;
+        }
+
+        .oj-navigationlist-item.oj-disabled .oj-navigationlist-item-icon {
+            color: $iconColorDisabled; 
+        }
+        
+        /* Selected node */
+        .oj-navigationlist-item.oj-selected .oj-navigationlist-item-icon {
+            color: $iconColorSelected;
+        }
+        
+        /* hover icon */
+        .oj-navigationlist-item.oj-hover .oj-navigationlist-item-icon
+        {
+            color: $iconColorHover;
+        }
+        
+        /*borders for high contrast mode*/
+         
+        .oj-hicontrast .oj-navigationlist-item.oj-selected,
+        .oj-hicontrast .oj-navigationlist-item.oj-selected.oj-hover,
+        .oj-hicontrast .oj-navigationlist-item.oj-selected.oj-focus {
+            outline: 1px solid #000000;
+            outline-offset: -1px;
+        }
+        
+        .oj-hicontrast .oj-navigationlist-item.oj-hover,
+        .oj-hicontrast .oj-navigationlist-item.oj-focus {
+            outline: 1px dotted #000000;
+            outline-offset: -1px;
+        }
+
+        /*Focus ring around  focused list item*/
+        .oj-navigationlist-item.oj-focus {
+            outline: dotted 1px $navigationListItemOutlineColorFocus; // Using dotted line for all browsers
+            outline-offset: -1px;
+        }
+        
+        .oj-navigationlist-item {
+            border-color:  transparent;
+            @include oj-display-flex-property();
+            @include oj-align-items-property(center);
+        }
+        
+        //Set Selected item colors
+        .oj-navigationlist-item.oj-selected {
+            background-color: $navigationListItemBgColorSelected;
+            border-color:  $navigationListItemBorderColorSelected;
+        }
+        
+        //Apply hover bgcolor or border color only when item is not selected.
+        .oj-navigationlist-item.oj-hover:not(.oj-selected) {
+            background-color: $navigationListItemBgColorHover;
+            border-color:  $navigationListItemBorderColorHover;
+        }
+        
+        //Background color is not needed for icon only and horizontal lists(only hover)
+        .oj-navigationlist-icon-only .oj-navigationlist-item.oj-selected,
+        .oj-navigationlist-icon-only .oj-navigationlist-item.oj-hover {
+            background-color: transparent;
+        }
+        
+        
+        /*---- Start of common styles for collapsible and expanded navigation list ----*/
+
+        //Space between icon and text
+        .oj-navigationlist-collapsible .oj-navigationlist-item-icon,
+        .oj-navigationlist-expanded:not(.oj-navigationlist-icon-only).oj-navigationlist-vertical .oj-navigationlist-item-icon {
+            @include oj-align-self-property(center);
+            @include oj-ltr() {
+                margin-right: $navigationListIconToTextPadding;  
+            }
+
+            @include oj-rtl() {
+                margin-left: $navigationListIconToTextPadding;
+            }
+        }
+        //space when icon missing
+        .oj-navigationlist-collapsible .oj-navigationlist-has-icons > .oj-navigationlist-item > .oj-navigationlist-item-no-icon .oj-navigationlist-item-label,
+        .oj-navigationlist-expanded:not(.oj-navigationlist-icon-only).oj-navigationlist-vertical .oj-navigationlist-has-icons > .oj-navigationlist-item > .oj-navigationlist-item-no-icon .oj-navigationlist-item-label {
+            @include oj-ltr() {
+                margin-left: calc(#{$navigationListIconToTextPadding} + 24px ); // here 24px is icon size
+            }
+
+            @include oj-rtl() {
+                margin-right: calc(#{$navigationListIconToTextPadding} + 24px );// here 24px is icon size
+            }
+        }
+
+        .oj-navigationlist-collapsible .oj-navigationlist-item,
+        .oj-navigationlist-expanded:not(.oj-navigationlist-icon-only).oj-navigationlist-vertical .oj-navigationlist-item
+        {
+            //Padding at start of item
+            @include oj-rtl() {
+                padding-right: calc(#{$navigationListItemStartEndPadding} - #{$navigationListItemAccentBorderWidth}); 
+                border-width: 0 $navigationListItemAccentBorderWidth 0 0;
+            }
+            @include oj-ltr() {
+                padding-left:  calc(#{$navigationListItemStartEndPadding} - #{$navigationListItemAccentBorderWidth}); 
+                border-width: 0 0 0 $navigationListItemAccentBorderWidth;
+            }
+            border-style: solid;
+            
+        }
+
+        /* Padding for sublist    */
+
+        //padding for sub list of non icons list 
+        .oj-navigationlist-collapsible ul:not(.oj-navigationlist-has-icons) > .oj-navigationlist-item-element > ul,
+        .oj-navigationlist-expanded:not(.oj-navigationlist-icon-only).oj-navigationlist-vertical ul:not(.oj-navigationlist-has-icons) > .oj-navigationlist-item-element > ul
+        {
+            
+            @include oj-ltr() {
+                padding-left: $navigationListItemStartEndPadding;
+            }
+
+            @include oj-rtl() {
+                padding-right: $navigationListItemStartEndPadding;
+            }
+        }
+        
+        //padding for sub list of icons list
+        .oj-navigationlist-collapsible ul.oj-navigationlist-has-icons > .oj-navigationlist-item-element > ul,
+        .oj-navigationlist-expanded:not(.oj-navigationlist-icon-only).oj-navigationlist-vertical ul.oj-navigationlist-has-icons > .oj-navigationlist-item-element > ul
+        {
+            
+            @include oj-ltr() {
+                padding-left: calc(#{$navigationListItemStartEndPadding} + #{$navigationListIconToTextPadding} + 24px );// total of parent item padding + icon text space + icon size.here 24px is icon size
+            }
+
+            @include oj-rtl() {
+                padding-right: calc(#{$navigationListItemStartEndPadding} + #{$navigationListIconToTextPadding} + 24px );// total of parent item padding + icon text space + icon size.here 24px is icon size
+            }
+        }
+        
+        //Add padding to right side
+        .oj-navigationlist-expanded:not(.oj-navigationlist-icon-only).oj-navigationlist-vertical .oj-navigationlist-item,
+        .oj-navigationlist-collapsible .oj-navigationlist-item {
+            @include oj-ltr() {
+                padding-right: $navigationListItemStartEndPadding;
+            }
+            @include oj-rtl() {
+                padding-left: $navigationListItemStartEndPadding;
+            }
+        }
+        
+        /*---- End of common styles for collapsible and expanded navigation list ----*/
+        
+        /* Start of Collapsible Navigation list*/
+            
+        .oj-navigationlist-collapsible .oj-navigationlist-item-element.oj-collapsed .oj-navigationlist-group {
+            max-height: 0; //Needed for hiding collapsed elements
+        }
+
+         /* expand and collapse animation */
+        .oj-navigationlist-collapsible .oj-navigationlist-collapsible-transition {
+            transition: max-height $collapsibleAnimationDuration;
+            overflow: hidden;
+        }
+
+        /* Collapse or expand icon color should not change on hover*/
+        .oj-navigationlist-collapsible a.oj-component-icon.oj-clickable-icon-nocontext.oj-navigationlist-collapse-icon:hover ,
+        .oj-navigationlist-collapsible a.oj-component-icon.oj-clickable-icon-nocontext.oj-navigationlist-collapse-icon,
+        .oj-navigationlist-collapsible a.oj-component-icon.oj-clickable-icon-nocontext.oj-navigationlist-expand-icon:hover ,
+        .oj-navigationlist-collapsible a.oj-component-icon.oj-clickable-icon-nocontext.oj-navigationlist-expand-icon{
+            color: $iconColorDefault;
+        }
+        
+        // Remove focus ring on expand/collapse icons
+        .oj-navigationlist-collapse-icon:focus,
+        .oj-navigationlist-expand-icon:focus {
+            outline: none;
+        }
+        
+        /* End of Collapsible Navigation list*/
+        
+        
+        /*Start of icons only navlist*/
+        .oj-navigationlist-icon-only .oj-navigationlist-divider {
+            display:none;
+        }
+
+        .oj-navigationlist-icon-only .oj-navigationlist-item-content {
+            @include oj-justify-content-property(center);
+        }
+
+        .oj-navigationlist-icon-only .oj-navigationlist-item-icon
+        {
+            border-radius: 50%;
+            padding: 12px;
+        }
+        
+        .oj-navigationlist-icon-only .oj-navigationlist-item.oj-selected .oj-navigationlist-item-icon {
+            background-color: $navigationListItemIconOnlyBgColorSelected;
+        }
+        
+        .oj-navigationlist-icon-only .oj-navigationlist-item.oj-hover:not(.oj-selected) .oj-navigationlist-item-icon {
+            background-color: $navigationListItemIconOnlyBgColorHover;
+        }
+        /*End of icons only navlist*/
+        
+        /*Set width on icons only vertical navigation list otherwise it will align the icons in middle and streatch to parent*/
+        .oj-navigationlist-icon-only.oj-navigationlist-vertical{
+            width: 60px;
+        }
+        
+        //Margin for  Vertical icons only list 
+        .oj-navigationlist-icon-only.oj-navigationlist-vertical .oj-navigationlist-item {
+            margin-top: 4px;
+        }
+        //Remove margin top for first element
+        .oj-navigationlist-icon-only.oj-navigationlist-vertical .oj-navigationlist-item:first-child {
+            margin-top: 0;
+        }
+
+        //Padding for horizontal icons only list
+        .oj-navigationlist-horizontal.oj-navigationlist-icon-only .oj-navigationlist-item {
+           @include oj-ltr() {     
+                margin-left: 4px;
+           }
+           @include oj-rtl() {
+                margin-right: 4px;
+           }
+        }
+        .oj-navigationlist-horizontal.oj-navigationlist-icon-only .oj-navigationlist-item:first-child {
+           @include oj-ltr() {     
+                margin-left:0;
+           }
+           @include oj-rtl() {
+                margin-right:0;
+           }
+        }
+        
+        /*Start of common horizontal navigationlist styles */
+        
+        .oj-navigationlist-horizontal .oj-navigationlist-item-label {
+                @include oj-align-self-property(center);
+        }
+            
+        .oj-navigationlist-horizontal .oj-navigationlist-element {
+                @include oj-display-flex-property();   
+        }
+
+            
+        .oj-navigationlist-horizontal .oj-navigationlist-item {
+                @include oj-flex-property(1 1 auto);  
+        }
+
+
+
+        // UP
+        @if $responsiveQuerySmallUp and $responsiveQuerySmallUp != none {
+          @media #{$responsiveQuerySmallUp} {
+            .oj-navigationlist-horizontal.oj-sm-condense .oj-navigationlist-item
+            {
+              @include oj-flex-property(0 0 auto);
+            }
+            
+            .oj-navigationlist-horizontal.oj-sm-justify-content-center .oj-navigationlist-element {
+                @include oj-justify-content-property(center);
+            }
+            .oj-navigationlist-horizontal.oj-sm-justify-content-flex-end .oj-navigationlist-element {
+                @include oj-justify-content-property(flex-end);
+            }
+            
+          }
+        }
+
+
+        @if $responsiveQueryMediumUp and $responsiveQueryMediumUp != none {
+          @media #{$responsiveQueryMediumUp} {
+            .oj-navigationlist-horizontal.oj-md-condense .oj-navigationlist-item
+            {
+              @include oj-flex-property(0 0 auto);
+            }
+            .oj-navigationlist-horizontal.oj-md-justify-content-center .oj-navigationlist-element {
+                @include oj-justify-content-property(center);
+            }
+            .oj-navigationlist-horizontal.oj-md-justify-content-flex-end .oj-navigationlist-element {
+                @include oj-justify-content-property(flex-end);
+            }
+          }
+        }
+
+
+        @if $responsiveQueryLargeUp and $responsiveQueryLargeUp != none {
+          @media #{$responsiveQueryLargeUp} {
+            .oj-navigationlist-horizontal.oj-lg-condense .oj-navigationlist-item
+            {
+              @include oj-flex-property(0 1 auto);
+            }
+            .oj-navigationlist-horizontal.oj-lg-justify-content-center .oj-navigationlist-element {
+                @include oj-justify-content-property(center);
+            }
+            .oj-navigationlist-horizontal.oj-lg-justify-content-flex-end .oj-navigationlist-element {
+                @include oj-justify-content-property(flex-end);
+            }
+          }
+        }
+
+
+        @if $responsiveQueryXlargeUp and $responsiveQueryXlargeUp != none {
+          @media #{$responsiveQueryXlargeUp} {
+            .oj-navigationlist-horizontal.oj-xl-condense .oj-navigationlist-item
+            {
+              @include oj-flex-property(0 0 auto);
+            }
+            .oj-navigationlist-horizontal.oj-xl-justify-content-center .oj-navigationlist-element {
+                @include oj-justify-content-property(center);
+            }
+            .oj-navigationlist-horizontal.oj-xl-justify-content-flex-end .oj-navigationlist-element {
+                @include oj-justify-content-property(flex-end);
+            }
+          }
+        }
+
+
+        @if $responsiveQueryXXlargeUp and $responsiveQueryXXlargeUp != none {
+          @media #{$responsiveQueryXXlargeUp} {
+            .oj-navigationlist-horizontal.oj-xxl-condense .oj-navigationlist-item
+            {
+              @include oj-flex-property(0 0 auto);
+            }
+            .oj-navigationlist-horizontal.oj-xxl-justify-content-center .oj-navigationlist-element {
+                @include oj-justify-content-property(center);
+            }
+            .oj-navigationlist-horizontal.oj-xxl-justify-content-flex-end .oj-navigationlist-element {
+                @include oj-justify-content-property(flex-end);
+            }
+          }
+        }
+        
+        /*End of common horizontal navigationlist styles */
+        
+        /*Start of  horizontal navigationlist styles excluding icons only*/
+        
+        //Add horizontal padding for navlist content
+        .oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
+            padding-left: $navigationListItemStartEndPadding; 
+            padding-right: $navigationListItemStartEndPadding; 
+            padding-top: 0.5rem;
+            padding-bottom: 4px;
+            border-width: 0 0 3px 0;
+            border-style: solid;
+        }
+            
+        .oj-navigationlist-horizontal:not(.oj-navigationlist-icon-only) .oj-navigationlist-item-content {
+            @include oj-justify-content-property(center);
+        }
+            
+            //Add Space between icon and text
+        .oj-navigationlist-horizontal:not(.oj-navigationlist-stack-icon-label):not(.oj-navigationlist-icon-only) .oj-navigationlist-item-icon {
+            @include oj-align-self-property(center);
+            @include oj-ltr() {
+                margin-right: $navigationListIconToTextPadding;
+            }
+
+            @include oj-rtl() {
+                margin-left: $navigationListIconToTextPadding;
+            }
+        }
+        /*End of  horizontal navigationlist styles excluding icons only*/
+        
+        /*Start of  horizontal stacked icon label navigationlist styles */
+        
+            //Horizontal divider
+        .oj-navigationlist-horizontal.oj-navigationlist-stack-icon-label:not(.oj-navigationlist-icon-only) .oj-navigationlist-divider {
+             height: 2.714rem;//38px
+        }
+            
+        .oj-navigationlist-horizontal.oj-navigationlist-stack-icon-label:not(.oj-navigationlist-icon-only) .oj-navigationlist-item {
+            padding-bottom: 2px;
+        }
+        .oj-navigationlist-horizontal.oj-navigationlist-stack-icon-label:not(.oj-navigationlist-icon-only) .oj-navigationlist-item-content {
+            @include oj-flex-direction-property(column);
+        }
+            
+        /*End of  horizontal stacked icon label navigationlist styles */
+        
+        /*Start of sliding navlist*/
+        
+            //color of collapse icon should not have any hover
+        .oj-navigationlist-slider a.oj-component-icon.oj-clickable-icon-nocontext.oj-navigationlist-collapse-icon:hover ,
+        .oj-navigationlist-slider a.oj-component-icon.oj-clickable-icon-nocontext.oj-navigationlist-collapse-icon {
+            color: $iconColorDefault;
+        }
+            
+            //Padding and border around content
+        .oj-navigationlist-slider .oj-navigationlist-item {
+            padding: 0 $navigationListItemStartEndPadding;
+            border-bottom: 1px solid $navigationListItemBorderColor;
+        }
+        .oj-navigationlist-slider .oj-navigationlist-item-element:last-child > .oj-navigationlist-item,
+        .oj-navigationlist-slider .oj-navigationlist-item-element:last-child.oj-navigationlist-item {
+            border-bottom: none;
+        }
+            
+        //Override default border color. For sliding navlist hover should not change. border
+        .oj-navigationlist-slider .oj-navigationlist-item.oj-hover:not(.oj-selected) {
+            border-color: $navigationListItemBorderColor;
+        }
+            //Add space between icon and label
+        .oj-navigationlist-slider .oj-navigationlist-item-icon {
+            @include oj-align-self-property(center);
+            @include oj-ltr() {
+                margin-right: $navigationListIconToTextPadding;
+            }
+            @include oj-rtl() {
+                margin-left: $navigationListIconToTextPadding;
+            }
+            @include oj-order-property(1);
+        }
+
+            /*Hide siblings of parent node while showing the list*/
+        // Hide all first level items except the one which is expanded.
+        .oj-navigationlist-slider .oj-navigationlist-element:not(.oj-navigationlist-current) > .oj-navigationlist-item-element:not(.oj-expanded),
+         // Hide all sub lists which are collapsed
+        .oj-navigationlist-slider .oj-navigationlist-item-element:not(.oj-expanded) > .oj-navigationlist-group,
+         // Hide list items which are not parents of current opened list
+        .oj-navigationlist-slider .oj-navigationlist-item-element.oj-expanded:not(.oj-navigationlist-current) > .oj-navigationlist-group > .oj-navigationlist-item-element:not(.oj-expanded),
+         //Hide label when list item is open/expanded 
+        .oj-navigationlist-slider .oj-navigationlist-item-element.oj-expanded > .oj-navigationlist-group-item 
+        {
+            display:none;
+        }
+
+        /* Navlist header in case of sliding */
+        .oj-navigationlist-toolbar {
+            border-bottom: 1px solid $toolbarBorderColor;
+            background-color: $navigationListToolbarBgColor;
+            @include oj-display-flex-property();
+            line-height: 3.142rem;//44px
+            @include oj-ltr() {
+                padding-left: 0.714rem; //10px;
+            }
+
+            @include oj-rtl() {
+                padding-right: 0.714rem; //10px;
+            }
+        }
+        
+        /* previous link */
+        .oj-navigationlist-previous-link {
+            @include oj-align-self-property(center);
+            @include oj-order-property(0);
+            @include oj-display-flex-property();
+            @include oj-flex-property(1 1 auto);
+            overflow:hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .oj-navigationlist-previous-icon {
+            @include oj-align-self-property(center);
+        }
+        
+        /* Previous icon active color. Appears only in sliding navlist */
+        a:active .oj-navigationlist-previous-icon.oj-component-icon.oj-clickable-icon-nocontext{
+            color: $iconColorSelected;
+        }
+        
+        /* Override link style */
+        a.oj-navigationlist-previous-link {
+            text-decoration: none;
+            outline: none;
+            font-weight: normal;
+        }
+        
+        /* Label for current displayed list */
+        .oj-navigationlist-current-header {
+            @include oj-flex-property(1 1 auto);
+            @include oj-order-property(1);
+            font-weight: bold;
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow:hidden;
+            white-space: nowrap;
+            color: $headerTextColor;
+        }
+
+        .oj-navigationlist-toolbar-separator {
+            @include oj-align-self-property(center);
+            border-left: 1px solid $toolbarBorderColor;
+            display: inline-block;
+            height: 2.642rem;//37px
+            vertical-align: middle;
+            @include oj-order-property(1);
+            @include oj-ltr() {
+                margin: 0.214rem 0 0.214rem 0.714rem; // 3px 0 3px 10px
+            }
+            @include oj-rtl() {
+                margin: 0.214rem 0.714rem 0.214rem 0; // 3px 10px 3px 0 
+            }
+        }
+        
+        
+        .oj-navigationlist-hierarchical-button {
+            @include oj-align-self-property(center);
+            @include oj-order-property(2);
+            @include oj-flex-property(0 0 auto);
+        }
+        
+        /* override oj-button margin for hierarchical menu button*/
+        .oj-button.oj-navigationlist-hierarchical-button {
+            margin: 0 5px; //0 5 0 5
+        }
+        
+        //Overriding margin for button icon 
+        .oj-navigationlist-hierarchical-button.oj-button-icons-only .oj-hier-icon.oj-button-icon.oj-start {
+           
+            // margin:0 0.5rem will not work here because button using 
+            // different padding for both ltr/rtl and so we need to override like this
+            @include oj-ltr() {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+
+            @include oj-rtl() {
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+        }
+        
+        /* Multiple space elements will be added to dom to get tree style in hierarchical menu  popup*/
+        .oj-navigationlist-hvitem-space {
+            margin-left: 1.142rem;//16px
+        }
+
+        
+        /* override menu css*/
+
+        .oj-menu-item-icon.oj-navigationlist-level-indicator {
+            @include oj-align-self-property(baseline); //level indivator icon alignment   
+            padding-bottom: 10px;
+            padding-left: 9px;
+            margin-bottom: 2px;
+            margin-top: 3px;
+            width:auto;
+            height:auto;
+        }
+        
+        //Add padding and font size for menu. Here font is fixed irrespective of page font.
+        .oj-navigationlist-hierarchical-menu.oj-menu, .oj-navigationlist-hierarchical-menu .oj-menu {
+            background-color: $navigationListHierarchicalMenuBgColor;
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+        
+        //Height is fixed as 12px font need not to change wrt page font
+        .oj-navigationlist-hierarchical-menu .oj-menu-item a {
+            line-height: 12px;    
+        }
+
+        .oj-navigationlist-hierarchical-menu .oj-menu-item a.oj-focus {
+            background: none; 
+        }
+        
+        //Add border for focused menu item
+        .oj-navigationlist-hierarchical-menu .oj-menu-item a.oj-focus > .oj-navigationlist-hierarchical-menu-label {
+            background-color: $treeNodeBgColorHoverSelected;
+            border : 1px solid $treeNodeBorderColorHoverSelected;
+            padding: 1px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+        
+        //Add padding/margin on menu label
+        .oj-navigationlist-hierarchical-menu .oj-menu-item a > .oj-navigationlist-hierarchical-menu-label {
+            padding: 2px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+        }
+
+        .oj-navigationlist-hierarchical-menu .oj-menu-item a {
+            color : $treeTextColor;
+        }
+        
+        //Remove padding
+        html:not([dir="rtl"]) .oj-navigationlist-hierarchical-menu .oj-menu-item a,
+        html:not([dir="ltr"]) .oj-navigationlist-hierarchical-menu .oj-menu-item a {
+            padding: 0;   
+        }
+        
+        //Hide down arrow icon
+        .oj-navigationlist-hierarchical-button .oj-button-menu-dropdown-icon {
+            display: none !important;
+        }
+        
+        //Remove margin
+        html:not([dir="ltr"]) .oj-navigationlist-hierarchical-menu .oj-menu-item-icon,
+        html:not([dir="rtl"]) .oj-navigationlist-hierarchical-menu .oj-menu-item-icon {
+            margin-left: 4px;
+            margin-right: 2px;
+        }
+        
+        //Flip the image for rtl mode
+        html:not([dir="ltr"]) .oj-navigationlist-hierarchical-menu .oj-menu-item-icon {
+            @include oj-transform-property (rotate(270deg));
+        }
+        /* end - override menu css*/
+    }
+}
+

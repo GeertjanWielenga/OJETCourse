@@ -1,0 +1,159 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your base theme's directory, 
+//          for example alta/widgets/_oj.alta.icons.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+@import "../../utilities/oj.utilities";
+
+
+
+@if $includeIconClasses != false {
+  @include module-include-once("common.icons") {
+
+    /* Icons
+    --------------------------------------------------------------------*/
+    
+    /*--------------------------------------------------------------------
+    /  Generic style that can be used for images 
+    /  App developers can use the mixin ("oj-icon-content") to generate 
+    /  a class with additions/overrides
+    / 
+    /  For example let's say you used the mixin ("oj-icon-content") to 
+    /  generate a class ".binky-icon". You
+    /  could then put class="oj-icon binky-icon" on your dom element. 
+    --------------------------------------------------------------------*/
+    .oj-icon {
+      @include oj-icon-base(                         
+           $height: 16px,                                               
+           $width:  16px);       
+    }                              
+     
+    // we support two generic classes for getting icon font colors
+    //   1. oj-clickable-icon
+    //   2. oj-clickable-icon-nocontext
+    //
+    // these classes, when used in conjunction with an anchor tag and/or 
+    // marker classes like oj-default, oj-hover, oj-active, oj-selected, 
+    // and oj-disabled will use the $iconColor* variables
+    //
+    // oj-clickable-icon is optionally contextual, meaning the anchor 
+    // or marker style can be on an ancestor. For example this will work
+    //
+    //   <div class="oj-default">
+    //     <span class="oj-clickable-icon demo-icon-font demo-icon-gear"></span>
+    //   </div>
+    //   <a href="http://www.oracle.com">
+    //     <span class="oj-clickable-icon demo-icon-font demo-icon-gear"></span>
+    //   </a>
+    //
+    //
+    // oj-clickable-icon-nocontext is not contextual, instead it must go on the 
+    // same tag as seen below (oj-clickable-icon would also work in the examples below).
+    //
+    //   <span class="oj-default oj-clickable-icon-nocontext demo-icon-font demo-icon-gear"></span>
+    //   <a href="http://www.oracle.com"
+    //      class="oj-clickable-icon-nocontext demo-icon-font demo-icon-gear"></a>
+
+    a .oj-clickable-icon,
+    a.oj-clickable-icon,
+    a.oj-clickable-icon-nocontext {
+      // needed when clickable on an anchor tag
+      font-weight: normal;
+    }
+
+    a .oj-clickable-icon,
+    a.oj-clickable-icon,
+    a.oj-clickable-icon-nocontext,
+    a:visited .oj-clickable-icon,
+    a:visited.oj-clickable-icon,
+    a:visited.oj-clickable-icon-nocontext,
+    .oj-default .oj-clickable-icon,
+    .oj-default.oj-clickable-icon,
+    .oj-default.oj-clickable-icon-nocontext {
+      color: $iconColorDefault;
+    }
+
+    a:hover .oj-clickable-icon,
+    a:hover.oj-clickable-icon,
+    a:hover.oj-clickable-icon-nocontext,
+    .oj-hover .oj-clickable-icon,
+    .oj-hover.oj-clickable-icon,
+    .oj-hover.oj-clickable-icon-nocontext {
+      color: $iconColorHover;
+    }
+
+    a:active .oj-clickable-icon,
+    a:active.oj-clickable-icon,
+    a:active.oj-clickable-icon-nocontext,
+    .oj-active .oj-clickable-icon,
+    .oj-active.oj-clickable-icon,
+    .oj-active.oj-clickable-icon-nocontext {
+      color: $iconColorActive;
+    }
+
+    a.oj-selected .oj-clickable-icon,
+    a.oj-selected.oj-clickable-icon,
+    a.oj-selected.oj-clickable-icon-nocontext,
+    .oj-selected .oj-clickable-icon,
+    .oj-selected.oj-clickable-icon,
+    .oj-selected.oj-clickable-icon-nocontext {
+      color: $iconColorSelected;
+    }
+
+    a.oj-disabled .oj-clickable-icon,
+    a.oj-disabled.oj-clickable-icon,
+    a.oj-disabled.oj-clickable-icon-nocontext,
+    .oj-disabled .oj-clickable-icon,
+    .oj-disabled a .oj-clickable-icon,
+    .oj-disabled.oj-clickable-icon,
+    .oj-disabled.oj-clickable-icon-nocontext {
+      color: $iconColorDisabled;
+    }
+
+    
+    .oj-fwk-icon-load {
+      @include oj-icon-content(
+          $icon: oj-common-image-url("node_anim.gif")
+      );
+    }
+
+
+    
+    .oj-fwk-icon-status-error2,
+    .oj-fwk-icon-status-warning2,
+    .oj-fwk-icon-status-info2,
+    .oj-fwk-icon-status-confirmation2 {
+      height: 9px;
+      width: 9px;
+      font-size: 9px;
+    }
+
+    .oj-fwk-icon-status-confirmation2 {
+      @include oj-icon-content(
+        $icon: oj-common-image-url("alertModifier_complete.png")
+      );
+    }
+
+    .oj-fwk-icon-status-info2 {
+      @include oj-icon-content(
+        $icon: oj-common-image-url("alertModifier_info.png")
+      );
+    }
+
+    .oj-fwk-icon-status-warning2 {
+      @include oj-icon-content(
+        $icon: oj-common-image-url("alertModifier_warning.png")
+      );
+    }
+    
+    .oj-fwk-icon-status-error2 {
+      @include oj-icon-content(
+          $icon: oj-common-image-url("alertModifier_error.png")
+      );
+    }
+
+  }
+}
+
+

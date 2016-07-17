@@ -1,0 +1,32 @@
+@import "../../utilities/oj.utilities";
+  
+
+$includePanelClasses:   $includeAllClasses !default;
+
+
+@if $includePanelClasses != false {
+  @include module-include-once("common.panel") {
+
+    .oj-panel {
+      border: 1px solid $panelBorderColor;
+      background-color: $panelBgColor;
+      @include oj-border-radius( $smallBorderRadius );
+      @include oj-box-sizing-property(border-box);
+      overflow: hidden;
+      padding: $panelPadding;
+    }
+
+    //this should be applied to the drag handle of a draggable panel
+    .oj-panel-drag-handle {
+      text-align: center;
+      vertical-align: middle;
+      cursor: move;
+      height: 20px;
+      line-height: 20px;
+      margin-top: -$panelPadding;
+      margin-left: -$panelPadding;
+      margin-right: -$panelPadding;
+    }
+    
+  }
+}

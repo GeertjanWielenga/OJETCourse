@@ -1,0 +1,316 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your base theme's directory, 
+//          for example alta/widgets/_oj.alta.tabs.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+@import "../../utilities/oj.utilities";
+
+//--------------------------------------------------------
+
+// include dependencies
+@if $includeTabsClasses != false {
+  @include module-include-once("common.tabs") {
+
+    /* tabs */
+    /* --------------------------------------------------------------- */
+
+    /*
+     * applied to the tabs
+     */
+    .oj-tabs {
+      position: relative;
+      font-size: $fontSize;
+    }
+
+    /*
+     * use flexbox so that vertial tabs automatically lay out correctly on resize
+     */
+    .oj-tabs.oj-tabs-vertical {
+      @include oj-display-flex-property();
+    }
+
+
+    /*
+     * applied to the tab bar
+     */
+    .oj-tabs-nav {
+      // nowrap so conveyor doesn't wrap its content
+      white-space: nowrap;
+      margin: 0;
+      // touch support
+      @include oj-user-select-property (none);
+    }
+
+    /*
+     * applied to a tab when it's selected
+     */
+    .oj-tabs-tab.oj-selected {
+      background-color: $tabsPanelBgColor;
+    }
+
+    /*
+     * applied to the tab header
+     */
+    .oj-tabs-anchor {
+      cursor: pointer;
+      outline: none;
+
+      display: inline-block;
+      padding: .55rem .85rem .65rem .85rem;
+      vertical-align: middle;
+    }
+
+
+    /*
+     * applied to the tab title text
+     * display inline so the close icon is aligned with the title text
+     */
+    .oj-tabs-title {
+      display: inline-block;
+      min-width: 1rem;
+      line-height: 1rem;
+      vertical-align: middle;
+      font-weight: normal;
+      color: $tabsNavTextColor;
+      text-decoration: none;
+    }
+
+    /*
+     * applied to the tab title text when it's overflow
+     */
+    .oj-tabs-title-overflow {
+      display: inline-block;
+      overflow: hidden; 
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    /*
+     * applied to the tab anchor when it's disabled
+     */
+    .oj-tabs-tab.oj-disabled .oj-tabs-anchor {
+      cursor: text;
+      text-decoration: none;
+    }
+
+    /* suppress all browser decorations of anchors in the tab */
+    .oj-tabs-tab a,
+    .oj-tabs-tab a:active,
+    .oj-tabs-tab a:visited,
+    .oj-tabs-tab a:hover,
+    .oj-tabs-tab a:focus {
+      text-decoration: none;
+    }
+
+    /*
+     * applied to the icon font in the tab title
+     */
+    .oj-tabs-tab-icon {
+      @extend .oj-clickable-icon;
+    }
+
+    /*
+     * applied to the horizontal tab
+     */
+    .oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab {
+      display: inline-block;
+      position: relative;
+    }
+
+    /*
+     * applied to the tab placeholder created when reordering
+     */
+    .oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab.ui-sortable-placeholder {
+      margin-bottom: -1rem;
+    }
+
+    .oj-tabs-horizontal.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab.ui-sortable-placeholder {
+      margin-top: -1rem;
+    }
+
+
+    /* 
+     * Bug 18283133 - ER for placing buttons alongside tabs
+     */
+
+    /*
+     * For the facet after the tab bar, grow but no shrink when resized
+     */
+    .oj-tabs-facet {
+      @include oj-flex-property(1 0 auto); 
+    }
+
+    /*
+     * For the facet before the tab bar, no grow or shrink when resized
+     */
+    .oj-tabs-facet.oj-start {
+      @include oj-flex-property(0 0 auto); 
+    }
+
+    /*
+     * For the conveyor belt, set flex-basis in JS
+     * set min-width to allow the content to be shrunk smaller than its content size
+     */
+    .oj-tabs-conveyorbelt-wrapper {
+      min-width: 1px;
+    }
+
+    /*
+     * Use flex layout only if the tab bar contains any facets
+     */
+    .oj-tabs-horizontal > .oj-tabs-nav-root:not(.oj-conveyorbelt) {
+      @include oj-display-flex-property();
+    }
+
+    /*
+     * Container of the horizontal tab bar
+     */
+    .oj-tabs-conveyor {
+      display: inline-block;
+    }
+
+    /*
+     * applied to the conveyorbelt buttons
+     */
+    .oj-tabs-nav-root .oj-conveyorbelt-overflow-indicator.oj-start {
+      @include oj-ltr() {
+        margin-right: 5px;
+      }
+      @include oj-rtl() {
+        margin-left: 5px;
+      }
+    }
+    .oj-tabs-nav-root .oj-conveyorbelt-overflow-indicator.oj-end {
+      @include oj-ltr() {
+        margin-left: 5px;
+      }
+      @include oj-rtl() {
+        margin-right: 5px;
+      }
+    }
+
+    /*
+     * applied to the panel body
+     */
+    .oj-tabs-panel {
+      display: block;
+      padding: $panelPadding;
+      color: $textColor;
+      background-color: $tabsPanelBgColor;
+    }
+
+    /* vertical tabs */
+    /* --------------------------------------------------------------- */
+
+    /*
+     * applied to the vertical tab bar
+     */
+    .oj-tabs-vertical > .oj-tabs-nav-root {
+      margin: 0;
+
+      // don't change the tab bar size when ojtab is resized
+      @include oj-flex-property(0 0 auto); 
+
+      // make sure the tab bar is layout after the panel content so the connected border is covered
+      position: relative;
+      // nowrap on tab labels
+      white-space: nowrap;
+    }
+
+    /*
+     * applied to the vertical tab
+     */
+    .oj-tabs-vertical > .oj-tabs-nav-root .oj-tabs-tab {
+      list-style: none;
+      position: relative;
+      top: 0;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+
+    /*
+     * apply to the selected tab
+     */
+    .oj-tabs-vertical > .oj-tabs-nav-root .oj-tabs-tab.oj-selected {
+      @include oj-ltr() {
+        margin-right: -1px;
+      }
+      @include oj-rtl() {
+        margin-left: -1px;
+      }
+    }
+
+    .oj-tabs-vertical.oj-tabs-end > .oj-tabs-nav-root .oj-tabs-tab.oj-selected {
+      @include oj-ltr() {
+        margin-right: 0;
+        margin-left: -1px;
+      }
+      @include oj-rtl() {
+        margin-left: 0;
+        margin-right: -1px;
+      }
+    }
+
+
+    /*
+     * applied to the body of vertical tabs
+     */
+    .oj-tabs-vertical > .oj-tabs-panel {
+      margin-top: 0;
+
+      //Bug 21562918 - ojtable "max-width: 100%" doesn't work well
+      @include oj-flex-property(1 1); 
+
+      min-width: 0;
+      min-height: 0;
+    }
+
+
+    /* Tabs with the oj-tabs-icon-only class specified */
+    /* --------------------------------------------------------------- */
+
+    /* 
+     * override background setting in 
+     * .oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab
+     */
+    .oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-tab.oj-selected,
+    .oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-tab.oj-selected.oj-hover,
+    .oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab.oj-selected,
+    .oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab.oj-selected.oj-hover {
+      background-color: $tabsPanelBgColor;
+      background-image: none;
+    }
+
+    .oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-close-icon {
+      padding-top: 4px;
+    }
+
+    .oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-anchor {
+      padding: 0.68rem;
+    }
+
+    .oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-anchor {
+      padding: 0.7rem 0.6rem 0.7rem 0.6rem;
+    }
+
+    /*
+     * applied to the vertical tabs with icon only in the tab header
+     */
+    .oj-tabs-vertical.oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-anchor {
+      padding: 0.68rem 0.6rem 0.68rem 0.6rem;
+    }
+
+    /*
+     * applied to the vertical tabs with text and icon in the tab header
+     */
+    .oj-tabs-vertical.oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-anchor {
+      padding: 0.8rem 0.6rem 0.8rem 0.6rem;
+    }
+
+
+
+  }
+}
+

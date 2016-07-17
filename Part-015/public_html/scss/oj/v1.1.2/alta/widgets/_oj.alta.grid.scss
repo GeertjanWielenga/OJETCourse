@@ -1,0 +1,13 @@
+@import "../../utilities/oj.utilities";
+
+
+$includeGridClasses: $includeAllClasses !default;
+
+// alta implementation currently in common
+@import "../../common/widgets/oj.common.grid"; 
+
+
+@if $includeGridClasses != false {
+  @include module-include-once("alta.grid") {
+  }
+}

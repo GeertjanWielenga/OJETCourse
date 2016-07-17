@@ -1,0 +1,11 @@
+@import "../../utilities/oj.utilities";
+$includeTagsCoreClasses:  $includeTagClasses !default;
+
+
+@import "../../common/widgets/oj.common.tags.core"; 
+
+@if $includeTagsCoreClasses != false {
+  @include module-include-once("alta.tagscore") {
+  
+  }
+}

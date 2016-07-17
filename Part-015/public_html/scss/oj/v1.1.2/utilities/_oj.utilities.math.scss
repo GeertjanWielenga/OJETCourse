@@ -1,0 +1,23 @@
+
+
+//*****************************************************************************
+// returns the lower bound (first item) in a range
+//*****************************************************************************
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    // sass won't let us error here because we're in a function
+    @return "called lower-bound function but the range is empty";
+  }
+  @return nth($range,1);
+}
+
+//*****************************************************************************
+// returns the upper bound (second item) in a range
+//*****************************************************************************
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    // sass won't let us error here because we're in a function
+    @return "called upper-bound function the range is less than 2 items";
+  }
+  @return nth($range, 2);
+}

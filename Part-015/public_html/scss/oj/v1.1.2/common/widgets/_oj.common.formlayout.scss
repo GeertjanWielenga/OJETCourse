@@ -1,0 +1,146 @@
+// !!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your theme's directory, 
+//          for example alta/widgets/_oj.common.formlayout.scss
+// !!!
+
+@if $includeFormLayoutClasses != false {
+  @include module-include-once("common.formlayout") {
+
+    // The technique used in these column classes use css multi column layout.
+    // http://dev.w3.org/csswg/css-multicol/ 
+    // With this layout the columns should automatically be 
+    // approximately the same heights.
+    .oj-form-cols-labels-inline { 
+      @include oj-column-width-property($formLayoutLabelsInlineColumnWidth);
+    } 
+
+    .oj-form-cols { 
+      @include oj-column-width-property($formLayoutColumnWidth);
+    } 
+
+    // set the max number of columns to 2
+    .oj-form-cols-max2 { 
+      @include oj-column-count-property(2);
+    } 
+
+    // without controlling breaking then in some cases a label will 
+    // show up in the first column but its associated field will show 
+    // up in the second column.
+    .oj-form-cols > .oj-row,
+    .oj-form-cols-labels-inline > .oj-row { 
+      @include oj-break-inside-property(avoid);
+      // page-break-inside is needed for FF 24, the col break written 
+      // out by the mixin doesn't work
+      page-break-inside: avoid; 
+    } 
+
+   
+
+    // headers inside a form layout have different margins than regular headers
+    .oj-form > hr,
+    .oj-form > h1,
+    .oj-form > h2,
+    .oj-form > h3,
+    .oj-form > h4 {
+      // the margins above and below are 15px, but there's
+      // already the formlayout margin bottom above, so subtract that
+      // from the top
+      margin: (15px - $formLayoutMarginBottom) 0 15px 0;
+    }
+
+
+    //
+    // Stacked (non-responsive) form layout
+    //
+
+    .oj-form > .oj-form-control,
+    .oj-form > .oj-form-non-control {
+      margin-bottom: $formLayoutMarginBottom;
+    }
+
+    // in some cases form controls are grouped together with the 
+    // oj-form-control-group class, in that case you need
+    // to subtract wrappableMarginBottom
+    .oj-form > .oj-form-control-group {
+      margin-bottom: ($formLayoutMarginBottom - $wrappableMarginBottom);
+    }
+
+
+    // 
+    // Responsive form layout
+    //
+
+    .oj-form > .oj-row > .oj-col {
+      // remove all grid padding, padding will come from the label when appropriate
+      padding: 0;
+    }
+
+    // Originally the margin was on .oj-form .oj-row. However there was a problem. 
+    // In the "across" form layout there's 4 grid cells in a row. 
+    // On large screens these 4 cells are all on one line. 
+    // But on medium screens the first 2 cells stay on the 
+    // first line and the second 2 cells wrap to a new line 
+    // to create a second "row". However there's no actual row 
+    // class in this case, so the margins need to be on the field columns.
+    //
+    // The :last-child is to handle cases where there is a colspan
+    // across all the cells.
+    //
+    // See the form layout demo titled "inline responsive across" 
+    // before checking in any changes to where the margin is placed.
+    .oj-form > .oj-row > .oj-col:nth-child(even),
+    .oj-form > .oj-row > .oj-col:last-child {
+      margin: 0 0 ($formLayoutMarginBottom - $wrappableMarginBottom) 0;
+    }
+      
+    .oj-form > .oj-row > .oj-col > .oj-form-non-control {
+      margin-bottom: $wrappableMarginBottom;
+    }
+
+    @if $responsiveQuerySmallUp and $responsiveQuerySmallUp != none {
+      @media #{$responsiveQuerySmallUp} 
+      {
+        @include oj-form-responsive($selectorPrefix: "oj-sm", 
+                                    $labelInlineMarginTop: $formLayoutLabelInlineMarginTop,
+                                    $labelInlineGutter: $formControlLabelInlineGutter);
+      }
+    }
+
+    @if $responsiveQueryMediumUp and $responsiveQueryMediumUp != none {
+      @media #{$responsiveQueryMediumUp} 
+      {
+        @include oj-form-responsive($selectorPrefix: "oj-md", 
+                                    $labelInlineMarginTop: $formLayoutLabelInlineMarginTop,
+                                    $labelInlineGutter: $formControlLabelInlineGutter);
+      }
+    }
+
+    @if $responsiveQueryLargeUp and $responsiveQueryLargeUp != none {
+      @media #{$responsiveQueryLargeUp} 
+      {
+        @include oj-form-responsive($selectorPrefix: "oj-lg", 
+                                    $labelInlineMarginTop: $formLayoutLabelInlineMarginTop,
+                                    $labelInlineGutter: $formControlLabelInlineGutter);
+      }
+    }
+
+    @if $responsiveQueryXlargeUp and $responsiveQueryXlargeUp != none {
+      @media #{$responsiveQueryXlargeUp} 
+      {
+        @include oj-form-responsive($selectorPrefix: "oj-xl", 
+                                    $labelInlineMarginTop: $formLayoutLabelInlineMarginTop,
+                                    $labelInlineGutter: $formControlLabelInlineGutter);
+      }
+    }
+
+    @if $responsiveQueryXXlargeUp and $responsiveQueryXXLargeUp != none {
+      @media #{$responsiveQueryXXlargeUp} 
+      {
+        @include oj-form-responsive($selectorPrefix: "oj-xxl", 
+                                    $labelInlineMarginTop: $formLayoutLabelInlineMarginTop,
+                                    $labelInlineGutter: $formControlLabelInlineGutter);
+      }
+    }
+  }
+}

@@ -1,0 +1,207 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your base theme's directory, 
+//          for example alta/widgets/_oj.alta.formcontrol.switch.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+@import "../../utilities/oj.utilities";
+
+@if $includeSwitchClasses != false {
+  @include module-include-once("common.switch") {
+    /* switch */
+    /* --------------------------------------------------------------- */    
+	.oj-switch {
+		display: inline-block;
+	}
+	
+	.oj-switch .oj-messaging-inline-container {
+		padding-top: 3px;
+	}  
+	
+	.oj-switch .oj-messaging-inline-container .oj-message {
+		border-top-width: 1px;
+	}	
+
+	.oj-switch-track,
+	.oj-switch-thumb
+	{
+		display: block;
+		border-style: solid;
+		border-width: 1px;
+		@include oj-box-sizing-property(border-box);
+	}
+	
+	.oj-switch-track {
+		height: $switchTrackHeight;
+		width: $switchTrackWidth;
+		@include oj-border-radius($switchTrackHeight);
+	
+	}
+	
+	.oj-switch-thumb 
+	{
+		height: $switchThumbHeight;
+		width: $switchThumbHeight;
+		@include oj-border-radius(50%);
+		@include oj-box-shadow($switchThumbShadow);
+	}
+
+	.oj-switch.oj-selected .oj-switch-thumb {
+      @include oj-ltr() {
+        float: right;
+      }
+      @include oj-rtl() {
+        float: left;        
+      }		
+	}
+	
+	.oj-switch.oj-selected .oj-switch-thumb,
+	.oj-switch.oj-disabled .oj-switch-thumb {
+		height: $switchThumbSelectedHeight;
+		width: $switchThumbSelectedHeight;
+		@include oj-border-radius(50%);
+	}
+	
+	.oj-switch.oj-hover .oj-switch-thumb,
+	.oj-switch.oj-active .oj-switch-thumb {
+		width: $switchThumbActiveHoverWidth;
+		@include oj-border-radius($switchThumbHeight);
+	}
+	
+	// DEFAULT
+	.oj-switch.oj-default .oj-switch-track,
+	.oj-switch-track {
+		background-color: $switchTrackBgColor;
+		border-color: $switchTrackBorderColor;
+	}
+
+	.oj-switch.oj-default .oj-switch-thumb,
+	.oj-switch-thumb {
+		background-color: $switchThumbBgColor;
+		border-color: $switchThumbBorderColor;
+	}
+			
+	// SELECTED
+	.oj-switch.oj-selected .oj-switch-track
+	{
+		background-color: $switchTrackBgColorSelected;
+		border-color: $switchTrackBorderColorSelected;
+	}
+	.oj-switch.oj-selected .oj-switch-thumb {
+		background-color: $switchThumbBgColorSelected;
+		border-color: $switchThumbBorderColorSelected;
+	}
+
+	// HOVER
+	.oj-switch.oj-hover .oj-switch-track
+	{
+		background-color: $switchTrackBgColorHover;
+		border-color: $switchTrackBorderColorHover;
+	}
+	.oj-switch.oj-hover .oj-switch-thumb 
+	{
+		background-color: $switchThumbBgColorHover;
+		border-color: $switchThumbBorderColorHover;
+	}
+
+	// HOVER SELECTED
+	.oj-switch.oj-selected.oj-hover .oj-switch-track
+	{
+		background-color: $switchTrackBgColorSelectedHover;
+		border-color: $switchTrackBorderColorSelectedHover;
+	}
+	.oj-switch.oj-selected.oj-hover .oj-switch-thumb 
+	{
+		background-color: $switchThumbBgColorSelectedHover;
+		border-color: $switchThumbBorderColorSelectedHover;
+	}
+	
+	// ACTIVE
+	.oj-switch.oj-active .oj-switch-track
+	{
+		background-color: $switchTrackBgColorActive;
+		border-color: $switchTrackBorderColorActive;
+	}
+	.oj-switch.oj-active .oj-switch-thumb 
+	{
+		background-color: $switchThumbBgColorActive;
+		border-color: $switchThumbBorderColorActive;
+	}
+
+	// ACTIVE SELECTED
+	.oj-switch.oj-selected.oj-active .oj-switch-track
+	{
+		background-color: $switchTrackBgColorSelectedActive;
+		border-color: $switchTrackBorderColorSelectedActive;
+	}	
+	.oj-switch.oj-selected.oj-active .oj-switch-thumb 
+	{
+		background-color: $switchThumbBgColorSelectedActive;
+		border-color: $switchTrackBorderColorSelectedActive;
+	}
+
+	// DISABLED
+	.oj-switch.oj-disabled .oj-switch-track
+	{
+		background-color: $switchTrackBgColorDisabled;
+		border-color: $switchTrackBorderColorDisabled;
+	}
+	.oj-switch.oj-disabled .oj-switch-thumb 
+	{
+		background-color: $switchThumbBgColorDisabled;
+		border-color: $switchThumbBorderColorDisabled;
+		box-shadow: none;
+	}
+	
+	// DISABLED SELECTED
+	.oj-switch.oj-selected.oj-disabled .oj-switch-track 
+	{
+		background-color: $switchTrackBgColorSelectedDisabled;
+		border-color: $switchTrackBorderColorSelectedDisabled;
+	}
+	.oj-switch.oj-selected.oj-disabled .oj-switch-thumb 
+	{
+		background-color: $switchThumbBgColorSelectedDisabled;
+		border-color: $switchThumbBorderColorSelectedDisabled;
+		box-shadow: none;
+	}
+	
+	// Invalid and Warning styling for switch messaging
+	.oj-switch.oj-invalid .oj-switch-track,
+	.oj-switch.oj-invalid.oj-selected .oj-switch-track,
+	.oj-switch.oj-invalid.oj-hover .oj-switch-track, 
+	.oj-switch.oj-invalid.oj-active .oj-switch-track, 
+	.oj-switch.oj-invalid.oj-disabled .oj-switch-track, 
+	.oj-switch.oj-invalid.oj-selected.oj-disabled .oj-switch-track,
+	.oj-switch.oj-invalid.oj-selected.oj-active .oj-switch-track,
+	.oj-switch.oj-invalid.oj-selected.oj-hover .oj-switch-track
+	{
+		border: $formControlMessagingBorderWidth solid $borderColorError;
+	}
+
+	.oj-switch.oj-warning .oj-switch-track,
+	.oj-switch.oj-warning.oj-selected .oj-switch-track,
+	.oj-switch.oj-warning.oj-hover .oj-switch-track,
+	.oj-switch.oj-warning.oj-active .oj-switch-track,	
+	.oj-switch.oj-warning.oj-disabled .oj-switch-track,
+	.oj-switch.oj-warning.oj-selected.oj-hover .oj-switch-track, 
+	.oj-switch.oj-warning.oj-selected.oj-active .oj-switch-track,
+	.oj-switch.oj-warning.oj-selected.oj-disabled .oj-switch-track
+	{
+		border: $formControlMessagingBorderWidth solid $borderColorWarning;
+	}  
+	
+	.oj-switch.oj-invalid:not(.oj-selected):not(.oj-disabled) .oj-switch-thumb,
+	.oj-switch.oj-warning:not(.oj-selected):not(.oj-disabled) .oj-switch-thumb {
+		margin-top: -1px;
+		margin-bottom: -1px;		
+	}
+	
+	.oj-switch.oj-selected:not(.oj-invalid):not(.oj-warning) .oj-switch-thumb,
+	.oj-switch.oj-disabled:not(.oj-invalid):not(.oj-warning) .oj-switch-thumb {
+		margin: 1px 1px;
+	}
+	
+ }
+}
+  

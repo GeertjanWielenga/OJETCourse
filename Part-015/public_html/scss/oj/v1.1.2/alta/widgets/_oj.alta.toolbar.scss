@@ -1,0 +1,26 @@
+@import "../../utilities/oj.utilities";
+
+$includeToolbarClasses: $includeAllClasses !default;
+
+@import "../../common/helpers/oj.common.helpers"; 
+@import "../../common/widgets/oj.common.toolbar"; 
+
+@if $includeToolbarClasses != false {
+  @include module-include-once("alta.toolbar") {
+
+
+    /* Apps can apply this class if a top toolbar border is desired */
+    .oj-toolbar-top-border {
+        border-top-width: 1px;
+        @include oj-border-radius(0);
+    }
+
+    /* Apps can apply this class if a bottom toolbar border is desired */
+    .oj-toolbar-bottom-border {
+        border-bottom-width: 1px;
+        @include oj-border-radius(0);
+    }
+
+  }
+}
+ 

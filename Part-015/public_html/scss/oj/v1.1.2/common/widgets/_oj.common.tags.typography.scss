@@ -1,0 +1,111 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your base theme's directory, 
+//          for example alta/widgets/_oj.alta.tags.typography.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+@import "../../utilities/oj.utilities";
+
+@if $includeTagsTypographyClasses != false {
+  @include module-include-once("common.tagstypography") {
+
+    /* links */
+    /* --------------------------------------------------------------- */
+    
+    @include oj-tag-selectors(
+      $tagSelectors:   "a", 
+      $classSelectors: ".oj-link") {
+        color: $linkTextColor;
+        line-height: inherit;
+        text-decoration: none; 
+    }
+
+    @include oj-tag-selectors(
+      $tagSelectors:   "a:visited", 
+      $classSelectors: ".oj-link:visited") {
+        color: $linkTextColorVisited; 
+    }
+
+    @include oj-tag-selectors(
+      $tagSelectors:   "a:hover, a:focus", 
+      $classSelectors: ".oj-link:hover, .oj-link:focus") {
+        text-decoration: underline;
+    }
+
+    @include oj-tag-selectors(
+      $tagSelectors:   "a:active", 
+      $classSelectors: ".oj-link:active") {
+        font-weight: bold;
+    }
+
+    @include oj-tag-selectors(
+      $tagSelectors:   "a.oj-disabled", 
+      $classSelectors:  ".oj-link.oj-disabled") {
+          color: $linkTextColorDisabled;
+          opacity: $opacityDisabled;
+          cursor: default;
+        }
+
+
+
+    /* header */
+    /* --------------------------------------------------------------- */
+    @include oj-tag-selectors(
+      $tagSelectors:   "h1, h2, h3, h4", 
+      $classSelectors: ".oj-header") {
+        color: $headerTextColor; 
+        font-family: inherit;
+        font-style: normal;
+        font-weight: $headerFontWeight; 
+        margin: 8px 0;
+        padding: 0 0 2px;
+
+    }
+
+
+    @include oj-tag-selectors(
+      $tagSelectors:   "h1", 
+      $classSelectors: "h1.oj-header") {
+          font-size: $largestFontSize;
+    }
+
+    @include oj-tag-selectors(
+      $tagSelectors:   "h2", 
+      $classSelectors: "h2.oj-header") {
+          font-size: $largeFontSize; 
+    }
+
+   
+    @include oj-tag-selectors(
+      $tagSelectors:   "h3", 
+      $classSelectors: "h3.oj-header") {
+          font-size: $mediumFontSize; 
+    }
+
+    
+    @include oj-tag-selectors(
+      $tagSelectors:   "h4", 
+      $classSelectors: "h4.oj-header") {
+          font-size: $fontSize; 
+    }
+
+
+    .oj-header-border {
+        border: solid $headerBorderColor;
+        border-width: 0 0 1px;
+        padding: 0 0 7px;
+    }
+
+
+    /* hr */
+    /* --------------------------------------------------------------- */
+    @include oj-tag-selectors(
+      $tagSelectors:   "hr", 
+      $classSelectors: ".oj-hr") {
+        border: solid $panelBorderColor;
+        border-width: 1px 0 0;
+        margin: 7px 0;
+    }
+
+  }
+
+}

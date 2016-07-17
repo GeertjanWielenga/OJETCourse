@@ -1,0 +1,19 @@
+@import "../../utilities/oj.utilities";
+
+$includeTagsTypographyClasses: $includeTagClasses !default;
+
+@import "../../common/widgets/oj.common.tags.typography";
+
+@if $includeTagsTypographyClasses != false {
+  @include module-include-once("alta.tagstypography") {
+
+    /* p */
+    /* --------------------------------------------------------------- */
+    @include oj-tag-selectors(
+      $tagSelectors:   "p", 
+      $classSelectors: ".oj-p") {
+      margin: 0 0 12px 0;
+    }
+  }
+
+}
