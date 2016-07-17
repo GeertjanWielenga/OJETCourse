@@ -66,9 +66,9 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * Part-014: 
     * Title: Data Sources and Persistence
     * Description: Exploring AJAX, Common Model, and Persistence.
-  * Part-015: 
-    * Title: Navigation and Routing
-    * Description: Exploring Navigation & Routing.
+  * [Part-015](Part-015): 
+    * Title: Routing and Navigation
+    * Description: Exploring Single Page Application architecture via Routing and Navigation.
   * Part-016: 
     * Title: Validation and Error Handling
     * Description: Exploring Validation & Error Handling.
