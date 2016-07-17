@@ -1,7 +1,3 @@
-/**
- * Example of Require.js boostrap javascript
- */
-
 requirejs.config({
     // Path mappings for the logical module names
     paths: {
@@ -36,13 +32,11 @@ requirejs.config({
     }
 });
 
-require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter', 'ojs/ojknockout', 
-    'ojs/ojmodule', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu', 
-    'ojs/ojarraytabledatasource', 'ojs/ojnavigationlist'],
-
-        function (oj, ko, $) 
+require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
+    'ojs/ojmodule', 'ojs/ojoffcanvas', 'ojs/ojnavigationlist', 'ojs/ojarraytabledatasource'],
+        function (oj, ko, $)
         {
-            
+
             var router = oj.Router.rootInstance;
             router.configure({
                 'home': {label: 'Home', isDefault: true},
@@ -50,36 +44,51 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter', 'ojs/ojknockout',
             });
 
             function RootViewModel() {
+
                 var self = this;
+
                 self.router = router;
+
                 var navData = [
                     {name: 'Home', id: 'home'},
                     {name: 'People', id: 'people'}
                 ];
                 self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});
+                var smQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.SM_ONLY);
+                self.smScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(smQuery);
                 self.navChange = function (event, ui) {
                     if (ui.option === 'selection' && ui.value !== self.router.stateId()) {
-                         self.router.go(ui.value);
+                        if (self.smScreen())
+                            self.toggleDrawer();
+                        self.router.go(ui.value);
                     }
                 };
+
+                self.drawerParams = {
+                    displayMode: 'push',
+                    selector: '#offcanvas',
+                };
+                // Called by navigation drawer toggle button and after selection of nav drawer item
+                self.toggleDrawer = function () {
+                    return oj.OffcanvasUtils.toggle(self.drawerParams);
+                };
+                // Close the drawer for medium and up screen sizes
+                var mdQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.MD_UP);
+                self.mdScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(mdQuery);
+                self.mdScreen.subscribe(function () {
+                    oj.OffcanvasUtils.close(self.drawerParams);
+                });
+
             }
-            
             oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
             oj.Router.sync().then(
-                function () {
-                    //bind your ViewModel for the content 
-                    //of the whole page body.
-                    ko.applyBindings(
-                            new RootViewModel(),
-                            document.getElementById('globalBody'));
-                    $('#globalBody').show();
-                },
-                function (error) {
-                    oj.Logger.error(
-                            'Error in root start: ' +
-                            error.message);
-                });
+                    function () {
+                        ko.applyBindings(new RootViewModel(), document.getElementById('globalBody'));
+                    },
+                    function (error) {
+                        oj.Logger.error('Error in root start: ' + error.message);
+                    }
+            );
         }
-
 );
 

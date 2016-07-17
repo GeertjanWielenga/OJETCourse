@@ -1,0 +1,9 @@
+<div data-bind="ojComponent: {component: 'ojNavigationList',
+        optionChange: $parent.navChange, 
+        navigationLevel: 'application',
+        item: {template: 'navTemplate'}, 
+        data: $parent.navDataSource,
+        selection: $parent.router.stateId(), 
+        edge: 'start'
+     }">
+</div>

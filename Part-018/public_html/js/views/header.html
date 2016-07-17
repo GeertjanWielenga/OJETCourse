@@ -1,3 +1,12 @@
+<div class="oj-flex-bar-start oj-md-hide">
+    <button class="oj-button-lg" data-bind="click: $parent.toggleDrawer,
+      ojComponent: {
+                  component:'ojButton', 
+                  display: 'icons', 
+                  icons: {start: 'oj-web-applayout-offcanvas-icon'}
+      }">
+    </button>
+</div>
 <div role="navigation" data-bind="ojComponent: {component: 'ojNavigationList',
           optionChange: $parent.navChange, 
           navigationLevel: 'application',
@@ -6,8 +15,8 @@
           selection: $parent.router.stateId(), 
           edge: 'top'
       }"
-      class="oj-web-applayout-navbar oj-sm-only-hide oj-web-applayout-max-width
-      oj-navigationlist-item-dividers oj-md-condense oj-md-justify-content-center
-      oj-lg-justify-content-flex-end"
->
+     class="oj-web-applayout-navbar oj-sm-only-hide oj-web-applayout-max-width
+     oj-navigationlist-item-dividers oj-md-condense oj-md-justify-content-center
+     oj-lg-justify-content-flex-end"
+     >
 </div>
