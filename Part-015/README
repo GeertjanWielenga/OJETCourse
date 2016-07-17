@@ -6,30 +6,24 @@ How to use this sample:
 
 1. Open the sample.
 
-2. Add 'header' and 'footer' modules and add in index.html:
+2. Talk about adding 'header' and 'footer' modules and loading them in index.html:
 
 <header data-bind="ojModule: {name:'header'}"></header>
 
 <footer data-bind="ojModule: {name:'footer'}"></footer>
 
-3. Add router.
+3. Look again at the index.html file and point out that a router handles loading of modules.
+
+Look at the two 'home' and 'people'. 
 
 In index.html, add router configuration between the header and footer:
 
-<div id="mainContainer" data-bind="ojModule: router.moduleConfig"></div>
+<div data-bind="ojModule: { name: router.stateId()}"></div>
 
-In main.js, load the router in the 'require' block:
-
-'ojs/ojrouter'
-
-In main.js, add router definition:
-
-var router = oj.Router.rootInstance;
-router.configure({
-    'home': {label: 'Home', value: 'home', isDefault: true},
-    'people': {label: 'People', value: 'people'}
-});
-
-Add the two modules 'home' and 'people'. 
+Open main.js, talk about the code defining the router in the 'require' block.
 
 4. Add navigation component.
+
+Talk about needing an Oracle JET component to let the user control the router.
+
+Open 'header.js' and 'header.html' and talk about the ojNavigationList component.
