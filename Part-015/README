@@ -6,12 +6,30 @@ How to use this sample:
 
 1. Open the sample.
 
-2. Add 'header' and 'footer' modules and add in index:
+2. Add 'header' and 'footer' modules and add in index.html:
 
 <header data-bind="ojModule: {name:'header'}"></header>
 
 <footer data-bind="ojModule: {name:'footer'}"></footer>
 
 3. Add router.
+
+In index.html, add router configuration between the header and footer:
+
+<div id="mainContainer" data-bind="ojModule: router.moduleConfig"></div>
+
+In main.js, load the router in the 'require' block:
+
+'ojs/ojrouter'
+
+In main.js, add router definition:
+
+var router = oj.Router.rootInstance;
+router.configure({
+    'home': {label: 'Home', value: 'home', isDefault: true},
+    'people': {label: 'People', value: 'people'}
+});
+
+Add the two modules 'home' and 'people'. 
 
 4. Add navigation component.

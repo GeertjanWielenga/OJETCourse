@@ -5,7 +5,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/libs/requirejs/require.js" data-main="js/main" type="text/javascript"></script>
+        <link href="css/libs/oj/v1.1.2/alta/oj-alta-min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <div id="globalBody" style="display: none">
+            
+            <header data-bind="ojModule: {name:'header'}"></header>
+            
+            <div data-bind="ojModule: { name: router.stateId()}"></div>
+            
+            <footer data-bind="ojModule: {name:'footer'}"></footer>
+            
+        </div>
     </body>
 </html>
