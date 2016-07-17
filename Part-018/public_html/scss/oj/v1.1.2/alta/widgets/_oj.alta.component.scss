@@ -1,0 +1,15 @@
+@import "../../utilities/oj.utilities";
+
+$includeComponentClasses:  $includeAllClasses !default;
+
+
+// this is for shared classes, for example a modal overlay class that 
+// more than one component might use
+@import "../../common/widgets/oj.common.component"; 
+
+@if $includeComponentClasses != false {
+  @include module-include-once("alta.component") {
+
+
+  }
+}

@@ -1,0 +1,41 @@
+@import "../../utilities/oj.utilities";
+
+
+// form controls
+//----------------------------------
+
+@mixin oj-form-control-content {       
+    color: $formControlValueColor; 
+    background-color: $formControlBgColor; 
+    border: 1px solid $formControlBorderColor;
+    
+    // iOS's iPad has a bug of showing an inner top shadow, the below CSS is to remove it for webkit
+    -webkit-appearance: none;
+    @include oj-border-radius($formControlBorderRadius);
+
+    @include oj-placeholder()
+    {
+      color: $formControlPlaceholderColor;
+      // in Firefox the default opacity is not 1 for placeholder
+      opacity: 1;
+      font-style: $formControlPlaceholderFontStyle;
+    }
+}
+
+@mixin oj-form-control-content-disabled {
+    color: $formControlValueColorDisabled;
+    background-color: $formControlBgColorDisabled;
+    border: 1px solid $formControlBorderColorDisabled;
+    opacity: $formControlOpacityDisabled;
+}
+
+@mixin oj-form-control-content-readonly {
+    color: $formControlValueColorReadOnly;
+    background-color: transparent;
+    border-color: transparent;
+    // Leave the border on top and bottom so that the 
+    //       inline label continues to line up properly.  
+    // Remove the border on the left/right so that the
+    //       input value is flush with the label gutter
+    border-width: 1px 0;
+}

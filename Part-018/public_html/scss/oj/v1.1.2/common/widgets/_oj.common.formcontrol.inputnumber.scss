@@ -1,0 +1,234 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your base theme's directory, 
+//          for example alta/widgets/_oj.alta.formcontrol.inputnumber.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+@import "../../utilities/oj.utilities";
+@import "oj.common.formcontrol.mixins";
+
+
+@if $includeInputNumberClasses != false {
+  @include module-include-once("common.inputnumber") {
+
+    /* inputnumber */
+    /* --------------------------------------------------------------- */
+
+    /* We need to support this sizing use cases: 
+       - width on root dom element should be the width of input and buttons, not just input. */
+    
+    /* Root dom element for inputnumber. 
+     It wraps the input and the down/up buttons */
+    .oj-inputnumber { 
+ 
+      display: inline-block;
+        
+      /* use a width of 100% and then max and min width so that when 
+         there's less room for the form control it can automatically 
+         get smaller instead of overflowing its boundaries */
+      max-width: $formControlMediumMaxWidth;
+      min-width: $formControlMinWidth;
+      width: 100%;
+      
+      // font size needs to be on the root, because max/min width is in em.
+      font-size: $formControlFontSize;
+    }
+    
+    .oj-inputnumber-wrapper {
+         width: 100%; 
+         // do not allow the buttons to wrap to the next line
+          white-space: nowrap;
+          // use inline-flex properties. This will grow the input and the buttons will take up 
+          // the remaining width
+          @include oj-display-inline-flex-property();
+           
+    }
+
+    /* Input field for inputnumber */
+    .oj-inputnumber-input { 
+      @include oj-form-control-content;
+      // grow the input using the flex property
+      @include oj-flex-property(1);
+      // needed or else the input could overflow the container
+      min-width: 1em;
+      
+      // normally removing an outline can cause accessibility issues, however
+      // on an input the cursor blinks so an outline is not required for
+      // accessibility. As of 6-11-14 only chrome is putting
+      // an outline on inputs anyway
+      outline: 0;
+
+      @include oj-box-sizing-property(border-box);
+      padding: 0 $formControlPaddingHorizontal; 
+      height: $formControlHeight;
+
+      // font-family and font-size would normally be included by
+      // calling @include oj-normalize-text-input;
+      // however we can't call @include oj-normalize-text-input;  
+      // or we get a css lint error because margin is set to 0 in that and 
+      // you shouldn't use margin with display: table-cell
+      // so set the font-family and font-size here instead
+      font-family: inherit; 
+      font-size: 100%; 
+
+      // we override border-radius that is in the oj-form-control-content.
+      // For inputnumber, we want the radius only on the 'start' of the input
+      // not the end. After the 'end' comes the down/up buttons, so we don't
+      // want a curved edge next to the down/up buttons
+
+      @include oj-ltr()
+      { 
+        @include oj-border-radius($formControlBorderRadius 0 0 $formControlBorderRadius,
+                                  $slowOverride: false);
+      }
+
+      @include oj-rtl()
+      { 
+        @include oj-border-radius(0 $formControlBorderRadius $formControlBorderRadius 0,
+                                  $slowOverride: false);
+      }
+      @include oj-border-radius-slowoverride();  
+    }
+
+
+    /* Invalid styling for the widget. Spec calls for border around entire
+     component, not just input. */
+    .oj-inputnumber.oj-invalid .oj-inputnumber-input {
+      border: $formControlMessagingBorderWidth solid $borderColorError;
+      @include oj-ltr() {
+        border-right: none;
+      }
+      @include oj-rtl() {
+        border-left: none;
+      }
+    }
+
+    /* Warning styling for the widget.  Spec calls for border around entire
+     component, not just input. */
+    .oj-inputnumber.oj-warning .oj-inputnumber-input {
+      border: $formControlMessagingBorderWidth solid $borderColorWarning;
+      @include oj-ltr() {
+        border-right: none;
+      }
+      @include oj-rtl() {
+        border-left: none;
+      } 
+    }
+
+    /* Disabled styling for the widget */
+    .oj-inputnumber.oj-disabled .oj-inputnumber-input {
+      @include oj-form-control-content-disabled;
+    }
+    
+    /* readonly styling for the widget */
+    .oj-inputnumber.oj-read-only .oj-inputnumber-input {
+      @include oj-form-control-content-readonly;
+      padding: 0;
+    }
+    
+    // hide buttons when in readonly mode
+    .oj-inputnumber.oj-read-only .oj-inputnumber-button {
+      display: none;
+    }
+
+    /* Up/Down button styling */
+
+
+    /* Styling for the container of the button */
+    .oj-inputnumber-button { 
+      @include oj-box-sizing-property(border-box);
+    }
+
+    /* more specificity is required here to overide default button borders */
+    .oj-inputnumber-button.oj-button { 
+      margin-bottom: 0;
+      border-color: $formControlBorderColor;
+
+      @include oj-ltr() {
+        border-left: none;
+      }
+      @include oj-rtl() {
+        border-right: none;
+      }
+    }
+
+    /* Error border  for the widget. */
+    .oj-inputnumber.oj-invalid .oj-inputnumber-button.oj-button {
+       border: $formControlMessagingBorderWidth solid $borderColorError;
+    }
+    /* Warning border color for the widget.  */
+    .oj-inputnumber.oj-warning .oj-inputnumber-button.oj-button  {
+       border: $formControlMessagingBorderWidth solid $borderColorWarning;
+    }
+    
+    /* Warning/error styling for the widget.  Spec calls for border around entire
+     component, not just input. We make sure the border is only on the outside
+     of the buttons by setting border-left/right to none as appropriate.
+     The 'up' button is the outside button.
+    */
+    .oj-inputnumber.oj-invalid .oj-inputnumber-button.oj-button.oj-inputnumber-up,
+    .oj-inputnumber.oj-warning .oj-inputnumber-button.oj-button.oj-inputnumber-up{
+       @include oj-ltr() {
+        border-left: none;
+       }
+       @include oj-rtl() {
+         border-right: none;
+       }
+    }
+    // The 'down' button is the inside button in both ltr and rtl, so we don't
+    // want it to have left or right border for error/warnings 
+    // since we want the border around the entire component, not just input.
+    .oj-inputnumber.oj-invalid .oj-inputnumber-button.oj-button.oj-inputnumber-down,
+    .oj-inputnumber.oj-warning .oj-inputnumber-button.oj-button.oj-inputnumber-down {
+         border-left: none;
+         border-right: none;
+    }
+    
+    // according to the design review meeting, 
+    // the up button is after the down button (down/up)
+    // in the layout. The down ('inside') button should have no border-radius.  
+    // The up ('end') button should have an 'end' border-radius. 
+    .oj-inputnumber-down.oj-button { 
+      @include oj-border-radius(0);
+    }
+
+    .oj-inputnumber-up.oj-button { 
+
+      @include oj-ltr()
+      { 
+        @include oj-border-radius(0 $formControlBorderRadius $formControlBorderRadius 0,
+                                  $slowOverride: false);
+      }
+
+      @include oj-rtl()
+      { 
+        @include oj-border-radius($formControlBorderRadius 0 0 $formControlBorderRadius,
+                                  $slowOverride: false); 
+      }
+
+      @include oj-border-radius-slowoverride();
+    }
+
+    .oj-inputnumber .oj-inputnumber-down-icon,
+    .oj-inputnumber .oj-inputnumber-up-icon {
+      font-size: 12px;
+    }
+    
+    // The up button looks like it is 1px lower than the down button when
+    // they are perfectly aligned, so UX team wants the up button 1px higher,
+    // so the visual perception is that they are aligned.
+    // this is 2px difference but the ui was approved and I don't want to change it now
+    // todo: fix this in the icon font?
+    .oj-inputnumber-up-icon {
+      margin-bottom: 3px;
+    }
+    .oj-inputnumber-down-icon {
+      margin-bottom: 2px;
+    }
+    
+    .oj-inputnumber.oj-disabled .oj-inputnumber-button.oj-button {
+      border-color: $formControlBorderColorDisabled;
+    }
+  }
+}

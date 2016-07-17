@@ -1,0 +1,35 @@
+@import "../../utilities/oj.utilities";
+
+$includeTagsListClasses: $includeTagClasses !default;
+
+@if $includeTagsListClasses != false {
+  @include module-include-once("alta.tagslist") {
+    /* lists */
+    /* --------------------------------------------------------------- */
+
+
+    @include oj-tag-selectors(
+      $tagSelectors:   "ul, ol", 
+      $classSelectors: ".oj-ul, .oj-ol")
+    {
+      margin: 12px 0; 
+      padding-left: 40px; 
+
+    }
+    
+    @include oj-tag-selectors(
+      $tagSelectors:   "ul ul, ul ol, ol ul, ol ol", 
+      $classSelectors:  ".oj-ul .oj-ul, .oj-ul .oj-ol, .oj-ol .oj-ul, .oj-ol .oj-ol")
+    {
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-left: 30px; 
+    }
+
+    @include oj-tag-selectors(
+      $tagSelectors:   "ul li, ol li", 
+      $classSelectors: ".oj-ul li, .oj-ol li") {
+        line-height: 1.25; 
+    }
+  }
+}

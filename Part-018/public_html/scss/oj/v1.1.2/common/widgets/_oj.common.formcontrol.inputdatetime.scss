@@ -1,0 +1,220 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your base theme's directory, 
+//          for example alta/widgets/_oj.alta.formcontrol.inputdatetime.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+@import "../../utilities/oj.utilities";
+@import "oj.common.formcontrol.mixins";
+
+@if $includeInputDateTimeClasses != false {
+  @include module-include-once("common.inputdatetime") {
+
+    .oj-inputdatetime, // added to root for ojInputDateTime, ojInputDate, and ojInputTime
+    .oj-inputdatetime-date-time, // added to root for ojInputDateTime
+    .oj-inputdatetime-date-only, // added to root for ojInputDate
+    .oj-inputdatetime-time-only  // added to root for ojInputTime
+    { 
+      /* use a width of 100% and then max and min width so that when 
+         there's less room for the form control it can automatically 
+         get smaller instead of overflowing its boundaries */
+      max-width: $formControlLargeMaxWidth;
+      min-width: $formControlMinWidth;
+      width: 100%;
+      display: inline-block;
+    }
+    
+    //added to root for ojInputDateTime and ojInputDate when of inline, since div need to restrict the size due to 
+    //messaging
+    .oj-inputdatetime-inline
+    {
+      /* use a width of 100% and then max and min width so that when 
+         there's less room for the form control it can automatically 
+         get smaller instead of overflowing its boundaries */
+      max-width: $formControlLargeMaxWidth;
+      min-width: $formControlMinWidth;
+      width: 100%;
+    }
+
+    // Class that wraps the input element and trigger icons. Need a separate one due to inline mode.
+    .oj-inputdatetime-input-container
+    {
+      @include oj-box-sizing-property(border-box);
+      // use inline-flex properties. This will grow the input and the buttons will take up 
+      // the remaining width
+      @include oj-display-inline-flex-property();
+      width: 100%;
+
+      // because max/min width is in em the font size needs to be on this element 
+      // and not on the selector that goes on the input.
+      font-size: $formControlFontSize;
+    }
+	
+    //actual input element
+    .oj-inputdatetime-input
+    {
+      @include oj-form-control-content;
+      @include oj-box-sizing-property(border-box);
+      // grow the input using the flex property
+      @include oj-flex-property(1);
+      // needed or else the input could overflow the container
+      min-width: 1em;
+      font-family: inherit;
+      font-weight: normal;
+      padding: 0 $formControlPaddingHorizontal; 
+      height: $formControlHeight;
+      
+      // normally removing an outline can cause accessibility issues, however
+      // on an input the cursor blinks so an outline is not required for
+      // accessibility. As of 6-11-14 only chrome is putting
+      // an outline on inputs anyway
+      outline: 0;
+      
+      @include oj-ltr()
+      { 
+        //need to disable right border if trigger exists
+        border-width: 1px 0 1px 1px; 
+        @include oj-border-radius($formControlBorderRadius 0 0 $formControlBorderRadius,
+                                  $slowOverride: false);
+      }
+
+      @include oj-rtl()
+      { 
+        //need to disable left border if trigger exists
+        border-width: 1px 1px 1px 0;
+        @include oj-border-radius(0 $formControlBorderRadius $formControlBorderRadius 0,
+                                  $slowOverride: false); 
+      }
+
+      @include oj-border-radius-slowoverride();
+    }
+	
+    //Trigger contains the calendar-icon + time-icon
+    .oj-inputdatetime-input-trigger 
+    {
+      @include oj-box-sizing-property(border-box);
+      @include oj-display-inline-flex-property();
+      @include oj-align-items-property(center);
+      border: 1px solid $formControlBorderColor;
+      background-color: $formControlBgColor;
+      height: $formControlHeight;
+      line-height: $formControlHeight;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+      
+      //since need to make it look like input and the trigger are of a single input, need to disable one side of 
+      //input and one side of the trigger
+      
+      @include oj-ltr()
+      {
+        //disable left border
+        border-width: 1px 1px 1px 0; 
+        @include oj-border-radius(0 $formControlBorderRadius $formControlBorderRadius 0,
+                                  $slowOverride: false);
+      }
+
+      @include oj-rtl()
+      {
+        border-width: 1px 0 1px 1px;
+        @include oj-border-radius($formControlBorderRadius 0 0 $formControlBorderRadius,
+                                  $slowOverride: false);
+      }
+
+      @include oj-border-radius-slowoverride();
+    }
+    
+    //oj-warning border color
+    .oj-inputdatetime.oj-warning .oj-inputdatetime-input,
+    .oj-inputdatetime.oj-warning .oj-inputdatetime-input-trigger,
+    {
+      border-color: $borderColorWarning;
+    }
+
+    //oj-invalid border color
+    .oj-inputdatetime.oj-invalid .oj-inputdatetime-input,
+    .oj-inputdatetime.oj-invalid .oj-inputdatetime-input-trigger,
+    {
+      border-color: $borderColorError;
+    }
+
+    //oj-invalid and warning border width
+    .oj-inputdatetime.oj-invalid .oj-inputdatetime-input,
+    .oj-inputdatetime.oj-warning .oj-inputdatetime-input
+    {
+      @include oj-ltr()
+      {
+        border-width: $formControlMessagingBorderWidth 0 $formControlMessagingBorderWidth $formControlMessagingBorderWidth;
+      }
+
+      @include oj-rtl()
+      {
+        border-width: $formControlMessagingBorderWidth $formControlMessagingBorderWidth $formControlMessagingBorderWidth 0;
+      }
+    }
+  
+    .oj-inputdatetime.oj-invalid .oj-inputdatetime-input-trigger,
+    .oj-inputdatetime.oj-warning .oj-inputdatetime-input-trigger
+    {
+      @include oj-ltr()
+      {
+        border-width: $formControlMessagingBorderWidth $formControlMessagingBorderWidth $formControlMessagingBorderWidth 0;
+      }
+
+      @include oj-rtl()
+      {
+        border-width: $formControlMessagingBorderWidth 0 $formControlMessagingBorderWidth $formControlMessagingBorderWidth;
+      }
+    }
+
+    //oj-disabled
+    .oj-inputdatetime.oj-disabled .oj-inputdatetime-input
+    {
+      @include oj-form-control-content-disabled;
+    }
+
+    .oj-inputdatetime.oj-disabled .oj-inputdatetime-input-trigger
+    {
+      background-color: $formControlBgColorDisabled;
+      border-color: $formControlBorderColorDisabled;
+    }    
+	
+    //oj-read-only
+    .oj-inputdatetime.oj-read-only .oj-inputdatetime-input
+    {
+      @include oj-form-control-content-readonly;
+      padding: 0;
+    }
+
+    // Hide when is of read-only
+    .oj-inputdatetime.oj-read-only .oj-inputdatetime-input-trigger
+    {
+      display: none;
+    }
+
+    .oj-inputdatetime-calendar-icon,
+    .oj-inputdatetime-time-icon 
+    { 
+      cursor: pointer;
+      padding: 0 5px;
+      vertical-align: middle;
+      line-height: inherit;
+    }
+    .oj-inputdatetime-calendar-icon 
+    {
+      @extend .oj-fwk-icon-calendar;
+    }
+
+    .oj-inputdatetime-calendar-icon.oj-disabled,
+    .oj-inputdatetime-time-icon.oj-disabled
+    {
+      background-color: $formControlBgColorDisabled;
+      cursor: default;
+    }
+
+    .oj-inputdatetime-time-icon 
+    {
+      @extend .oj-fwk-icon-clock;
+    }
+  }
+}

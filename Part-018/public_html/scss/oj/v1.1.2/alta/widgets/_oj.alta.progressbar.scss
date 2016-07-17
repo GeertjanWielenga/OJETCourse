@@ -1,0 +1,12 @@
+@import "../../utilities/oj.utilities";
+
+$includeProgressbarClasses: $includeAllClasses !default;
+
+@import "../../common/helpers/oj.common.helpers"; 
+@import "../../common/widgets/oj.common.progressbar"; 
+
+@if $includeProgressbarClasses != false  {
+  @include module-include-once("alta.progressbar") {
+   
+  }
+}

@@ -1,0 +1,399 @@
+@import "../../utilities/oj.utilities";
+
+$includeTabsClasses: $includeAllClasses !default;
+
+// ----- start dependencies ---------
+
+// set up include variables before importing dependencies
+@if $includeTabsClasses != false {
+  $includeIconClasses: true !global;
+}
+
+// import dependencies
+@import "../../common/helpers/oj.common.helpers"; 
+@import "oj.alta.icons";
+
+// ----- end dependencies ---------
+
+
+// import classes defined in the common directory
+@import "../../common/widgets/oj.common.tabs"; 
+
+@if $includeTabsClasses != false {
+  @include module-include-once("alta.tabs") {
+
+    /* tabs */
+    /* --------------------------------------------------------------- */
+
+    /*
+     * applied to the tab bar
+     */
+    .oj-tabs-nav {
+      padding: 0;
+      border: 0;
+    }
+
+    /*
+     * applied to each tab 
+     */
+    .oj-tabs-tab {
+      // In Alta: the selected tab has thicker border (3px) and bold tab label 
+      // while the normal tabs don't.
+      // To reduce the size jumps between selected and un-selected
+      // add transparent borders to all tabs and change the border-color when selected.
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    /*
+     * applied to a selected tab
+     */
+    .oj-tabs-tab.oj-selected {
+      border-color: $tabsNavAccentBorderColorSelected;
+    }
+
+    /*
+     * applied to the selected tab title text
+     */
+    .oj-tabs-tab.oj-selected .oj-tabs-title {
+      font-weight: bold;
+    }
+
+    /*
+     * applied to the selected tab icon, needed for icon font icons
+     */
+    .oj-tabs-tab.oj-selected .oj-tabs-tab-icon {
+      font-weight: normal;
+    }
+
+    /*
+     * applied to the tab title when it's hovered
+     */
+    .oj-tabs-tab.oj-hover .oj-tabs-title {
+      text-decoration: underline;
+    }
+
+    .oj-tabs-tab.oj-hover .oj-tabs-tab-icon {
+      text-decoration: none;
+    }
+
+    /*
+     * applied to the tab title text when it's disabled
+     */
+    .oj-tabs-tab.oj-disabled .oj-tabs-title {
+      color: $linkTextColorDisabled;
+    }
+
+
+    /*
+     * applied to the tab content
+     */
+    .oj-tabs-tab-content {
+      white-space: nowrap;
+
+      //border properties are used to reduce the size jumps between selected and de-selected
+      border-color: transparent;
+      border-style: solid;
+      border-width: 1px 1px 0 1px;
+      @include oj-border-radius($tabsNavBorderRadius $tabsNavBorderRadius 0 0);
+    }
+
+    /*
+     * used to display the left and right borders of the selected tab
+     */
+    .oj-tabs-tab.oj-selected .oj-tabs-tab-content {
+      border-color: $tabsNavBorderColorSelected;
+    }
+
+    /*
+     * applied to the horizontal tab when it is selected
+     */
+    .oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab-content,
+    .oj-tabs-horizontal.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab-content {
+      border-width: 0 1px 0 1px;
+    }
+
+    /*
+     * applied to a horizontal tab
+     */
+    .oj-tabs-horizontal > .oj-tabs-nav-root .oj-tabs-tab {
+      top: 0;
+      margin: 0;
+      border-width: $tabsNavAccentBorderWidthSelected 0 0 0;
+
+      @include oj-border-radius($tabsNavBorderRadius $tabsNavBorderRadius 0 0);
+    }
+
+    /*
+     * applied to a horizontal tab when edge = bottom
+     */
+    .oj-tabs-horizontal.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab {
+      border-width: 0 0 $tabsNavAccentBorderWidthSelected 0;
+    }
+
+    .oj-tabs-horizontal.oj-tabs-text-icon.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab,
+    .oj-tabs-horizontal.oj-tabs-icon-only.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab {
+      border-width: 0 0 1px 0;
+    }
+
+
+    /*
+     * In alta horizontal tabs
+     * make the start border on the first selected tab match the container
+     */
+    .oj-first-child-selected > .oj-tabs-nav-root .oj-tabs-tab.oj-selected .oj-tabs-tab-content {
+      @include oj-ltr() {
+        border-left-color: $tabsPanelBorderColor;
+      }
+      @include oj-rtl() {
+        border-right-color: $tabsPanelBorderColor;        
+      }
+    }
+
+
+    /* close icon for tabs */
+    /* -----------------------------*/
+
+    /*
+     * close icon style
+     */
+    .oj-tabs-close-icon {
+      @extend .oj-fwk-icon-cross03;
+      overflow: hidden;
+      cursor: pointer;
+      text-align: center;
+      vertical-align: middle;
+      width: 1.84rem;
+
+      @include oj-ltr() {
+        margin-left: -0.75rem;
+      }
+      @include oj-rtl() {
+        margin-right: -0.75rem;
+      }
+    }
+
+    /*
+     * applied to the panel body
+     */
+    .oj-tabs-panel {
+      border: 1px solid $tabsPanelBorderColor;
+      @include oj-border-radius($largeBorderRadius);
+
+      margin-top: -1px;
+    }
+
+    /*
+     * applied to the panel body when edge = bottom
+     */
+    .oj-tabs-bottom > .oj-tabs-panel {
+      margin-top: 0;
+      margin-bottom: -1px;
+    }
+
+    /*
+     * don't apply top left border radius when the 1st tab is selected
+     */
+    .oj-first-child-selected > .oj-tabs-panel {
+      @include oj-ltr() {
+        @include oj-border-top-left-radius(0, $slowOverride: false);
+      }
+      @include oj-rtl() {
+        @include oj-border-top-right-radius(0, $slowOverride: false);
+      }
+    }
+
+    /*
+     * applied to the panel body when 1st tab is selected and edge = bottom
+     */
+    .oj-tabs-bottom.oj-first-child-selected > .oj-tabs-panel {
+      @include oj-ltr() {
+        @include oj-border-bottom-left-radius(0, $slowOverride: false);
+      }
+      @include oj-rtl() {
+        @include oj-border-bottom-right-radius(0, $slowOverride: false);
+      }
+    }
+
+
+    /* vertical tabs */
+    /* --------------------------------------------------------------- */
+
+    /*
+     * applied to the vertical tab bar
+     */
+    .oj-tabs-vertical > .oj-tabs-nav-root {
+      padding: 15px 0 0;
+    }
+
+    /*
+     * applied to the vertical tab
+     */
+    .oj-tabs-vertical > .oj-tabs-nav-root .oj-tabs-tab {
+      line-height: 1rem;
+
+      @include oj-ltr() {
+        border-width: 0 0 0 $tabsNavAccentBorderWidthSelected;
+        @include oj-border-radius($tabsNavBorderRadius 0 0 $tabsNavBorderRadius,
+                                  $slowOverride: false);
+      }
+      @include oj-rtl() {
+        border-width: 0 $tabsNavAccentBorderWidthSelected 0 0;
+        @include oj-border-radius(0 $tabsNavBorderRadius $tabsNavBorderRadius 0,
+                                  $slowOverride: false);
+      }
+
+      @include oj-border-radius-slowoverride();
+    }
+
+    /*
+     * applied to the vertical tab when edge = end
+     */
+    .oj-tabs-vertical.oj-tabs-end > .oj-tabs-nav-root .oj-tabs-tab {
+      @include oj-rtl() {
+        border-width: 0 0 0 $tabsNavAccentBorderWidthSelected;
+        @include oj-border-radius($tabsNavBorderRadius 0 0 $tabsNavBorderRadius,
+                                  $slowOverride: false);
+      }
+      @include oj-ltr() {
+        border-width: 0 $tabsNavAccentBorderWidthSelected 0 0;
+        @include oj-border-radius(0 $tabsNavBorderRadius $tabsNavBorderRadius 0,
+                                  $slowOverride: false);
+      }
+    }
+
+    //This class is to override border-width setting in
+    //.oj-tabs-vertical > .oj-tabs-nav-root .oj-tabs-tab
+    .oj-tabs-vertical.oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-tab,
+    .oj-tabs-vertical.oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab {
+
+      //Note: because of css precedence rule, border-width need to be inside oj-ltr/oj-rtl
+      @include oj-ltr() {
+        border-width: 1px;
+      }
+      @include oj-rtl() {
+        border-width: 1px;
+      }
+    }
+
+    /*
+     * applied to the vertical tab
+     */
+    .oj-tabs-vertical > .oj-tabs-nav-root .oj-tabs-tab-content {
+      border-width: 1px 0 1px 0;
+
+      @include oj-ltr() {
+        @include oj-border-radius($tabsNavBorderRadius 0 0 $tabsNavBorderRadius,
+                                  $slowOverride: false);
+      }
+      @include oj-rtl() {
+        @include oj-border-radius(0 $tabsNavBorderRadius $tabsNavBorderRadius 0,
+                                  $slowOverride: false);
+      }
+
+      @include oj-border-radius-slowoverride();
+    }
+
+    /*
+     * applied to the vertical tab header
+     */
+    .oj-tabs-vertical > .oj-tabs-nav-root .oj-tabs-anchor {
+      padding: 1.1rem 0.8rem 1.1rem 0.8rem;
+    }
+
+
+    /* Tabs with the oj-tabs-icon-only class specified */
+    /* --------------------------------------------------------------- */
+
+    .oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-tab,
+    .oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab {
+      border-width: 1px;
+      @include oj-border-radius(0);
+    }
+
+    .oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-tab-content,
+    .oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab-content {
+      border-width: 0;
+      @include oj-border-radius(0);
+    }
+
+    .oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-tab.oj-selected,
+    .oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab.oj-selected {
+      border-color: $tabsPanelBorderColor;
+    }
+
+    /* vertical tabs with the oj-tabs-icon-only class specified */
+    /* --------------------------------------------------------------- */
+    /*
+     * display top, bottom and left border and border radius on the selected tab
+     */
+    .oj-tabs-vertical.oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-tab.oj-selected,
+    .oj-tabs-vertical.oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab.oj-selected {
+
+      @include oj-ltr() {
+        @include oj-border-radius($mediumBorderRadius 0 0 $mediumBorderRadius,
+                                  $slowOverride: false);
+        border-right-color: transparent;
+      }
+      @include oj-rtl() {
+        @include oj-border-radius(0 $mediumBorderRadius $mediumBorderRadius 0,
+                                  $slowOverride: false);
+        border-left-color: transparent;
+      }
+
+      @include oj-border-radius-slowoverride();
+    }
+
+    /*
+     * display top, bottom and right border and border radius on the selected tab 
+     * when edge = end
+     */
+    .oj-tabs-vertical.oj-tabs-text-icon.oj-tabs-end > .oj-tabs-nav-root .oj-tabs-tab.oj-selected,
+    .oj-tabs-vertical.oj-tabs-icon-only.oj-tabs-end > .oj-tabs-nav-root .oj-tabs-tab.oj-selected {
+
+      @include oj-ltr() {
+        @include oj-border-radius(0 $mediumBorderRadius $mediumBorderRadius 0,
+                                  $slowOverride: false);
+        border-color: $tabsPanelBorderColor;
+
+        // set margin to cover up the border connect between the selected tab and 
+        // the panel content border 
+        margin-left: -1px;
+        border-left-color: transparent;
+      }
+      @include oj-rtl() {
+        @include oj-border-radius($mediumBorderRadius 0 0 $mediumBorderRadius,
+                                  $slowOverride: false);
+        border-color: $tabsPanelBorderColor;
+        margin-right: -1px;
+        border-right-color: transparent;
+      }
+
+      @include oj-border-radius-slowoverride();
+    }
+
+
+    /* horizontal tabs with the oj-tabs-icon-only class specified */
+    /* --------------------------------------------------------------- */
+
+    /*
+     * display top, right and left border and border radius on the selected tab
+     */
+    .oj-tabs-horizontal.oj-tabs-text-icon > .oj-tabs-nav-root .oj-tabs-tab.oj-selected,
+    .oj-tabs-horizontal.oj-tabs-icon-only > .oj-tabs-nav-root .oj-tabs-tab.oj-selected {
+      border-bottom-color: transparent;
+
+      @include oj-border-radius($mediumBorderRadius $mediumBorderRadius 0 0);
+    }
+
+    .oj-tabs-horizontal.oj-tabs-text-icon.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab.oj-selected,
+    .oj-tabs-horizontal.oj-tabs-icon-only.oj-tabs-bottom > .oj-tabs-nav-root .oj-tabs-tab.oj-selected {
+      border-color: $tabsPanelBorderColor;
+      border-top-color: transparent;
+
+      @include oj-border-radius(0 0 $mediumBorderRadius $mediumBorderRadius);
+    }
+
+  }
+
+}

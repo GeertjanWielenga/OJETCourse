@@ -1,0 +1,131 @@
+// !!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your theme's directory, 
+//          for example alta/widgets/_oj.alta.grid.scss
+// !!!
+
+@import "../../utilities/oj.utilities";
+
+@if $includeGridClasses != false {
+  @include module-include-once("common.grid") {
+
+    /* Grid HTML Classes */
+    .oj-row {
+      @include oj-float-grid-row();
+      
+      > .oj-col > .oj-row { 
+        @include oj-float-grid-row($behavior: nest);
+      }
+    }
+
+
+    .oj-col { 
+      @include oj-float-grid-column($columns: $gridTotalColumns, 
+                                    $float:   start, 
+                                    $padding: true); 
+
+      position: relative; 
+      @include oj-box-sizing-property(border-box);
+    }
+
+
+    .oj-row.oj-cols-nopad > .oj-col,
+    .oj-cols-nopad > .oj-row > .oj-col {
+         @include oj-float-grid-column($padding: 0);
+    }
+
+    // Media query classes
+
+    //UP
+    @if $responsiveQuerySmallUp and $responsiveQuerySmallUp != none {
+      @media #{$responsiveQuerySmallUp} {
+
+        @include oj-float-grid-responsive($selectorPrefix: "oj-sm", $generateOffsets: false);
+      }
+    }
+
+    @if $responsiveQueryMediumUp and $responsiveQueryMediumUp != none {
+      @media  #{$responsiveQueryMediumUp} {
+        @include oj-float-grid-responsive($selectorPrefix: "oj-md", $generateCol: true);
+      }
+    }
+
+    @if $responsiveQueryLargeUp and $responsiveQueryLargeUp != none {
+      @media  #{$responsiveQueryLargeUp} {
+        @include oj-float-grid-responsive($selectorPrefix: "oj-lg", $generateCol: true);
+
+      }
+    }
+
+    @if $responsiveQueryXlargeUp and $responsiveQueryXlargeUp != none {
+      @media  #{$responsiveQueryXlargeUp} {
+        @include oj-float-grid-responsive($selectorPrefix: "oj-xl", $generateCol: true);
+
+      }
+    }
+    
+    @if $responsiveQueryXXlargeUp and $responsiveQueryXXlargeUp != none {
+      @media  #{$responsiveQueryXXlargeUp} {
+        @include oj-float-grid-responsive($selectorPrefix: "oj-xxl", $generateCol: true);
+
+      }
+    }
+
+    //ONLY
+    @if $responsiveQuerySmallOnly and $responsiveQuerySmallOnly != none {
+      @media #{$responsiveQuerySmallOnly} {
+        // only generate centering classes
+        @include oj-float-grid-responsive($selectorPrefix:            "oj-sm-only",
+                                          $generateCentering:          $gridGenerateCentering,
+                                          $generateBasics:             false, 
+                                          $generateOffsets:            false, 
+                                          $generateOddEven:            false,
+                                          $generateDeprecatedOrdering: false); 
+      }
+    }
+
+    @if $responsiveQueryMediumOnly and $responsiveQueryMediumOnly != none {
+      @media #{$responsiveQueryMediumOnly} {
+        // only generate centering classes
+        @include oj-float-grid-responsive($selectorPrefix:            "oj-md-only",
+                                          $generateCentering:          $gridGenerateCentering,
+                                          $generateBasics:             false, 
+                                          $generateOffsets:            false, 
+                                          $generateOddEven:            false,
+                                          $generateDeprecatedOrdering: false); 
+      }
+    }
+
+    @if $responsiveQueryLargeOnly and $responsiveQueryLargeOnly != none {
+      @media #{$responsiveQueryLargeOnly} {
+        // only generate centering classes
+        @include oj-float-grid-responsive($selectorPrefix:            "oj-lg-only",
+                                          $generateCentering:          $gridGenerateCentering,
+                                          $generateBasics:             false, 
+                                          $generateOffsets:            false, 
+                                          $generateOddEven:            false,
+                                          $generateDeprecatedOrdering: false); 
+      }
+    }
+
+    @if $responsiveQueryXlargeOnly and $responsiveQueryXlargeOnly != none {
+      @media #{$responsiveQueryXlargeOnly} {
+        // only generate centering classes
+        @include oj-float-grid-responsive($selectorPrefix:            "oj-xl-only",
+                                          $generateCentering:          $gridGenerateCentering,
+                                          $generateBasics:             false, 
+                                          $generateOffsets:            false, 
+                                          $generateOddEven:            false,
+                                          $generateDeprecatedOrdering: false); 
+      }
+    }
+
+    @if $responsiveQueryPrint and $responsiveQueryPrint != none {
+      @media  #{$responsiveQueryPrint} {
+        @include oj-float-grid-responsive($selectorPrefix: "oj-print");
+      }
+    }
+
+
+  }
+}

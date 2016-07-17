@@ -1,0 +1,12 @@
+@import "../../utilities/oj.utilities";
+
+$includeFormLayoutClasses: $includeAllClasses !default;
+
+// implementation currently in common
+@import "../../common/widgets/oj.common.formlayout"; 
+
+
+@if $includeFormLayoutClasses != false {
+  @include module-include-once("alta.formlayout") {
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../utilities/oj.utilities";
+
+$includeFormControlCommonClasses:  $includeFormControlClasses !default;
+
+@import "../../common/helpers/oj.common.helpers"; 
+@import "../../common/widgets/oj.common.formcontrol.common";
+
+@if $includeFormControlCommonClasses != false  {
+  @include module-include-once("alta.formcontrolcommon") {
+
+  }
+}
+

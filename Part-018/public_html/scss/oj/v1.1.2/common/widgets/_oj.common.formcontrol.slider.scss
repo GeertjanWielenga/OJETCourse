@@ -1,0 +1,261 @@
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: do not directly import this file, instead import the 
+//          version in your base theme's directory, 
+//          for example alta/widgets/_oj.alta.formcontrol.slider.scss
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+@import "../../utilities/oj.utilities";
+@import "oj.common.formcontrol.mixins";
+
+@if $includeSliderClasses != false {
+  @include module-include-once("common.slider") {
+
+//
+// The oj-slider class defines the dimensions of a the slider
+// when embedded in a form control.
+//
+.oj-slider {
+  // relative position needed for correct sizing.
+  display: inline-block;
+  position: relative;
+
+  @include oj-ltr() {
+    text-align: left;
+  }
+  @include oj-rtl() {    
+    text-align: right;
+  }
+
+  @include oj-box-sizing-property(border-box);
+
+  padding-left: $sliderThumbDiameter/2;
+  padding-right: $sliderThumbDiameter/2;
+
+  // disable the "copy" feature on iOS
+  -webkit-touch-callout: none;
+   // Prevent showing selection handles on press-hold for Mobile Safari and Android Chrome
+   @include oj-user-select-property(none);
+   // Prevent flash on slider bar tap-hold on touch devices.
+   -webkit-tap-highlight-color: transparent;
+
+}
+
+.oj-slider.oj-slider-horizontal {
+  /* use a width of 100% and then max and min width so that when 
+     there's less room for the form control it can automatically 
+      get smaller instead of overflowing its boundaries */
+   max-width: $formControlLargeMaxWidth;
+   min-width: $formControlMinWidth;
+   width: 100%;
+}
+
+//
+// set margins for vertical sliders on oj-slider-container
+// in order to preserve space for messaging box.
+//
+.oj-slider-vertical > .oj-slider-container {
+  margin-top: $sliderThumbDiameter/2;
+  margin-bottom: $sliderThumbDiameter/2;
+}
+
+// Styling for invalid state
+.oj-invalid .oj-slider-thumb {
+   border: $formControlMessagingBorderWidth solid $borderColorError !important; 
+}
+
+// Styling for warning state
+.oj-warning .oj-slider-thumb {
+   border: $formControlMessagingBorderWidth solid $borderColorWarning !important; 
+}
+
+.oj-slider-horizontal.oj-form-control .oj-slider-container {
+  height: $formControlHeight;
+}
+
+.oj-slider-vertical.oj-form-control .oj-slider-container {
+  height: 100%;
+  min-height: $sliderThumbDiameter*2;
+}
+
+
+
+//
+// oj-slider-wraper is the parent of the bar, barvalue, and the thumb.
+// It is used to create the proper spacing around the thumbs.
+//
+
+.oj-slider-container {
+  position: relative;
+}
+
+//
+// Define a round slider thumb of diameter $sliderThumbDiameter
+//
+.oj-slider-thumb {
+  position: absolute;
+  @include oj-box-sizing-property(border-box);
+  width: $sliderThumbDiameter;
+  height: $sliderThumbDiameter;
+  cursor: default;
+  touch-action: none;
+  background-color: $sliderThumbBgColor;
+  @include oj-border-radius(50%);
+  border: $sliderThumbBorderWidth solid $sliderThumbBorderColor;
+}
+
+// Disabled sliders have a light gray thumb.
+.oj-disabled .oj-slider-thumb {
+   background-color: $sliderThumbBgColorDisabled;
+   border: none;
+}
+
+.oj-slider-range {
+   position: absolute;
+   border: 0;
+   background-position: 0 0;
+}
+
+//
+// The border-radius is set to the thickness of the bar.
+// The bar thickness is defined using width for vertical orientations,
+// and height for horizontal orientations. The bar thickness is applied
+// to both the slider-bar (which is the background, gray bar) and the 
+// bar value (the foreground, blue part of the bar).
+//
+.oj-slider-bar {
+   @include oj-border-radius($sliderBarThickness);
+   background-color: $sliderBarBgColor;
+   @include oj-box-sizing-property(border-box);
+   position: absolute;
+}
+
+// For vertical orientations, set the width of the slider-bar and the slider-bar-value
+.oj-slider-vertical .oj-slider-bar, .oj-slider-vertical .oj-slider-bar-value {
+   width: $sliderBarThickness;
+}
+
+// 
+// When vertical, the bar background is full height.
+//
+.oj-slider-vertical .oj-slider-bar {
+   height: 100%;
+}
+
+// When horizontal, the bar background is full width.
+//
+.oj-slider-horizontal .oj-slider-bar {
+   width: 100%;
+}
+
+// For horizontal orientations, set the width of the slider-bar and the slider-bar-value
+.oj-slider-horizontal .oj-slider-bar, .oj-slider-horizontal .oj-slider-bar-value {
+   height: $sliderBarThickness;
+   top: 50%;
+   margin-top: -$sliderBarThickness/2;
+}
+
+// 
+// Add hit padding to the bar in support of 
+// bar-click to reposition slider thumb.
+// 
+.oj-slider-bar:after {
+    content: '';
+   position: absolute;
+   top: - (36px - $sliderThumbDiameter);
+   bottom: -(36px - $sliderThumbDiameter);
+   left: -(36px - $sliderThumbDiameter);
+   right: -(36px - $sliderThumbDiameter);
+}
+
+
+// oj-slider-bar-value represents the filled part of the slider bar
+.oj-slider-bar-value {
+   @include oj-border-radius($sliderBarThickness);
+   background: $sliderBarValueBgColor;	
+}
+
+.oj-disabled .oj-slider-bar-value {
+   background: $sliderBarValueBgColorDisabled;	
+}
+
+.oj-slider-horizontal .oj-slider-thumb  {
+  top: 50%;
+  margin-top: -$sliderThumbDiameter/2;
+  margin-left: -$sliderThumbDiameter/2;
+}
+
+//
+// For horizontal sliders,
+// set the position of the value bar based on its range.
+// Flip the direction for RTL.
+//
+.oj-slider-horizontal .oj-slider-range-min {
+   @include oj-ltr() {
+      left: 0;
+   }
+   @include oj-rtl() {    
+      right: 0;
+   }
+}
+.oj-slider-horizontal .oj-slider-range-max {
+   @include oj-ltr() {
+      right: 0;
+   }
+   @include oj-rtl() {    
+      left: 0;
+   }
+}
+
+.oj-slider-vertical .oj-slider-thumb {
+   @include oj-ltr() {
+     margin-left: 0;
+     left: -$sliderThumbDiameter/2 + $sliderThumbBorderWidth;
+   }
+   @include oj-rtl() {    
+     margin-right: 0;
+     right: -$sliderThumbDiameter/2 + $sliderThumbBorderWidth;
+   }
+   margin-bottom: -$sliderThumbDiameter/2;
+   margin-top: -$sliderThumbDiameter/2;
+}
+
+//
+// For vertical sliders,
+// set the position of the value bar based on its range.
+//
+.oj-slider-vertical .oj-slider-range-min {
+   bottom: 0;
+}
+.oj-slider-vertical .oj-slider-range-max {
+   top: 0;
+}
+
+.oj-slider-thumb.oj-hover {
+   background-color: $sliderThumbBgColorHover;
+}
+
+//
+// Expand the hit area of the slider thumb.
+//
+.oj-slider-thumb:after {
+   content:'';
+   position:absolute;
+   top: -(28px - $sliderThumbDiameter);
+   bottom: -(28px - $sliderThumbDiameter);
+   left: -(28px - $sliderThumbDiameter);
+   right: -(28px - $sliderThumbDiameter);
+}
+
+// active should trump hover
+.oj-slider-thumb.oj-active {
+   background-color: $sliderThumbBgColorActive;
+}
+
+// Minor adjustment needed to align slider label with the slider.
+// todo - this gets overwritten by another style class in the demos.
+.oj-slider-label {
+   margin-top: .2em;
+}
+
+ }
+}

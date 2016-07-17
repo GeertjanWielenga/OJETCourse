@@ -1,0 +1,44 @@
+@import "../../utilities/oj.utilities";
+  
+
+$includePanelClasses:   $includeAllClasses !default;
+
+// definitions in the common panel file
+@import "../../common/widgets/oj.common.panel"; 
+
+@if $includePanelClasses != false {
+  @include module-include-once("alta.panel") {
+
+    .oj-panel.oj-panel-alt1 {
+      background-color: $panel1BgColor;
+      border-color: $panel1BorderColor;
+    }
+
+    .oj-panel.oj-panel-alt2 {
+      background-color: $panel2BgColor;
+      border-color: $panel2BorderColor;
+    }
+
+    .oj-panel.oj-panel-alt3 {
+      background-color: $panel3BgColor;
+      border-color: $panel3BorderColor;
+    }
+
+    .oj-panel.oj-panel-alt4 {
+      background-color: $panel4BgColor;
+      border-color: $panel4BorderColor;
+    }
+
+    .oj-panel.oj-panel-alt5 {
+      background-color: $panel5BgColor;
+      border-color: $panel5BorderColor;
+    }
+    
+    //this should be applied to the icon in the drag handle of a draggable panel
+    .oj-panel-drag-icon {
+      @extend .oj-fwk-icon-drag;
+      @extend .oj-fwk-icon;
+    }
+    
+  }
+}

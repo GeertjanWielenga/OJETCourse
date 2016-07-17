@@ -1,0 +1,27 @@
+<div class="demo-appheader">
+    <div class="oj-row demo-appheader-classic">
+        <div class="oj-col demo-appheader-col">
+            <div class="oj-row">
+                <div>
+                    <div id="ojAppNav" class="oj-xl-condense 
+                         oj-xl-justify-content-flex-end" 
+                         data-bind="ojComponent: {component: 'ojNavigationList', 
+                              drillMode: 'none', 
+                              edge: 'top', 
+                              optionChange: $parent.optionChangeHandler,
+                              data: dataSource,
+                              item: { template: 'app_nav_template' }
+                              }">
+                    </div>
+                </div>
+            </div> <!-- oj-row -->
+        </div> <!-- oj-col -->
+    </div> <!-- oj-row -->
+</div> <!-- demo-appheader -->
+<script type="text/html" id="app_nav_template">
+    <li>
+        <a href="#">
+            <!-- ko text: $data['name'] --> <!--/ko-->
+        </a>
+    </li>    
+</script>
