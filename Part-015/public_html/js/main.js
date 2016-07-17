@@ -36,19 +36,13 @@ requirejs.config({
     }
 });
 
+require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter', 'ojs/ojknockout', 
+    'ojs/ojmodule', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu', 
+    'ojs/ojarraytabledatasource', 'ojs/ojnavigationlist'],
 
-/**
- * A top-level require call executed by the Application.
- * Although 'ojcore' and 'knockout' would be loaded in any case (they are specified as dependencies
- * by the modules themselves), we are listing them explicitly to get the references to the 'oj' and 'ko'
- * objects in the callback.
- *
- * For a listing of which JET component modules are required for each component, see the specific component
- * demo pages in the JET cookbook.
- */
-require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter', 'ojs/ojknockout', 'ojs/ojmodule', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu'], // add additional JET component modules as needed
-        function (oj, ko, $) // this callback gets executed when all required modules are loaded
+        function (oj, ko, $) 
         {
+            
             var router = oj.Router.rootInstance;
             router.configure({
                 'home': {label: 'Home', isDefault: true},
@@ -58,34 +52,34 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter', 'ojs/ojknockout', '
             function RootViewModel() {
                 var self = this;
                 self.router = router;
-                self.optionChangeHandler = function (event, data) {
-                    if (data.value === undefined) {
-                        data.value = 'home';
-                    }
-                    // Only go for user action events
-                    if ('ojAppNav' ===
-                            event.target.id &&
-                            event.originalEvent) {
-                        self.router.go(data.value);
+                var navData = [
+                    {name: 'Home', id: 'home'},
+                    {name: 'People', id: 'people'}
+                ];
+                self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});
+                self.navChange = function (event, ui) {
+                    if (ui.option === 'selection' && ui.value !== self.router.stateId()) {
+                         self.router.go(ui.value);
                     }
                 };
             }
+            
             oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
             oj.Router.sync().then(
-                    function () {
-                        //bind your ViewModel for the content 
-                        //of the whole page body.
-                        ko.applyBindings(
-                                new RootViewModel(),
-                                document.getElementById('globalBody'));
-                        $('#globalBody').show();
-                    },
-                    function (error) {
-                        oj.Logger.error(
-                                'Error in root start: ' +
-                                error.message);
-                    });
+                function () {
+                    //bind your ViewModel for the content 
+                    //of the whole page body.
+                    ko.applyBindings(
+                            new RootViewModel(),
+                            document.getElementById('globalBody'));
+                    $('#globalBody').show();
+                },
+                function (error) {
+                    oj.Logger.error(
+                            'Error in root start: ' +
+                            error.message);
+                });
         }
-                
+
 );
 

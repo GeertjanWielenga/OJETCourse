@@ -5,9 +5,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/libs/requirejs/require.js" data-main="js/main" type="text/javascript"></script>
-        <link href="css/libs/oj/v1.1.2/alta/oj-alta-min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/libs/oj/v2.0.2/alta/oj-alta-min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        
+        <!-- template for rendering navigation items shared between nav bar and nav list -->
+        <script type="text/html" id="navTemplate">
+        <li><a href="#">
+                <span data-bind="css: $data['iconClass']"></span>
+                <!-- ko text: $data['name'] --> <!--/ko-->
+            </a></li>
+        </script>
+        
         <div id="globalBody" style="display: none">
             
             <header data-bind="ojModule: {name:'header'}"></header>
