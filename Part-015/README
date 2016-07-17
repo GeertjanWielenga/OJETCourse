@@ -22,7 +22,7 @@ In index.html, add router configuration between the header and footer:
 
 Open main.js, talk about the code defining the router in the 'require' block.
 
-4. Add a navigation component.
+4. Talk about the need to add a navigation component.
 
 Talk about needing an Oracle JET component to let the user control the router.
 
