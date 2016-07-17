@@ -64,8 +64,8 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
     * Title: Data Collection Components
     * Description: Exploring Data Collection components.
   * Part-014: 
-    * Title: Data Sources and Persistence
-    * Description: Exploring AJAX, Common Model, and Persistence.
+    * Title: Data Sources
+    * Description: Exploring REST, JSON, jQuery, and Oracle JET Common Model.
   * [Part-015](Part-015): 
     * Title: Routing and Navigation
     * Description: Exploring Single Page Application architecture via Routing and Navigation.
