@@ -14,9 +14,9 @@ How to use this sample:
 
 3. Look again at the index.html file and point out that a router handles loading of modules.
 
-Look at the two 'home' and 'people'. 
+Look at the two modules 'home' and 'people'. 
 
-In index.html, add router configuration between the header and footer:
+In index.html, talk about adding router configuration between the header and footer:
 
 <div data-bind="ojModule: { name: router.stateId()}"></div>
 
