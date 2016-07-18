@@ -1,1 +1,31 @@
-<h1>People Content</h1>
+<h3 class="oj-header-border">Date Validators</h3>
+
+<input  type=date 
+        step=7 
+        min=2016-06-20>
+<hr>
+
+<input  type="date" 
+        min="2016-07-07T08:00:00.000" 
+        title="date not greater than today"
+        data-bind="ojComponent:{
+            component:'ojInputDate', 
+            value: date,
+            max: todayIsoDate}"/>
+<hr>
+
+<input  type="date"
+        data-bind="ojComponent:{
+            component:'ojInputDate', 
+            value: date,
+            validators: [{
+              type: 'dateTimeRange', 
+              options: {
+                max: todayIsoDate(), 
+                min: milleniumStartIsoDate(),
+                hint: {
+                  'inRange': 'Enter a date that falls in the current millennium.'}
+                }
+            }]
+        }"/>
+<hr>
