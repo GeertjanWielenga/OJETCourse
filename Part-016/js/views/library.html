@@ -1,1 +1,25 @@
 <h1>Library Content</h1>
+
+<input  type="text" 
+        required name="username" 
+        placeholder="at least 3 alphanumeric characters" 
+        data-bind="ojComponent: {
+            component: 'ojInputText', 
+            value: userName, 
+            validators: [{
+            type: 'regExp', 
+                options: {
+                    pattern: '[a-zA-Z0-9]{3,}', 
+                    messageDetail: 'Enter at least 3 letters or numbers'
+                }
+            }],
+            optionChange: messagesHiddenListener
+        }">
+<span id="status" title="Deferred Error" role="img" 
+      class="oj-fwk-icon-status-error oj-fwk-icon"
+      data-bind="style: {
+          display: userNameDeferred() ? 'inline': 'none'}">
+</span>
+<span id="nameval" data-bind="text: 
+        '[Component Value: ' + userName() + ']'">
+</span> 
