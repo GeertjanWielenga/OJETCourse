@@ -5,5 +5,8 @@
         <data xmlns="http://www.netbeans.org/ns/clientside-project/1">
             <name>Part-016</name>
         </data>
+        <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>ojInputDate</word>
+        </spellchecker-wordlist>
     </configuration>
 </project>
