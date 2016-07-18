@@ -1,7 +1,8 @@
-define(['ojs/ojcore', 'knockout'],
-  function(oj, ko) {
-    function mainContentViewModel() {
-        var self = this;
-    }
-   return new mainContentViewModel();
-});
+define(['ojs/ojcore', 'knockout', 'ojs/ojdatetimepicker'],
+    function (oj, ko) {
+        function mainContentViewModel() {
+            var self = this;
+            self.date = ko.observable();
+        }
+        return new mainContentViewModel();
+    });
