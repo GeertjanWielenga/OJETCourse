@@ -5,15 +5,15 @@
         placeholder="at least 3 alphanumeric characters" 
         data-bind="ojComponent: {
             component: 'ojInputText', 
-            value: userName, 
-            validators: [{
-            type: 'regExp', 
-                options: {
-                    pattern: '[a-zA-Z0-9]{3,}', 
-                    messageDetail: 'Enter at least 3 letters or numbers'
-                }
-            }],
-            optionChange: messagesHiddenListener
+                value: userName, 
+                validators: [{
+                    type: 'regExp', 
+                        options: {
+                            pattern: '[a-zA-Z0-9]{3,}', 
+                            messageDetail: 'Enter at least 3 letters or numbers'
+                        }
+                }],
+                optionChange: messagesHiddenListener
         }">
 <span data-bind="style: {
           display: userNameDeferred() ? 'inline': 'none'}">
