@@ -2,7 +2,7 @@ require.config({
     baseUrl: './',
     paths: {
         knockout: 'js/libs/knockout/dist/knockout',
-        appViewModel: 'js/app'
+        app: 'js/app'
     },
     waitSeconds: 2
 });
