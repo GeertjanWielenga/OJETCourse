@@ -2,10 +2,10 @@ require.config({
     baseUrl: './',
     paths: {
         knockout: 'js/libs/knockout/dist/knockout',
-        appViewModel: 'js/appViewModel'
+        appViewModel: 'js/app'
     },
     waitSeconds: 2
 });
-require(['knockout', 'appViewModel'], function (ko, appViewModel) {
+require(['knockout', 'app'], function (ko, appViewModel) {
     ko.applyBindings(new appViewModel());
 });
