@@ -1,13 +1,20 @@
-<div role="navigation" data-bind="ojComponent: {component: 'ojNavigationList',
+<div role="navigation" 
+     data-bind="ojComponent: {component: 'ojNavigationList',
           optionChange: $parent.navChange, 
-          navigationLevel: 'application',
           item: {template: 'navTemplate'}, 
           data: $parent.navDataSource,
           selection: $parent.router.stateId(), 
           edge: 'top'
       }"
-      class="oj-web-applayout-navbar oj-sm-only-hide oj-web-applayout-max-width
-      oj-navigationlist-item-dividers oj-md-condense oj-md-justify-content-center
-      oj-lg-justify-content-flex-end"
->
+     class="oj-web-applayout-navbar oj-sm-only-hide oj-web-applayout-max-width
+     oj-navigationlist-item-dividers oj-md-condense oj-md-justify-content-center
+     oj-lg-justify-content-flex-end"
+     >
 </div>
+<script type="text/html" id="navTemplate">
+    <li><a href="#">
+            <!-- ko text: $data['name'] --> <!--/ko-->
+        </a>
+    </li>
+</script>
+
