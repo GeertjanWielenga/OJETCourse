@@ -1,9 +1,21 @@
-/**
- * Copyright (c) 2014, 2016, Oracle and/or its affiliates.
- * The Universal Permissive License (UPL), Version 1.0
- */
-/* 
- * Your viewModel code goes here
- */
-
-
+define(['ojs/ojcore', 'knockout', 'ojs/ojfilmstrip'],
+        function (oj, ko) {
+            function peopleContentViewModel() {
+                var self = this;
+                self.chemicals = ko.observableArray([
+                    "Hydrogen",
+                    "Helium",
+                    "Lithium",
+                    "Beryllium",
+                    "Boron",
+                    "Carbon",
+                    "Nitrogen",
+                    "Oxygen",
+                    "Fluorine",
+                    "Neon",
+                    "Sodium",
+                    "Magnesium"
+                ]);
+            }
+            return new peopleContentViewModel();
+        });
