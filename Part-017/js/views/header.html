@@ -1,0 +1,65 @@
+<!--
+ Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<!--
+   ** Oracle JET V1.1 header template uses oj-flex-bar style classes to layout header content.
+   ** Contains three main areas: appname/logo, global navigation, and application navigation.
+   ** Please see the Oracle JET website under the Cookbook/Application Patterns section for details on how to use this pattern
+-->
+<div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+  <!-- Offcanvas toggle button -->
+  <div class="oj-flex-bar-start oj-md-hide">
+    <button class="oj-button-lg" data-bind="click: $parent.toggleDrawer,
+      ojComponent: {component:'ojButton', label: 'Application Navigation',
+      chroming: 'half', display: 'icons', icons: {start: 'oj-web-applayout-offcanvas-icon'}}">
+    </button>
+  </div>
+  <div data-bind="css: smScreen() ? 'oj-flex-bar-center-absolute' : 'oj-flex-bar-middle oj-sm-align-items-baseline'">
+    <span role="img" class="oj-sm-only-hide oj-icon demo-oracle-icon" title="Oracle Logo" alt="Oracle Logo"></span>
+    <span class="oj-web-applayout-header-title" title="Application Name" data-bind="text: appName"></span>
+  </div>
+  <div class="oj-flex-bar-end">
+    <!-- Responsive Toolbar -->
+    <div data-bind="ojComponent: {component:'ojToolbar'}">
+      <button data-bind="ojComponent: {component:'ojButton',
+        label: 'Search', display: 'icons', chroming: 'half',
+        icons: {start:'oj-fwk-icon-magnifier oj-fwk-icon'}}">
+      </button>
+      <span class="oj-toolbar-separator" role="separator" aria-orientation="vertical"></span>
+      <button id="userMenu"
+        data-bind="ojComponent: {component: 'ojButton', label: userLogin,
+        display: smScreen() ? 'icons' : 'all',
+        icons: smScreen() ? {start: 'oj-icon demo-avatar-icon', end: null} : {end: null},
+        chroming: 'half', menu: '#menu1'}">
+      </button>
+      <ul id='menu1' data-bind="ojComponent: {component: 'ojMenu', select: menuItemSelect}" style="display:none">
+        <li id="pref"><a href="#">Preferences</a></li>
+        <li id="help"><a href="#">Help</a></li>
+        <li id="about"><a href="#">About</a></li>
+        <li id="out"><a href="#">Sign Out</a></li>
+      </ul>
+      <div style="display:none" id="aboutDialog" title="About JET QuickStart Basic"
+        data-bind="ojComponent:{component: 'ojDialog',
+        rootAttributes: { style: 'width: 620px; height: 350px;'}}">
+        <div class="oj-dialog-body">
+          The Oracle JET QuickStart Basic template is meant as an example of how to setup a
+          very basic Single-Page-Application(SPA) with the JET libraries configured correctly.<br/><br/>
+          It contains examples for working with the ojModule libraries for basic template and paging support.
+          It incorporates responsive design patterns to work at all Oracle JET
+          Media Query sizes for Desktop, Tablet(portrait and landscape), and phone.<br/><br/>
+          Please refer to in code comments for details.
+        </div>
+        <footer class="oj-dialog-footer oj-web-applayout-footer"
+          role="contentinfo" data-bind="ojModule: 'footer'">
+        </footer>
+      </div>
+    </div>
+  </div>
+</div>
+<div role="navigation" data-bind="ojComponent: {component: 'ojNavigationList',
+  optionChange: $parent.navChange, navigationLevel: 'application',
+  item: {template: 'navTemplate'}, data: $parent.navDataSource,
+  selection: $parent.router.stateId(), edge: 'top'}"
+  class="oj-web-applayout-navbar oj-sm-only-hide oj-web-applayout-max-width oj-navigationlist-item-dividers oj-md-condense oj-md-justify-content-center oj-lg-justify-content-flex-end">
+</div>
