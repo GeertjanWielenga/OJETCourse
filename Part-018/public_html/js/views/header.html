@@ -1,5 +1,6 @@
 <div class="oj-flex-bar-start oj-md-hide">
-    <button class="oj-button-lg" data-bind="click: $parent.toggleDrawer,
+    <button class="oj-button-lg" 
+            data-bind="click: $parent.toggleDrawer,
       ojComponent: {
                   component:'ojButton', 
                   display: 'icons', 
@@ -7,7 +8,7 @@
       }">
     </button>
 </div>
-<div role="navigation" data-bind="ojComponent: {component: 'ojNavigationList',
+<div data-bind="ojComponent: {component: 'ojNavigationList',
           optionChange: $parent.navChange, 
           navigationLevel: 'application',
           item: {template: 'navTemplate'}, 
