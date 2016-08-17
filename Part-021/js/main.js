@@ -6,6 +6,7 @@ requirejs.config({
     'knockout': 'libs/knockout/dist/knockout',
     'jquery': 'libs/jquery/dist/jquery.min',
     'jqueryui-amd': 'libs/jquery-ui/ui',
+    'jqueryui': 'libs/jquery-ui/ui/', 
     'ojs': 'libs/oraclejet/dist/js/libs/oj/min',
     'ojL10n': 'libs/oraclejet/dist/js/libs/oj/ojL10n',
     'ojtranslations': 'libs/oraclejet/dist/js/libs/oj/resources',

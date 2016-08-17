@@ -1,1 +1,9 @@
 <h1>Home Content Area</h1>
+
+<div 
+     data-bind="jqueryUI: {
+         component: 'datepicker', onSelect: dateSelector
+     }">
+</div>
+<hr>
+Selected date: <span data-bind="text: selectedDate"></span>
