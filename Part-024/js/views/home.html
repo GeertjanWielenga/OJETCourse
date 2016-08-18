@@ -1,0 +1,21 @@
+<button data-bind="
+        click: function(){setLang('Czech')}, clickBubble: false, 
+        ojComponent: {component: 'ojButton', label: 'Czech'}"></button>
+<button data-bind="
+        click: function(){setLang('French')}, clickBubble: false, 
+        ojComponent: {component: 'ojButton', label: 'French'}"></button>
+<button data-bind="
+        click: function(){setLang('English')}, clickBubble: false,
+        ojComponent: {component: 'ojButton', label: 'English'}"></button>
+<br/>
+<br/>
+<h3><span id="greeting" data-bind="text: localeGreeting"></span></h3>
+<br/>
+<span data-bind="text: localeDate"></span>
+<input type="text" 
+    title="Pick a date"
+    data-bind="ojComponent: {
+        component:'ojInputDate', 
+        value: date,
+        datePicker: {changeMonth: 'none', changeYear: 'none'}
+    }"/>
