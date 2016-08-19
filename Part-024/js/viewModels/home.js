@@ -2,6 +2,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojbutton', 'ojs/ojdatetimepicker'],
     function (oj, ko) {
         function mainContentViewModel() {
             var self = this;
+            self.formats = ko.observableArray(["english"]);
             self.date = ko.observable();
             self.greeting = ko.observable("Good Morning");
             self.localeDate = ko.observable();
@@ -13,15 +14,19 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojbutton', 'ojs/ojdatetimepicker'],
                 switch (data) {
                     case 'Arabic':
                         newLang = 'ar-EG';
+                        self.formats(["arabic"]);
                         break;
                     case 'Czech':
                         newLang = 'cs-CZ';
+                        self.formats(["czech"]);
                         break;
                     case 'French':
                         newLang = 'fr-FR';
+                        self.formats(["french"]);
                         break;
                     default:
                         newLang = 'en-US';
+                        self.formats(["english"]);
                 }
                 oj.Config.setLocale(newLang,
                     function () {

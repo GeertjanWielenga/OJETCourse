@@ -1,15 +1,21 @@
-<button data-bind="
-        click: function(){setLang('Arabic')}, 
-        ojComponent: {component: 'ojButton', label: 'Arabic'}"></button>
-<button data-bind="
-        click: function(){setLang('Czech')}, 
-        ojComponent: {component: 'ojButton', label: 'Czech'}"></button>
-<button data-bind="
-        click: function(){setLang('French')},
-        ojComponent: {component: 'ojButton', label: 'French'}"></button>
-<button data-bind="
-        click: function(){setLang('English')}, 
-        ojComponent: {component: 'ojButton', label: 'English'}"></button>
+<div data-bind="ojComponent: {component: 'ojButtonset', checked: formats}">
+    <!--Arabic-->
+    <label for="arabic">Arabic</label>
+    <input data-bind="click: function(){setLang('Arabic');}" 
+           type="checkbox" value="arabic" id="arabic"/>
+    <!--Czech-->
+    <label for="czech">Czech</label>
+    <input data-bind="click: function(){setLang('Czech');}" 
+           type="checkbox" value="czech" id="czech"/>
+    <!--French-->
+    <label for="french">French</label>
+    <input data-bind="click: function(){setLang('French');}" 
+           type="checkbox" value="french" id="french"/>
+    <!--English-->
+    <label for="english">English</label>
+    <input data-bind="click: function(){setLang('English');}" 
+           type="checkbox" value="english" id="english"/>
+</div>
 <br/>
 <br/>
 <span style="font-size: 50pt" id="greeting" data-bind="text: localeGreeting"></span>
