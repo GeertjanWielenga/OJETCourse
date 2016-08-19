@@ -3,6 +3,7 @@ define({
     "date": "Date:",
     "greeting": "Good Morning"
 },
+  "ar": true,
   "fr": true,
   "cs": true
 });

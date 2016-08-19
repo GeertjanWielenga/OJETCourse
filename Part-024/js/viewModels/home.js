@@ -11,6 +11,9 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojbutton', 'ojs/ojdatetimepicker'],
             self.setLang = function (data) {
                 var newLang = '';
                 switch (data) {
+                    case 'Arabic':
+                        newLang = 'ar-EG';
+                        break;
                     case 'Czech':
                         newLang = 'cs-CZ';
                         break;
@@ -20,12 +23,18 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojbutton', 'ojs/ojdatetimepicker'],
                     default:
                         newLang = 'en-US';
                 }
+                console.log(newLang);
                 oj.Config.setLocale(newLang,
                     function () {
                         $('html').attr('lang', newLang);
+                        if (newLang === 'ar-EG') {
+                            $('html').attr('dir', 'rtl');
+                        } else {
+                            $('html').attr('dir', 'ltr');
+                        }
                         self.localeDate(oj.Translations.getTranslatedString('date')); 
                         self.localeGreeting(oj.Translations.getTranslatedString('greeting')); 
-                         $('#dateInput').ojInputDate('refresh');
+                        $('#dateInput').ojInputDate('refresh');
                     }
                 );
             };

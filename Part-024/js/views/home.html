@@ -1,4 +1,7 @@
 <button data-bind="
+        click: function(){setLang('Arabic')}, 
+        ojComponent: {component: 'ojButton', label: 'Arabic'}"></button>
+<button data-bind="
         click: function(){setLang('Czech')}, 
         ojComponent: {component: 'ojButton', label: 'Czech'}"></button>
 <button data-bind="
@@ -9,7 +12,7 @@
         ojComponent: {component: 'ojButton', label: 'English'}"></button>
 <br/>
 <br/>
-<h3><span id="greeting" data-bind="text: localeGreeting"></span></h3>
+<h2><span id="greeting" data-bind="text: localeGreeting"></span></h2>
 <br/>
 <span data-bind="text: localeDate"></span>
 <input id="dateInput" type="text" 

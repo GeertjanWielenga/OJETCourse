@@ -1,4 +1,4 @@
 define({
   "date": "Datum:",
-  "greeting": "Dobry Den"
+  "greeting": "Dobrý Den"
 });
