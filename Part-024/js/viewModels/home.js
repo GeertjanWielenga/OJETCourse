@@ -25,6 +25,7 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojbutton', 'ojs/ojdatetimepicker'],
                         $('html').attr('lang', newLang);
                         self.localeDate(oj.Translations.getTranslatedString('date')); 
                         self.localeGreeting(oj.Translations.getTranslatedString('greeting')); 
+                         $('#dateInput').ojInputDate('refresh');
                     }
                 );
             };
