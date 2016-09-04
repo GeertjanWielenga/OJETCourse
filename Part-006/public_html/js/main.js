@@ -7,6 +7,6 @@ require.config({
     },
     waitSeconds: 2
 });
-require(['knockout', 'app'], function (ko, app, text) {
+require(['knockout', 'app', 'text'], function (ko, app, text) {
     ko.applyBindings(new app());
 });
