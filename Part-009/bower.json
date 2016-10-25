@@ -1,5 +1,5 @@
 {
-  "name": "Part-002",
+  "name": "Part-009",
   "version": "1.0.0",
   "main": "path/to/main.css",
   "ignore": [
@@ -7,7 +7,7 @@
     "**/*.txt"
   ],
   "dependencies": {
-    "oraclejet": "2.2.0"
+    "oraclejet": "latest"
   },
   "devDependencies": {}
 }
