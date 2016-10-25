@@ -6,5 +6,11 @@
  */
 function buyThing(name) {
     console.log(name + " is trying to buy");
-    return true;
+    var verified = verifyName(name);
+    if(verified){
+        sendThing(name);
+    } else {
+        sendApology(name);
+    }
+    return verified;
 }
