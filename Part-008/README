@@ -10,20 +10,21 @@ How to use this sample:
 
 3. Move it to the same folder where 'main.js' is found.
 
-4. Rewrite 'paths':
+4. Rewrite 'paths' and make sure that the locations below correspond
+   to folders and files in your project:
 
 paths: {
     'knockout': 'libs/knockout/dist/knockout',
     'jquery': 'libs/jquery/dist/jquery.min',
     'jqueryui-amd': 'libs/jquery-ui/ui',
+    'promise': 'libs/es6-promise/promise.min',
+    'hammerjs': 'libs/hammerjs/hammer.min',
+    'ojdnd': 'libs/oraclejet/dist/js/libs/dnd-polyfill/dnd-polyfill-1.0.0.min',
     'ojs': 'libs/oraclejet/dist/js/libs/oj/min',
     'ojL10n': 'libs/oraclejet/dist/js/libs/oj/ojL10n',
     'ojtranslations': 'libs/oraclejet/dist/js/libs/oj/resources',
     'text': 'libs/text/text',
-    'promise': 'libs/es6-promise/promise.min',
-    'hammerjs': 'libs/hammerjs/hammer.min',
-    'signals': 'libs/js-signals/dist/signals.min',
-    'ojdnd': 'libs/oraclejet/dist/libs/dnd-polyfill/dnd-polyfill-1.0.0.min'
+    'signals': 'libs/js-signals/dist/signals.min'
 },
 
 5. In 'require' block in 'main-template.js', add ViewModel:
@@ -41,7 +42,7 @@ $(document).ready(
 
 7. Delete 'main.js' and change the name of 'main-template.js' to 'main.js'.
 
-8. Rewrite 'app.js' to the following:
+8. Check the 'app.js' is as follows:
 
 define(['ojs/ojcore', 'knockout'
 ], function (oj, ko) {
@@ -55,6 +56,8 @@ define(['ojs/ojcore', 'knockout'
     return homeContentViewModel;
 });
 
-9. Load the 'app' module as follows in the 'index' file:
+9. Check the 'app' module as follows in the 'index' file:
 
 <div data-bind="ojModule: {name:'app'}"></div>
+
+10. The resulting code should be as in this application as described above.
