@@ -3,17 +3,17 @@ requirejs.config({
   paths: 
  //injector:mainReleasePaths
   {
-   'knockout': 'libs/knockout/dist/knockout',
+    'knockout': 'libs/knockout/dist/knockout',
     'jquery': 'libs/jquery/dist/jquery.min',
     'jqueryui-amd': 'libs/jquery-ui/ui',
+    'promise': 'libs/es6-promise/promise.min',
+    'hammerjs': 'libs/hammerjs/hammer.min',
+    'ojdnd': 'libs/oraclejet/dist/js/libs/dnd-polyfill/dnd-polyfill-1.0.0.min',
     'ojs': 'libs/oraclejet/dist/js/libs/oj/min',
     'ojL10n': 'libs/oraclejet/dist/js/libs/oj/ojL10n',
     'ojtranslations': 'libs/oraclejet/dist/js/libs/oj/resources',
     'text': 'libs/text/text',
-    'promise': 'libs/es6-promise/promise.min',
-    'hammerjs': 'libs/hammerjs/hammer.min',
-    'signals': 'libs/js-signals/dist/signals.min',
-    'ojdnd': 'libs/oraclejet/dist/js/libs/dnd-polyfill/dnd-polyfill-1.0.0.min'
+    'signals': 'libs/js-signals/dist/signals.min'
   }
   //endinjector
   ,
