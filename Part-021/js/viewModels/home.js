@@ -1,4 +1,4 @@
-define(['ojs/ojcore', 'knockout', 'jqueryui/datepicker'],
+define(['ojs/ojcore', 'knockout', 'jqueryui-amd/widgets/datepicker'],
   function(oj, ko) {
     function mainContentViewModel() {
         var self = this;
