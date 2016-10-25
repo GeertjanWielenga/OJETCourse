@@ -63,7 +63,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * Part-013: 
     * Title: Data Collection Components
     * Description: Exploring Data Collection components.
-  * Part-014: 
+  * [Part-014](Part-014): 
     * Title: Data Sources
     * Description: Exploring REST, JSON, jQuery, and Oracle JET Common Model.
   * [Part-015](Part-015): 
