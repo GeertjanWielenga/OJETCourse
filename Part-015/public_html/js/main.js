@@ -8,14 +8,14 @@ requirejs.config({
         'knockout': 'libs/knockout/dist/knockout',
         'jquery': 'libs/jquery/dist/jquery.min',
         'jqueryui-amd': 'libs/jquery-ui/ui',
+        'promise': 'libs/es6-promise/promise.min',
+        'hammerjs': 'libs/hammerjs/hammer.min',
+        'ojdnd': 'libs/oraclejet/dist/js/libs/dnd-polyfill/dnd-polyfill-1.0.0.min',
         'ojs': 'libs/oraclejet/dist/js/libs/oj/min',
         'ojL10n': 'libs/oraclejet/dist/js/libs/oj/ojL10n',
         'ojtranslations': 'libs/oraclejet/dist/js/libs/oj/resources',
         'text': 'libs/text/text',
-        'promise': 'libs/es6-promise/promise.min',
-        'hammerjs': 'libs/hammerjs/hammer.min',
-        'signals': 'libs/js-signals/dist/signals.min',
-        'ojdnd': 'libs/oraclejet/dist/libs/dnd-polyfill/dnd-polyfill-1.0.0.min'
+        'signals': 'libs/js-signals/dist/signals.min'
     },
     // Shim configurations for modules that do not expose AMD
     shim: {
@@ -36,13 +36,12 @@ requirejs.config({
     }
 });
 
-require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter', 'ojs/ojknockout', 
-    'ojs/ojmodule', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu', 
+require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter', 'ojs/ojknockout',
+    'ojs/ojmodule', 'ojs/ojbutton', 'ojs/ojtoolbar', 'ojs/ojmenu',
     'ojs/ojarraytabledatasource', 'ojs/ojnavigationlist'],
-
-        function (oj, ko, $) 
+        function (oj, ko, $)
         {
-            
+
             var router = oj.Router.rootInstance;
             router.configure({
                 'home': {label: 'Home', isDefault: true},
@@ -59,26 +58,26 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojrouter', 'ojs/ojknockout',
                 self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});
                 self.navChange = function (event, ui) {
                     if (ui.option === 'selection' && ui.value !== self.router.stateId()) {
-                         self.router.go(ui.value);
+                        self.router.go(ui.value);
                     }
                 };
             }
-            
+
             oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
             oj.Router.sync().then(
-                function () {
-                    //bind your ViewModel for the content 
-                    //of the whole page body.
-                    ko.applyBindings(
-                            new RootViewModel(),
-                            document.getElementById('globalBody'));
-                    $('#globalBody').show();
-                },
-                function (error) {
-                    oj.Logger.error(
-                            'Error in root start: ' +
-                            error.message);
-                });
+                    function () {
+                        //bind your ViewModel for the content 
+                        //of the whole page body.
+                        ko.applyBindings(
+                                new RootViewModel(),
+                                document.getElementById('globalBody'));
+                        $('#globalBody').show();
+                    },
+                    function (error) {
+                        oj.Logger.error(
+                                'Error in root start: ' +
+                                error.message);
+                    });
         }
 
 );
