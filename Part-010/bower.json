@@ -7,7 +7,7 @@
     "**/*.txt"
   ],
   "dependencies": {
-    "oraclejet": "2.2.0"
+    "oraclejet": "latest"
   },
   "devDependencies": {}
 }
