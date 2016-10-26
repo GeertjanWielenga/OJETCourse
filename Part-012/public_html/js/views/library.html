@@ -1,1 +1,18 @@
 <h1>Library Content</h1>
+
+<h1>Home Content Area</h1>
+<div id='thematicmap1'
+data-bind="ojComponent:{
+    component: 'ojThematicMap',
+        basemap: 'unitedKingdom',
+        mapProvider: mapProvider,
+        areaLayers:
+          [{
+            layer: 'countries',
+            areaDataLayer: {
+                id: 'adl1', 
+                areas: [{id: 'a1', 'location': 'GBR', color: 'rgb(255, 181, 77)'}]}
+          }],
+        pointDataLayers: [{id: 'pdl1', markers: cities}]
+        }"
+    style="width:100%; height:600px;"/>

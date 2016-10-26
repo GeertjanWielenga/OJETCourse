@@ -4,3 +4,4 @@ About data visualization components.
 
 1. In home module, a PictoChart is defined.
 2. In people module, a Status Meter Gauge (Circular) is defined.
+3. In library module, a Thematic Map is defined.
