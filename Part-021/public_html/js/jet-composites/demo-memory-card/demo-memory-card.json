@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "value": {
+      "description": "The card value.",
+      "type": "string"
+    },
+    "valueImage": {
+      "description": "The url of the image to use for the front of the card.",
+      "type": "string"
+    }
+  },
+  "methods": {
+    "flipCard": {
+      "description": "Method to toggle flipping a card."
+    },
+    "enableFlip": {
+      "description": "Enables or disables the ability to flip a card.",
+      "params": [
+        {
+          "name": "bEnable",
+          "description": "True to enable card flipping and false otherwise.",
+          "type": "boolean"
+        }
+      ]
+    }
+  },
+  "events": {
+    "cardClick": {
+      "description": "Triggered when a card is clicked and contains the value of the clicked card.",
+      "bubbles": true,
+      "detail": {
+        "value": {
+          "description": "The value of the card.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

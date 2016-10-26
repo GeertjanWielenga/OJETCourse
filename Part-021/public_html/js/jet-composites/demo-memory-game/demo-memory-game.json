@@ -1,0 +1,20 @@
+{
+  "properties": {
+    "attempts": {
+      "description": "The current number of pair match attempts.",
+      "type": "number",
+      "readOnly": true,
+      "value": 0
+    },
+    "cards": {
+      "description": "The array of card objects containing keys for 'value' and 'url' which point to the card value and image urls respectively. The game will create pairs of cards from the image urls so duplicates should not be provided.",
+      "type": "Array<object>"
+    },
+    "hasWon": {
+      "description": "True if all card pairs have been matched and the game is over.",
+      "type": "boolean",
+      "readOnly": true,
+      "value": false
+    }
+  }
+}

@@ -1,5 +1,22 @@
 {
     "elements": {
+        "demo-card": {
+            "attributes": {
+                "work-title": {},
+                "name": {},
+                "work-number": {},
+                "background-image": {},
+                "avatar": {},
+                "class": {},
+                "email": {}
+            }
+        },
+        "demo-memory-game": {
+            "attributes": {
+                "cards": {},
+                "id": {}
+            }
+        },
         "customer": {
             "attributes": {
                 "city": {},

@@ -1,13 +1,11 @@
-<!--
- Copyright (c) 2014, 2016, Oracle and/or its affiliates.
- The Universal Permissive License (UPL), Version 1.0
- -->
-<h1>Graphics Content</h1>
-<div>
-  Content in this area will be the primary content for the Graphics page. It will stay above the Complementary content as the viewport is made smaller.
-  At the smallest view port size, it will be in between the Navigation content and the Complementary content.
-</div>
-<br/>
-<div>
-  To change the content of this section, you will make edits to the graphics.html file located in the /js/views folder.
+<div id="composite-container">
+  <label for="score1" id="scoreLabel" class="oj-label-inline">Attempts:</label>   
+  <input id="score1" data-bind="ojComponent: {
+    component: 'ojInputNumber', readOnly: true, 
+    value: attempts}"/>
+  <demo-memory-game id="game1" cards="{{chartImages}}"></demo-memory-game>
+  <div style="display:none;" id="popup1"
+       data-bind="ojComponent:{component: 'ojPopup', position: {'at': 'center center', 'my': 'center center'}}">
+    <span class="blink-rainbow">You've won!</span>
+  </div>
 </div>

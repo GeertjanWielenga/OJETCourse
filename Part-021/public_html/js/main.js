@@ -13,7 +13,8 @@ requirejs.config({
     'ojL10n': 'libs/oraclejet/dist/js/libs/oj/ojL10n',
     'ojtranslations': 'libs/oraclejet/dist/js/libs/oj/resources',
     'text': 'libs/text/text',
-    'signals': 'libs/js-signals/dist/signals.min'
+    'signals': 'libs/js-signals/dist/signals.min',
+    'css': 'libs/require-css/css'
   }
   //endinjector
   ,

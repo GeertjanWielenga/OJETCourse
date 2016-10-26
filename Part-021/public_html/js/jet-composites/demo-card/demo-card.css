@@ -1,0 +1,88 @@
+/* This is to prevent the flash of unstyled content before the composite properties have been setup. */
+demo-card:not(.oj-complete) {
+  visibility: hidden;
+}
+
+demo-card {
+  display: block;
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+  margin: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+demo-card h2,
+demo-card h5,
+demo-card a, 
+demo-card .avatar  {
+  color: #fff;
+  padding: 0;
+}
+
+demo-card .front-side, 
+demo-card .back-side {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border-radius: 5px;
+  background-color: rgb(38, 125, 179);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+demo-card .front-side {
+  /* Specify a background-image url to provide an image for the front of the card. */
+  text-align: center;
+  padding-top: 30px;
+}
+
+demo-card .back-side {  
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  z-index: -1;
+}
+
+demo-card .inner-back-side {
+  /* IE11 workaround to show back side */
+  -ms-transform: rotateY(180deg);
+}
+
+demo-card .flip-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .25);
+  border-radius: 5px;
+}
+
+demo-card .flip-container.flipped {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+demo-card .flip-container.flipped .back-side {
+  /* IE11 workaround to show back side */
+  -ms-transform: rotateY(360deg);
+  z-index: 0;
+}
+
+demo-card .avatar {
+  width: 98px;
+  height: 98px;
+  line-height: 98px;
+  font-size: 34px;
+  margin: auto;
+  background-color: rgb(38, 125, 179);
+  border-radius: 50%;
+  border: 3px solid #fff;
+}

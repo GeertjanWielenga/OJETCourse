@@ -1,0 +1,28 @@
+{
+  "properties": {
+    "name": {
+      "description": "The employee's full name.",
+      "type": "string"
+    },
+    "avatar": {
+      "description": "The url of the employee's image.",
+      "type": "string"
+    },
+    "workTitle": {
+      "description": "The employee's job title.",
+      "type": "string"
+    },
+    "workNumber": {
+      "description": "The employee's work number.",
+      "type": "number"
+    },
+    "email": {
+      "description": "The employee's email.",
+      "type": "string"
+    },
+    "backgroundImage": {
+      "description": "The URL of background image.",
+      "type": "string"
+    }
+  }
+}

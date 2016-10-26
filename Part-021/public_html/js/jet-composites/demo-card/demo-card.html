@@ -1,0 +1,27 @@
+<div tabindex="0" role="group" class="flip-container"
+  data-bind="event: {click: flipCard, keypress: flipCard}, attr: {'aria-label': $props.name + ' Press Enter for more info.'}">
+    <div class="front-side" data-bind="attr: {style: $props.backgroundImage ? 'background-image:url(' + $props.backgroundImage + ')' : ''}">
+    <!-- ko if: $props.avatar == null -->
+      <div class="avatar" data-bind="text: initials"></div>
+    <!-- /ko -->
+    <!-- ko if: $props.avatar != null -->
+      <img class="avatar" data-bind="attr: {src: $props.avatar, alt: $props.name}">
+    <!-- /ko -->
+    <h2 data-bind="text: $props.name"></h2>
+  </div>
+
+  <div class="back-side">
+    <div class="inner-back-side">
+      <h2 data-bind="text: $props.name"></h2>
+      <h5 data-bind="text: $props.workTitle"></h5>
+      <!-- ko if: $props.workNumber != null -->
+        <h5>Work</h5>
+        <a href="#" data-bind="text: workFormatted"></a>
+      <!-- /ko -->
+      <!-- ko if: $props.email != null -->
+        <h5>Email</h5>
+        <a href="#" data-bind="text: $props.email"></a>
+      <!-- /ko -->
+    </div>
+  </div>
+</div>

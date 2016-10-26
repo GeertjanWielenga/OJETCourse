@@ -1,0 +1,69 @@
+/* This is to prevent the flash of unstyled content before the composite properties have been setup. */
+demo-memory-card:not(.oj-complete) {
+  visibility: hidden;
+}
+
+demo-memory-card {
+  display: block;
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  margin: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+demo-memory-card .front-side, 
+demo-memory-card .back-side {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border-radius: 5px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+demo-memory-card .back-side {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  z-index: -1;
+}
+
+demo-memory-card .front-side {
+  /* Specify a background-image url to provide an image for the front of the card. */
+}
+
+demo-memory-card .inner-back-side {
+  /* IE11 workaround to show back side */
+  -ms-transform: rotateY(180deg);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+demo-memory-card .flip-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .25);
+  border-radius: 5px;
+}
+
+demo-memory-card .flip-container.flipped {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+demo-memory-card .flip-container.flipped .back-side {
+  /* IE11 workaround to show back side */
+  -ms-transform: rotateY(360deg);
+  z-index: 0;
+}
