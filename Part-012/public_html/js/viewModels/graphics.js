@@ -1,9 +1,20 @@
-/**
- * Copyright (c) 2014, 2016, Oracle and/or its affiliates.
- * The Universal Permissive License (UPL), Version 1.0
- */
-/* 
- * Your viewModel code goes here
- */
+define(['text!../socialNetworks.json', 'ojs/ojtagcloud'],
+    function (file) {
+        function mainContentViewModel() {
+            var self = this;
+            self.tags = [];
+            var content = JSON.parse(file);
+            for (var i = 0; i < content.length; i++) {
+                var network = content[i];
+                self.tags.push({
+                    id: network["id"],
+                    label: network["id"],
+                    value: network["total"],
+                    shortDesc: network["id"] + ': ' + network["total"] + '%'
+                });
+            }
+        }
+        return new mainContentViewModel();
+    });
 
 

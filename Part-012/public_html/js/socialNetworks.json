@@ -1,0 +1,106 @@
+[
+  {
+    "id": "Facebook",
+    "14-17": 63.7,
+    "18-34": 83.2,
+    "35-54": 74.1,
+    "total": 76.8,
+    "url": "https://www.facebook.com"
+  },
+  {
+    "id": "YouTube",
+    "14-17": 81.9,
+    "18-34": 77.6,
+    "35-54": 54.2,
+    "total": 66.4,
+    "url": "https://www.youtube.com"
+  },
+  {
+    "id": "Twitter",
+    "14-17": 31,
+    "18-34": 38.7,
+    "35-54": 28.3,
+    "total": 32.8,
+    "url": "https://twitter.com"
+  },
+  {
+    "id": "Instagram",
+    "14-17": 56.4,
+    "18-34": 37.2,
+    "35-54": 16,
+    "total": 28.5,
+    "url": "https://instagram.com"
+  },
+  {
+    "id": "Google+",
+    "14-17": 24.6,
+    "18-34": 25,
+    "35-54": 20,
+    "total": 22.7,
+    "url": "https://plus.google.com"
+  },
+  {
+    "id": "LinkedIn",
+    "14-17": 1.5,
+    "18-34": 15.9,
+    "35-54": 20,
+    "total": 16.6,
+    "url": "https://www.linkedin.com"
+  },
+  {
+    "id": "SnapChat",
+    "14-17": 36.8,
+    "18-34": 21.1,
+    "35-54": 4.2,
+    "total": 14.2,
+    "url": "https://www.snapchat.com"
+  },
+  {
+    "id": "Tumblr",
+    "14-17": 23.8,
+    "18-34": 15.6,
+    "35-54": 5.7,
+    "total": 11.5,
+    "url": "https://www.tumblr.com"
+  },
+  {
+    "id": "Vine",
+    "14-17": 31.8,
+    "18-34": 15.5,
+    "35-54": 3.5,
+    "total": 11.1,
+    "url": "https://vine.co"
+  },
+  {
+    "id": "WhatsApp",
+    "14-17": 8,
+    "18-34": 9.8,
+    "35-54": 4,
+    "total": 6.8,
+    "url": "https://www.whatsapp.com"
+  },
+  {
+    "id": "reddit",
+    "14-17": 8,
+    "18-34": 8.5,
+    "35-54": 3.9,
+    "total": 6.2,
+    "url": "https://www.reddit.com"
+  },
+  {
+    "id": "Flickr",
+    "14-17": 3.6,
+    "18-34": 3.9,
+    "35-54": 6.9,
+    "total": 5.4,
+    "url": "https://www.flickr.com"
+  },
+  {
+    "id": "Pinterest",
+    "14-17": 3.6,
+    "18-34": 2,
+    "35-54": 0.6,
+    "total": 1.5,
+    "url": "https://www.pintrest.com"
+  }
+]
