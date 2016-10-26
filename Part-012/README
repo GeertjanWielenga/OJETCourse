@@ -8,6 +8,6 @@ About data visualization components.
 
 3. In library module, a Thematic Map is defined. Reference: https://blogs.oracle.com/geertjan/entry/geojson_and_oracle_jet_maps
 
-4. To be done: TimeLine component in Graphics module.
+4. To be done: TimeLine component in Graphics module. Reference: https://blogs.oracle.com/geertjan/entry/timeline_in_oracle_jet
 
-5. To be done: TagCloud component in Performance module.
+5. To be done: TagCloud component in Performance module. Reference: https://blogs.oracle.com/geertjan/entry/tag_cloud_in_oracle_jet
