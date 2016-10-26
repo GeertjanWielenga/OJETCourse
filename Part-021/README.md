@@ -2,7 +2,7 @@ What you will learn:
 
 How to integrate 3rd party components.
 
-1. In home module, jQuery datepicker is used.
+1. In home module, a jQuery datepicker is used.
 
 2. In people module, a "customer" CCA component is used.
 
