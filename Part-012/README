@@ -10,4 +10,4 @@ About data visualization components.
 
 4. In graphics module, a TagCloud is defined. Reference: https://blogs.oracle.com/geertjan/entry/tag_cloud_in_oracle_jet
 
-5. In performance module, a TimeLine. Reference: https://blogs.oracle.com/geertjan/entry/timeline_in_oracle_jet
+5. In performance module, a TimeLine is defined. Reference: https://blogs.oracle.com/geertjan/entry/timeline_in_oracle_jet
