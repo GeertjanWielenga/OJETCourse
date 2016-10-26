@@ -4,7 +4,7 @@ define(['text!../uk_epsg27700.json',
         'knockout',
         'ojs/ojthematicmap'],
         function (geo, proj4, oj, ko) {
-            function mainContentViewModel() {
+            function libraryContentViewModel() {
                 var self = this;
                 self.mapProvider = {
                     geo: JSON.parse(geo),
@@ -31,5 +31,5 @@ define(['text!../uk_epsg27700.json',
                 }
 
             }
-            return new mainContentViewModel();
+            return new libraryContentViewModel();
         });

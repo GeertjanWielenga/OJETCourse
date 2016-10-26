@@ -1,6 +1,6 @@
 define(['text!../socialNetworks.json', 'ojs/ojtagcloud'],
     function (file) {
-        function mainContentViewModel() {
+        function graphicsContentViewModel() {
             var self = this;
             self.tags = [];
             var content = JSON.parse(file);
@@ -14,7 +14,7 @@ define(['text!../socialNetworks.json', 'ojs/ojtagcloud'],
                 });
             }
         }
-        return new mainContentViewModel();
+        return new graphicsContentViewModel();
     });
 
 
