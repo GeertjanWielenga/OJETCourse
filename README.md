@@ -88,7 +88,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 3. "Into the Clouds with Oracle JET": Miscellaneous Topics
   * [Part-021](Part-021):
     * Title: Integrating Other Components
-    * Description: Integrate custom JQuery UI components, Leaflet, Mapbox, etc.
+    * Description: Integrate custom JQuery UI components, Leaflet, Mapbox, etc, as well as CCA.
   * Part-022: 
     * Title: Interaction with Oracle Cloud Services
     * Description: ABCS, MCS, ACCS, ORDS, MAX, and more.
