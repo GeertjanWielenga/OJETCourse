@@ -12,6 +12,8 @@ How to integrate 3rd party components.
 
 References:
 
+http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=basic
+
 https://blogs.oracle.com/geertjan/entry/getting_started_with_oracle_jet
 
 https://blogs.oracle.com/geertjan/entry/minimal_oracle_jet_composite_component
