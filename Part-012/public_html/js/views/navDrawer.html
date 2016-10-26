@@ -1,0 +1,14 @@
+<!--
+ Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<!--
+  Template for Vertical Nav List
+  This data is hidden in off-canvas content
+  until the user clicks on the hamburger icon.
+-->
+<div role="navigation" data-bind="ojComponent: {component: 'ojNavigationList',
+  optionChange: $parent.navChange, navigationLevel: 'application',
+  item: {template: 'navTemplate'}, data: $parent.navDataSource,
+  selection: $parent.router.stateId(), edge: 'start'}">
+</div>

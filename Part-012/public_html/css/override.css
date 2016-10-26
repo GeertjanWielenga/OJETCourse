@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'AppFont';
+  src: url("fonts/App_iconfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.demo-icon-font, .demo-icon-font-24 {
+  font-family: AppFont;
+  font-size: 16px;
+  line-height: 1;
+  display: inline-block;
+  font-weight: normal;
+  speak: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-align: center;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.demo-icon-font:before, .demo-icon-font-24:before {
+  display: inline-block;
+}
+
+.demo-icon-font-24 {
+  font-size: 24px;
+}
+
+/* Icons with a suffix "-16" were designed to look best at 16px. */
+.demo-bookmark-icon-16:before {
+  content: "\e606";
+}
+
+.demo-grid-icon-16:before {
+  content: "\e607";
+}
+
+.demo-list-icon-16:before {
+  content: "\e608";
+}
+
+.demo-gear-icon-16:before {
+  content: "\e609";
+}
+
+/* Icons with a suffix "-24" were designed to look best at 24px. */
+.demo-home-icon-24:before {
+  content: "\e600";
+}
+
+.demo-education-icon-24:before {
+  content: "\e601";
+}
+
+.demo-catalog-icon-24:before {
+  content: "\e602";
+}
+
+.demo-palette-icon-24:before {
+  content: "\e603";
+}
+
+.demo-library-icon-24:before {
+  content: "\e604";
+}
+
+.demo-chat-icon-24:before {
+  content: "\e605";
+}
+
+.demo-oracle-icon {
+  width: 137px;
+  height: 18px;
+}
+.demo-oracle-icon:before {
+  content: url("images/oracle_logo.svg");
+  display: inline;
+}
+/* Adds padding between logo and application name */
+html:not([dir="rtl"]) .demo-oracle-icon {
+  padding-right: 4px;
+}
+html[dir="rtl"] .demo-oracle-icon {
+  padding-left: 4px;
+}
+
+.demo-avatar-icon {
+  width:24px;
+  height:24px;
+}
+.demo-avatar-icon:before {
+  content:url("images/avatar_24px.png")
+}
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .demo-avatar-icon:before{
+    content:url("images/avatar_24px_2x.png");
+    -webkit-transform:translate(-25%, -25%) scale(0.5);transform:translate(-25%, -25%) scale(0.5)
+  }
+}
