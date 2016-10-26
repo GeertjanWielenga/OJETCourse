@@ -57,7 +57,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * [Part-011](Part-011): 
     * Title: Overview
     * Description: Exploring the Oracle JET website.
-  * Part-012: 
+  * [Part-012](Part-012): 
     * Title: Data Visualization Components
     * Description: Exploring the Data Visualization components.
   * Part-013: 
