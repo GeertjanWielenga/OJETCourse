@@ -9,3 +9,9 @@ How to integrate 3rd party components.
 3. In library module, a "demo-card" CCA component is used.
 
 4. In graphics module, a "demo-memory-game" CCA component is used.
+
+References:
+
+https://blogs.oracle.com/geertjan/entry/getting_started_with_oracle_jet
+
+https://blogs.oracle.com/geertjan/entry/minimal_oracle_jet_composite_component
