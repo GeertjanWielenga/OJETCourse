@@ -2,4 +2,5 @@ What you will learn:
 
 About data visualization components.
 
-1. In home module, a pictochart is defined.
+1. In home module, a PictoChart is defined.
+2. In people module, a Status Meter Gauge (Circular) is defined.
