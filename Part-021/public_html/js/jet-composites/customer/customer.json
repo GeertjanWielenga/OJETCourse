@@ -1,0 +1,12 @@
+{
+  "properties": {
+    "name": {
+      "description": "Customer name.",
+      "type": "string"
+    },
+    "city": {
+      "description": "Customer location.",
+      "type": "string"
+    }
+  }
+}

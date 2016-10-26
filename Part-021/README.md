@@ -4,4 +4,4 @@ How to integrate 3rd party components.
 
 1. In home module, jQuery datepicker is used.
 
-2. To be done: in people modle, integrate a CCA component.
+2. In people modle, a CCA component is used.

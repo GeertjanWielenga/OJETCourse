@@ -1,0 +1,11 @@
+{
+    "elements": {
+        "customer": {
+            "attributes": {
+                "city": {},
+                "name": {}
+            }
+        }
+    },
+    "attributes": {}
+}

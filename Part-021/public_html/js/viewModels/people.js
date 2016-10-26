@@ -1,9 +1,13 @@
-/**
- * Copyright (c) 2014, 2016, Oracle and/or its affiliates.
- * The Universal Permissive License (UPL), Version 1.0
- */
-/* 
- * Your viewModel code goes here
- */
-
-
+define(['ojs/ojcore', 'knockout', 'ojs/ojcomposite',
+'jet-composites/customer/loader'],
+   function (oj, ko) {
+      function peopleContentViewModel() {
+          var self = this;
+          self.customers = [
+              {name: 'Billy Bob Thornton', city: 'New York'},
+              {name: 'Brad Pitt', city: 'Hollywood'},
+              {name: 'Val Kilmer', city: 'Seattle'}
+          ];
+      }
+      return new peopleContentViewModel();
+   });
