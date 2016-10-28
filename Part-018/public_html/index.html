@@ -4,17 +4,18 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
         <script src="js/libs/requirejs/require.js" data-main="js/main" type="text/javascript"></script>
         <link href="css/libs/oj/v2.0.2/alta/oj-alta-min.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="css/override.css" type="text/css"/>
     </head>
     <body>
-    <!-- template for rendering navigation items shared between nav bar and nav list -->
-    <script type="text/html" id="navTemplate">
-    <li><a href="#">
-            <span data-bind="css: $data['iconClass']"></span>
-            <!-- ko text: $data['name'] --> <!--/ko-->
-        </a></li>
+        <!-- template for rendering navigation items shared between nav bar and nav list -->
+        <script type="text/html" id="navTemplate">
+        <li><a href="#">
+                <span data-bind="css: $data['iconClass']"></span>
+                <!-- ko text: $data['name'] --> <!--/ko-->
+            </a></li>
     </script>
     <div id="globalBody" class="oj-web-applayout-offcanvas-wrapper oj-offcanvas-outer-wrapper">
         <div class="oj-offcanvas-inner-wrapper">
