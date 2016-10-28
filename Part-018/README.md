@@ -12,4 +12,6 @@ http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=home&
 
 In header module, an Offcanvas component is defined, with ojNavigationList and ojButton.
 
+Reference:
+
 http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=offcanvas&demo=basic
