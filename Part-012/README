@@ -6,8 +6,14 @@ About data visualization components.
 
 2. In people module, a Status Meter Gauge (Circular) is defined.
 
-3. In library module, a Thematic Map is defined. Reference: https://blogs.oracle.com/geertjan/entry/geojson_and_oracle_jet_maps and https://www.youtube.com/watch?v=dnXsGSqKKuY
+3. In library module, a Thematic Map is defined. 
 
-4. In graphics module, a TagCloud is defined. Reference: https://blogs.oracle.com/geertjan/entry/tag_cloud_in_oracle_jet
+Reference: https://blogs.oracle.com/geertjan/entry/geojson_and_oracle_jet_maps and https://www.youtube.com/watch?v=dnXsGSqKKuY
 
-5. In performance module, a TimeLine is defined. Reference: https://blogs.oracle.com/geertjan/entry/timeline_in_oracle_jet
+4. In graphics module, a TagCloud is defined. 
+
+Reference: https://blogs.oracle.com/geertjan/entry/tag_cloud_in_oracle_jet
+
+5. In performance module, a TimeLine is defined. 
+
+Reference: https://blogs.oracle.com/geertjan/entry/timeline_in_oracle_jet
