@@ -10,7 +10,7 @@ http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=home&
 
 http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=home&demo=rootLayoutNav
 
-In header module, an Offcanvas component is defined, with ojNavigationList and ojButton.
+From main.js and index.html, an Offcanvas component is managed, with ojNavigationList and ojButton.
 
 Reference:
 
