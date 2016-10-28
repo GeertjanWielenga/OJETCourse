@@ -8,7 +8,11 @@ About data visualization components.
 
 3. In library module, a Thematic Map is defined. 
 
-Reference: https://blogs.oracle.com/geertjan/entry/geojson_and_oracle_jet_maps and https://www.youtube.com/watch?v=dnXsGSqKKuY
+Reference: 
+
+https://blogs.oracle.com/geertjan/entry/geojson_and_oracle_jet_maps 
+
+https://www.youtube.com/watch?v=dnXsGSqKKuY
 
 4. In graphics module, a TagCloud is defined. 
 
