@@ -89,7 +89,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * [Part-021](Part-021):
     * Title: Integrating Other Components
     * Description: Integrate custom JQuery UI components, Leaflet, Mapbox, etc, as well as CCA.
-  * Part-022: 
+  * [Part-022](Part-022): 
     * Title: Interaction with Oracle Cloud Services
     * Description: ABCS, MCS, ACCS, ORDS, MAX, and more.
   * Part-023:
