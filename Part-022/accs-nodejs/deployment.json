@@ -1,0 +1,6 @@
+{
+  "environment":
+    {
+      "DEBUG" : "express:application,express:view,express:router,ifixitfast"
+    }
+}

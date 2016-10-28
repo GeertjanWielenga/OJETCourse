@@ -1,0 +1,14 @@
+{
+  "name": "ifixitfast",
+  "version": "1.0.0",
+  "description": "ifixitfast REST Service",
+  "main": "web.js",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "express": "^4.13.4"
+  },
+  "scripts": {
+    "start": "node web.js",
+    "prepublish": "zip -r ifixitfast-dist.zip app client node_modules manifest.json package.json *.js"
+  }
+}
