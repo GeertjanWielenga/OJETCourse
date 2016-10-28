@@ -78,10 +78,10 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * [Part-018](Part-018):
     * Title: Responsive Design Solutions
     * Description: Exploring Responsive Design Solutions.
-  * Part-019: 
+  * [Part-019](Part-019):
     * Title: Development Patterns
     * Description: Exploring Oracle JET Development Patterns.
-  * Part-020: 
+  * [Part-020](Part-020):
     * Title: Hybrid Mobile Application Development
     * Description: Exploring the Hybrid Mobile Application Process.
 
