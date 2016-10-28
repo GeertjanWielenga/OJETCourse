@@ -1,0 +1,12 @@
+{
+    "runtime":{
+        "majorVersion": "8"
+    },
+    "command": "java -jar jersey-service-1.0-SNAPSHOT-jar-with-dependencies.jar",
+    "release": {
+        "build": "20160603aBuild",
+        "commit": "Changing from String to JSON.",
+        "version": "20160603aBuild"
+    },
+    "notes": "REST app for testing"
+}
