@@ -4,7 +4,9 @@ About data sources.
 
 1. In home module, data source via standard jQuery functionality is defined. 
 
-Reference: https://blogs.oracle.com/geertjan/entry/simple_json_and_oracle_jet
+Reference: 
+
+https://blogs.oracle.com/geertjan/entry/simple_json_and_oracle_jet
 
 2. In people module, data source via JET Common Model is defined. 
 
