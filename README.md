@@ -60,7 +60,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
   * [Part-012](Part-012): 
     * Title: Data Visualization Components
     * Description: Exploring the Data Visualization components.
-  * Part-013: 
+  * [Part-013](Part-013): 
     * Title: Data Collection Components
     * Description: Exploring Data Collection components.
   * [Part-014](Part-014): 
