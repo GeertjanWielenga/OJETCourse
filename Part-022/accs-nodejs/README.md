@@ -1,4 +1,4 @@
-Application Container Cloud, Node.js, and Oracle JET
+Application Container Cloud, Node, and Oracle JET
 
 All the details are described here:
 
