@@ -6,7 +6,7 @@ Reference:
 
 http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=home&demo=rootCollections
 
-1. In the home module, a Table is defined.
+1. In home module, a Table is defined.
 
 Reference:
 
@@ -18,7 +18,7 @@ https://blogs.oracle.com/geertjan/entry/selecting_a_row_in_oracle1
 
 https://blogs.oracle.com/geertjan/entry/selecting_a_row_in_oracle2
 
-2. In the people module, a Tree is defined.
+2. In people module, a Tree is defined.
 
 Reference:
 
