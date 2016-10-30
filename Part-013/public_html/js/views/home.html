@@ -1,0 +1,12 @@
+<table id="table" 
+       data-bind="ojComponent: {component: 'ojTable', 
+            data: datasource, 
+            beforeCurrentRow: currentRowListener,
+            columns: [
+                {headerText: 'Id',  field: 'DepartmentId'},
+                {headerText: 'Name',  field: 'DepartmentName'}
+            ]}">
+</table>
+<br/><br/>
+<span id="selectedDepartmentId"></span>
+<span id="selectedDepartmentName"></span>
