@@ -14,6 +14,7 @@ How to use this sample:
 
 5. Realize that Oracle JET also has components, expressed in JQuery UI, which we will see later.
 
-Reference:
-http://knockoutjs.com/documentation/component-overview.html
-https://blogs.oracle.com/geertjan/entry/require_config_with_knockout_in
+References:
+
+  * http://knockoutjs.com/documentation/component-overview.html
+  * https://blogs.oracle.com/geertjan/entry/require_config_with_knockout_in
