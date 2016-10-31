@@ -1,6 +1,6 @@
 What you will learn:
 
-About responsive design solutions.
+About responsive design solutions, specifically Offcanvas usage.
 
 Reference:
 
