@@ -11,7 +11,7 @@ How to use this sample:
 3. Move it to the same folder where 'main.js' is found.
 
 4. Rewrite 'paths' and make sure that the locations below correspond
-   to folders and files in your project:
+   to folders and files in your project, such as the following, though you may need to adapt the below:
 
 paths: {
     'knockout': 'libs/knockout/dist/knockout',
