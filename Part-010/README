@@ -6,9 +6,9 @@ How to use this sample:
 
 1. Understand CSS3 and FlexBox.
 
-2. Usage of "oj-flex".
+2. Use the "oj-flex" class.
 
-3. Usage of "oj-flex-item".
+3. Use the "oj-flex-item" class.
 
 4. Understand how easy it is to use FlexBox in Oracle JET applications.
 
