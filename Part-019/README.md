@@ -8,4 +8,4 @@ http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=home&
 
 http://www.oracle.com/webfolder/technetwork/jet/globalExamples.html
 
-Note: No code sample applies to this part.
+Note: No code sample is applicable to this part.
