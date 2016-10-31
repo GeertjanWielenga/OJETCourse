@@ -6,19 +6,19 @@ Reference:
 
 http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=home&demo=rootVisualizations
 
-1. In home module, a PictoChart is defined.
+1. In the home module, a PictoChart is defined.
 
 Reference:
 
 http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=pictoChart&demo=default
 
-2. In people module, a Status Meter Gauge (Circular) is defined.
+2. In the people module, a Status Meter Gauge (Circular) is defined.
 
 Reference:
 
 http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=statusMeterGauge&demo=statusMeterGaugeCircular
 
-3. In library module, a Thematic Map is defined. 
+3. In the library module, a Thematic Map is defined. 
 
 Reference: 
 
@@ -28,7 +28,7 @@ https://blogs.oracle.com/geertjan/entry/geojson_and_oracle_jet_maps
 
 https://www.youtube.com/watch?v=dnXsGSqKKuY
 
-4. In graphics module, a TagCloud is defined. 
+4. In the graphics module, a TagCloud is defined. 
 
 Reference: 
 
@@ -36,7 +36,7 @@ http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=tagCl
 
 https://blogs.oracle.com/geertjan/entry/tag_cloud_in_oracle_jet
 
-5. In performance module, a TimeLine is defined. 
+5. In the performance module, a TimeLine is defined. 
 
 Reference: 
 
