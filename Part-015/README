@@ -6,7 +6,7 @@ How to use this sample:
 
 1. Open the sample.
 
-2. Talk about adding 'header' and 'footer' modules and loading them in index.html:
+2. Look at the 'header' and 'footer' modules and how they're loaded in the index.html:
 
 <header data-bind="ojModule: {name:'header'}"></header>
 
@@ -22,8 +22,8 @@ In index.html, talk about adding router configuration between the header and foo
 
 Open main.js, talk about the code defining the router in the 'require' block.
 
-4. Talk about the need to add a navigation component.
+4. Examine the need to add a navigation component.
 
-Talk about needing an Oracle JET component to let the user control the router.
+Learn about needing an Oracle JET component to let the user control the router.
 
-Open 'header.js' and 'header.html' and talk about the ojNavigationList component.
+Open 'header.js' and 'header.html' and look at the ojNavigationList component.
