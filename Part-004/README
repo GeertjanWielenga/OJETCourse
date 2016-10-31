@@ -8,7 +8,7 @@ Inclusion of 'Knockout.js' into an application organized via 'Require.js'.
 
 3. Understand the requirement that two-way data binding solves.
 
-4. Understand that Knockout solves the two-way data binding requirement very narrowly and neatly.
+4. Understand that Knockout.js solves the two-way data binding requirement very narrowly and neatly.
 
 5. Run the sample and explain how it works and point to the link below.
 
