@@ -1,17 +1,25 @@
 What you will learn:
 
-Exploring the Oracle JET Website
+Exploring the Oracle JET Website and related sites.
 
 Process:
 
 1. Walk through the oraclejet.org site.
+
 2. Start with first page, browse through it, show open source libraries listed at end.
+
 3. Click first button at the top, talk about Yeoman, NetBeans IDE, point out hybrid generator too.
+
 4. Click second button at the top, talk about the Work Better App, resize it, drill-down, point to source code.
+
 5. Click third button at the top, talk about Cookbook, browse through it, make changes, update, talk about copy/paste.
+
 6. Browse through the remainder of oraclejet.org, look at tutorials, dev guide, forums, and other resources.
+
 7. Go to the OTN site.
+
 8. Go to the GitHub site.
+
 9. Go to the sites of Require, Knockout, JQuery, etc, as well.
 
 Note: No code sample applies to this part.
