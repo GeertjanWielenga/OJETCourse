@@ -13,7 +13,7 @@ How to use this sample:
 
 3. Look at index file and notice that JavaScript files are not loaded there.
 
-4. Instead, require.js is loaded in index file, with 'data-main' pointing to entry point.
+4. Instead, 'require.js' is loaded in index file, with 'data-main' pointing to entry point.
 
 5. Look at 'main.js' (which has a 'require' block). Each application only has one 'require' block.
 
