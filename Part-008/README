@@ -26,7 +26,7 @@ paths: {
     'signals': 'libs/js-signals/dist/signals.min'
 },
 
-5. In 'require' block in 'main-template.js', add ViewModel:
+5. In the 'require' block in 'main-template.js', add ViewModel:
 
 function DemoViewModel() {
 }
