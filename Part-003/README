@@ -5,6 +5,9 @@ Configuration of 'require.js' is done in the 'require.config' section.
 How to use this sample:
 
 1. Compare this code sample with the previous code sample.
+
 2. Notice te inclusion of 'require.config' in the 'main.js' file.
-3. In NetBeans, explore the options within the require.config section.
-4. Point out that this structure is something you'll see in Oracle JET applications.
+
+3. In your editor, e.g., NetBeans IDE, explore the options within the require.config section.
+
+4. Be aware that this structure is something you'll see in all Oracle JET applications.
