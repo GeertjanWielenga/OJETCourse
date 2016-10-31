@@ -4,7 +4,7 @@ Component-based development with Knockout.js.
 
 How to use this sample:
 
-1. Understand the problem that Knockout components solve.
+1. Understand the problem that Knockout.js components solve.
 
 2. In the code, look at Knockout.js component created in app.js, with its view in app.js.
 
