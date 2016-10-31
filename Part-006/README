@@ -4,7 +4,7 @@ Separating the HTML view from the JavaScript business logic.
 
 How to use this sample:
 
-1. Understand that separating the view from the business logic has advantages.
+1. Understand the advantages of separating the view from the business logic.
 
 2. Note the inclusion of requirejs-text.
 
