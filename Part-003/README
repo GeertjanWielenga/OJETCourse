@@ -6,7 +6,7 @@ How to use this sample:
 
 1. Compare this code sample with the previous code sample.
 
-2. Notice te inclusion of 'require.config' in the 'main.js' file.
+2. Notice the inclusion of 'require.config' in the 'main.js' file.
 
 3. In your editor, e.g., NetBeans IDE, explore the options within the require.config section.
 
