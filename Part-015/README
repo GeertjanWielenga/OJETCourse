@@ -6,7 +6,7 @@ How to use this sample:
 
 1. Open the sample.
 
-2. Look at the 'header' and 'footer' modules and how they're loaded in the index.html:
+2. Look at the 'header' and 'footer' modules and notice how they're loaded in the index.html:
 
 <header data-bind="ojModule: {name:'header'}"></header>
 
