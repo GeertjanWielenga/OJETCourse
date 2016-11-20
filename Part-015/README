@@ -12,15 +12,15 @@ How to use this sample:
 
 <footer data-bind="ojModule: {name:'footer'}"></footer>
 
-3. Look again at the index.html file and point out that a router handles loading of modules.
+3. Look again at the index.html file and notice that a router handles loading of modules.
 
 Look at the two modules 'home' and 'people'. 
 
-In index.html, talk about adding router configuration between the header and footer:
+In index.html, examine the need to add a router configuration between the header and footer:
 
 <div data-bind="ojModule: { name: router.stateId()}"></div>
 
-Open main.js, talk about the code defining the router in the 'require' block.
+Open main.js, and notice the code defining the router in the 'require' block.
 
 4. Examine the need to add a navigation component.
 
