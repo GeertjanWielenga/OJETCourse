@@ -132,5 +132,5 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 * Cape Town, June 22, 23
    * PepkorIT, Cape Town (http://pepkorit.com)
    * Steltix, Cape Town (http://http://www.steltix.com)
-   * f
+
 
