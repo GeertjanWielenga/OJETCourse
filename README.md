@@ -120,11 +120,11 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 South Africa Tour: June 19 - 23, 2017
 
 * Johannesburg/Pretoria, June 19, 20, 21
-** a
-** b
-** c
+   * a
+   * b
+   * c
 
 * Cape Town, June 22, 23
-**
-**
-**
+   *
+   *
+   *
