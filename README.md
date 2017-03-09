@@ -124,6 +124,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
    * Adapt IT, Pretoria (http://www.adaptit.co.za)
    * Timeworx, Johannesburg (http://www.timeworx.co.za)
    * Medscheme, Johannesburg (http://www.medscheme.com)
+   * Liberty Health, Johannesburg (http://www.libertyhealth.co.za)
    * Mark Clarke and Johannesburg JUG
    * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
    * Bilal Kathrada, Johannesburg (http://www.compukids.me)
