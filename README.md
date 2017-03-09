@@ -125,6 +125,6 @@ South Africa Tour: June 19 - 23, 2017
    * c
 
 * Cape Town, June 22, 23
-   *
-   *
-   *
+   * d
+   * e
+   * f
