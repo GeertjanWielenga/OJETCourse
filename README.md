@@ -117,4 +117,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
     * Title: Contributing to the Oracle JET community
     * Description: GitHub, YouTube clips, Blogs, Twitter.
 
-South Africa Tour
+South Africa Tour: June 19 - 23, 2017
+* a
+* b
+* c
