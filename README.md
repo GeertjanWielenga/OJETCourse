@@ -120,11 +120,14 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 ####South Africa Tour: June 19 - 23, 2017
 
 * Johannesburg/Pretoria, June 19, 20, 21
-   * a
-   * b
-   * c
+   * Tuesday, June 20, 14:00 - 16:00 -- Britehouse/Dimension Data (http://britehouse.co.za)
+   * Adapt IT, Pretoria (http://www.adaptit.co.za)
+   * Timeworx, Johannesburg (http://www.timeworx.co.za)
+   * Medscheme, Johannesburg (http://www.medscheme.com)
+   * Johannesburg JUG
 
 * Cape Town, June 22, 23
-   * d
+   * PepkorIT, Cape Town (http://pepkorit.com)
    * e
    * f
+
