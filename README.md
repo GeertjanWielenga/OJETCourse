@@ -130,9 +130,11 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
    * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
    * Bilal Kathrada, Johannesburg (http://www.compukids.me)
    * Geoff Arnold, Johannesburg (http://codecollege.co.za)
+   * Pinkmatter Solutions, Pretoria (http://pinkmatter.co.za)
 
 * Cape Town, June 22, 23
    * PepkorIT, Cape Town (http://pepkorit.com)
    * Steltix, Cape Town (http://http://www.steltix.com)
+   * Institute of Mine Seismology (http://www.imseismology.org)
 
 
