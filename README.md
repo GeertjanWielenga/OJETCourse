@@ -121,7 +121,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 
 * Johannesburg/Pretoria, June 19, 20, 21
    * Tuesday, June 20, 14:00 - 16:00 -- Britehouse/Dimension Data (http://britehouse.co.za)
-   * Wednesday, June 21, 18:00 Johannesburg JUG
+   * Wednesday, June 21, 18:00 Johannesburg JUG (https://www.meetup.com/Jozi-JUG)
    * Adapt IT, Pretoria (http://www.adaptit.co.za)
    * Timeworx, Johannesburg (http://www.timeworx.co.za)
    * Medscheme, Johannesburg (http://www.medscheme.com)
