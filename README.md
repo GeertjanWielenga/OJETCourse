@@ -121,11 +121,11 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 
 * Johannesburg/Pretoria, June 19, 20, 21
    * Tuesday, June 20, 14:00 - 16:00 -- Britehouse/Dimension Data (http://britehouse.co.za)
+   * Wednesday, June 21, 18:00 Johannesburg JUG
    * Adapt IT, Pretoria (http://www.adaptit.co.za)
    * Timeworx, Johannesburg (http://www.timeworx.co.za)
    * Medscheme, Johannesburg (http://www.medscheme.com)
    * Liberty Health, Johannesburg (http://www.libertyhealth.co.za)
-   * Mark Clarke and Johannesburg JUG
    * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
    * Bilal Kathrada, Johannesburg (http://www.compukids.me)
    * Geoff Arnold, Johannesburg (http://codecollege.co.za)
