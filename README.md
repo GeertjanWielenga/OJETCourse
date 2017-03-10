@@ -126,6 +126,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
    * Timeworx, Johannesburg (http://www.timeworx.co.za)
    * Medscheme, Johannesburg (http://www.medscheme.com)
    * Liberty Health, Johannesburg (http://www.libertyhealth.co.za)
+   * WesBank, Johannesburg (https://www.wesbank.co.za/wesbankcoza)
    * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
    * Bilal Kathrada, Johannesburg (http://www.compukids.me)
    * Geoff Arnold, Johannesburg (http://codecollege.co.za)
