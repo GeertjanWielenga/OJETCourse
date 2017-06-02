@@ -137,7 +137,8 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
    * To be done: Pinkmatter Solutions, Pretoria (http://pinkmatter.co.za)
 
 * Cape Town, June 22, 23
-   * 10:00 PepkorIT, Cape Town (http://pepkorit.com) and Steltix, Cape Town (http://http://www.steltix.com)
-   * To be done: Institute of Mine Seismology (http://www.imseismology.org)
+   * Friday, June 23:
+     * 10:00 PepkorIT, Cape Town (http://pepkorit.com) and Steltix, Cape Town (http://http://www.steltix.com)
+     * To be done: Institute of Mine Seismology (http://www.imseismology.org)
 
 
