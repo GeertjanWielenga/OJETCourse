@@ -126,7 +126,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
    * Tuesday, June 20:
      * 10:00 - 11:00 -- Adapt IT, Pretoria (http://www.adaptit.co.za)
      * 14:00 - 16:00 -- Britehouse/Dimension Data (http://britehouse.co.za)
-     * 18:00 Johannesburg JUG (https://www.meetup.com/Jozi-JUG)
+     * 18:00 - 20:00 -- Johannesburg JUG (https://www.meetup.com/Jozi-JUG)
        * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
        * Bilal Kathrada, Johannesburg (http://www.compukids.me)
        * Geoff Arnold, Johannesburg (http://codecollege.co.za)
