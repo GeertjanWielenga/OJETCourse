@@ -124,7 +124,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
      * 09:00 - 10:00 -- WesBank, Johannesburg (https://www.wesbank.co.za/wesbankcoza)
      * 11:00 - 14:00 -- Oracle Event at Oracle Johannesburg (to be confirmed)
    * Tuesday, June 20:
-     * 10:00 - 11:00 -- Adapt IT, Pretoria (http://www.adaptit.co.za)
+     * 10:00 - 12:00 -- Adapt IT, Pretoria (http://www.adaptit.co.za)
      * 14:00 - 16:00 -- Britehouse/Dimension Data, Bryanston (http://britehouse.co.za)
      * 18:00 - 20:00 -- Johannesburg JUG (https://www.meetup.com/Jozi-JUG)
        * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
