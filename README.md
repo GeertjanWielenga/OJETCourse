@@ -120,18 +120,21 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 ####South Africa Tour: June 19 - 23, 2017
 
 * Johannesburg/Pretoria, June 19, 20, 21
+   * Monday, June 19:
+     * 09:00 - 10:00 -- WesBank, Johannesburg (https://www.wesbank.co.za/wesbankcoza)
+     * 11:00 - 14:00 -- Oracle Event at Oracle Johannesburg 
    * Tuesday, June 20:
      * 10:00 - 11:00 -- Adapt IT, Pretoria (http://www.adaptit.co.za)
      * 14:00 - 16:00 -- Britehouse/Dimension Data (http://britehouse.co.za)
-   * Wednesday, June 21, 18:00 Timeworx, Johannesburg (http://www.timeworx.co.za)
-   * Wednesday, June 21, 18:00 Johannesburg JUG (https://www.meetup.com/Jozi-JUG)
-   * Medscheme, Johannesburg (http://www.medscheme.com)
-   * Liberty Health, Johannesburg (http://www.libertyhealth.co.za)
-   * WesBank, Johannesburg (https://www.wesbank.co.za/wesbankcoza)
-   * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
-   * Bilal Kathrada, Johannesburg (http://www.compukids.me)
-   * Geoff Arnold, Johannesburg (http://codecollege.co.za)
-   * Pinkmatter Solutions, Pretoria (http://pinkmatter.co.za)
+   * Wednesday, June 21:
+     * 13:00 Timeworx, Johannesburg (http://www.timeworx.co.za)
+     * 18:00 Johannesburg JUG (https://www.meetup.com/Jozi-JUG)
+       * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
+       * Bilal Kathrada, Johannesburg (http://www.compukids.me)
+       * Geoff Arnold, Johannesburg (http://codecollege.co.za)
+   * To be done: Medscheme, Johannesburg (http://www.medscheme.com)
+   * To be done: Liberty Health, Johannesburg (http://www.libertyhealth.co.za)
+   * To be done: Pinkmatter Solutions, Pretoria (http://pinkmatter.co.za)
 
 * Cape Town, June 22, 23
    * PepkorIT, Cape Town (http://pepkorit.com)
