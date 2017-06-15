@@ -121,23 +121,23 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 
 * Johannesburg/Pretoria, June 19, 20, 21
    * Monday, June 19:
-     * 09:00 - 12:00 -- WesBank, Johannesburg (https://www.wesbank.co.za/wesbankcoza)
+     * 09:00 - 12:00 -- WesBank, Johannesburg (wesbank.co.za/wesbankcoza)
      * 13.30 - 14.00 -- Oracle Cloud Council
      * 14:00 - 16:00 -- Oracle Partner Hub Johannesburg
    * Tuesday, June 20:
-     * 10:00 - 12:00 -- Adapt IT, Pretoria (http://www.adaptit.co.za)
-     * 18:00 - 20:00 -- Johannesburg JUG (https://www.meetup.com/Jozi-JUG)
-       * Simon Stewart, Johannesburg (http://brokenkeyboards.com)
-       * Bilal Kathrada, Johannesburg (http://www.compukids.me)
-       * Geoff Arnold, Johannesburg (http://codecollege.co.za)
-       * Pinkmatter Solutions, Pretoria (http://pinkmatter.co.za)
+     * 10:00 - 12:00 -- Adapt IT, Pretoria (adaptit.co.za)
+     * 14:00 - 16:00 -- Reutech Communications, Centurion (reutechcomms.com)
+     * 18:00 - 20:00 -- Johannesburg JUG (meetup.com/Jozi-JUG)
+       * Simon Stewart, Johannesburg (brokenkeyboards.com)
+       * Bilal Kathrada, Johannesburg (compukids.me)
+       * Geoff Arnold, Johannesburg (codecollege.co.za)
+       * Pinkmatter Solutions, Pretoria (pinkmatter.co.za)
    * Wednesday, June 21:
-     * 13:00 Timeworx, Johannesburg (http://www.timeworx.co.za)
-   * To be done: Medscheme, Johannesburg (http://www.medscheme.com)
+     * 13:00 Timeworx, Johannesburg (timeworx.co.za)
 
 * Cape Town, June 22, 23
    * Thursday, June 23:
-     * 14:00 - 16:00: Liberty Health (http://www.libertyhealth.co.za)
+     * 14:00 - 16:00: Liberty Health (libertyhealth.co.za)
    * Friday, June 23:
-     * 10:00 - 12:00 PepkorIT, Cape Town (http://pepkorit.com) & Steltix, Cape Town (http://http://www.steltix.com)
+     * 10:00 - 12:00 PepkorIT, Cape Town (pepkorit.com) & Steltix, Cape Town (steltix.com)
 
