@@ -133,6 +133,7 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
        * Geoff Arnold, Johannesburg (codecollege.co.za)
        * Pinkmatter Solutions, Pretoria (pinkmatter.co.za)
    * Wednesday, June 21:
+     * 10:00 - 12:00 -- Oracle JET Workshop at Oracle Johannesburg
      * 13:00 Timeworx, Johannesburg (timeworx.co.za)
 
 * Cape Town, June 22, 23
