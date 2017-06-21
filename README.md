@@ -138,9 +138,9 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 
 * Cape Town, June 22, 23
    * Thursday, June 23:
-     * 09:00 - 11:00 Steltix
-     * 12:00 Lunch with Nitsan and Pavel
+     * 11:00/11:30/12:00 Lunch with Nitsan and Pavel
      * 14:00 - 16:00: Liberty Health (libertyhealth.co.za)
    * Friday, June 23:
      * 10:00 - 12:00 PepkorIT, Cape Town (pepkorit.com) & Steltix, Cape Town (steltix.com)
+     * After the above -- Steltix  
 
