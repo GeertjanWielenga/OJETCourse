@@ -144,6 +144,6 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
      * 12:00 - 13:30 -- Lunch with Steltix
      * 15:00 - 17:00 -- Liberty Health Workshop
    * Saturday, June 24
-     * 16:00 Arnold Graaff, Code College (codecollege.co.za)
+     * 18:00 Arnold Graaff, Code College (codecollege.co.za)
      
 
