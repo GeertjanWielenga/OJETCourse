@@ -128,13 +128,12 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
      * 10:00 - 12:00 -- Adapt IT, Pretoria (adaptit.co.za)
      * 14:00 - 16:00 -- Reutech Communications, Centurion (reutechcomms.com)
      * 18:00 - 20:00 -- Johannesburg JUG (meetup.com/Jozi-JUG)
-       * Simon Stewart, Johannesburg (brokenkeyboards.com)
        * Bilal Kathrada, Johannesburg (compukids.me)
-       * Geoff Arnold, Johannesburg (codecollege.co.za)
-       * Pinkmatter Solutions, Pretoria (pinkmatter.co.za)
    * Wednesday, June 21:
+     * 09:30 - 10:00 -- Simon Stewart, Johannesburg (brokenkeyboards.com)
      * 10:00 - 12:00 -- Oracle JET Workshop at Oracle Johannesburg
-     * 13:00 Timeworx, Johannesburg (timeworx.co.za)
+     * 13:00 - 14:00 -- Timeworx, Johannesburg (timeworx.co.za)
+     * 17:00 - 18:00 -- Pinkmatter Solutions, Pretoria (pinkmatter.co.za)
 
 * Cape Town, June 22, 23
    * Thursday, June 23:
