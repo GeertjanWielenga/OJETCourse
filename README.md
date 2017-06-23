@@ -137,12 +137,12 @@ Each part can take from 5 to 10 minutes to explain/do for, e.g., a MOOC.
 
 * Cape Town, June 22, 23
    * Thursday, June 23:
-     * 11:00/11:30/12:00 Lunch with Nitsan and Pavel
-     * 14:00 - 16:00: Liberty Health (libertyhealth.co.za)
+     * 11:30 - 13:30 -- Lunch with Nitsan and Pavel
+     * 14:00 - 16:00 -- Liberty Health (libertyhealth.co.za)
    * Friday, June 23:
-     * 10:00 - 12:00 PepkorIT, Cape Town (pepkorit.com) & Steltix, Cape Town (steltix.com)
-     * 12:00 Lunch with Steltix
-     * 15:00 - 17:00 Liberty Health Workshop
+     * 10:00 - 12:00 -- PepkorIT, Cape Town (pepkorit.com) & Steltix, Cape Town (steltix.com)
+     * 12:00 - 13:30 -- Lunch with Steltix
+     * 15:00 - 17:00 -- Liberty Health Workshop
    * Saturday, June 24
      * 16:00 Arnold Graaff, Code College (codecollege.co.za)
      
